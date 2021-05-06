@@ -6,11 +6,13 @@
 package UserInterface;
 
 import ArayuzIslemleri.RenkVeIconlar;
+import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
+import java.util.Objects;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
@@ -29,6 +31,12 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     public Integer posX;
     public Integer posY;
+    
+    
+    // Değişkenler - Sonradan Silinecek
+    
+    public String kullanıcıAdı = "mehmet";
+    public String kullanıcıSifre = "123456";
     
 
     /**
@@ -203,11 +211,26 @@ public class GirisEkrani extends javax.swing.JFrame {
 
         jTextField_KullanıcıAdı.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_KullanıcıAdı.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Kullanıcı Adı", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 18))); // NOI18N
+        jTextField_KullanıcıAdı.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_KullanıcıAdıKeyPressed(evt);
+            }
+        });
 
         jPasswordField_Sifre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Sifre", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 18))); // NOI18N
+        jPasswordField_Sifre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField_SifreKeyPressed(evt);
+            }
+        });
 
         jTextField_KurtarmaKodu.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jTextField_KurtarmaKodu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Kurtarma Kodu", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 18))); // NOI18N
+        jTextField_KurtarmaKodu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_KurtarmaKoduKeyPressed(evt);
+            }
+        });
 
         jLabel_SifremiUnuttum.setForeground(new java.awt.Color(43, 81, 154));
         jLabel_SifremiUnuttum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -225,6 +248,11 @@ public class GirisEkrani extends javax.swing.JFrame {
         });
 
         jButton_GirisYap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enter.png"))); // NOI18N
+        jButton_GirisYap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_GirisYapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -422,6 +450,55 @@ public class GirisEkrani extends javax.swing.JFrame {
         this.setLocation(evt.getXOnScreen() - posX - 351, evt.getYOnScreen() - posY);
         
     }//GEN-LAST:event_jLabel_MoveMouseDragged
+
+    private void jButton_GirisYapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GirisYapActionPerformed
+        
+        String girilenKullanıcıAdı = jTextField_KullanıcıAdı.getText();
+        String girilenSifre = new String(jPasswordField_Sifre.getPassword());
+        
+        if(girilenKullanıcıAdı.equals("") && girilenSifre.equals("")){
+            JOptionPane.showMessageDialog(this, "Kullanıcı Adı ve Şifresi Giriniz");
+        }else if(girilenKullanıcıAdı.equals("")){
+            JOptionPane.showMessageDialog(this, "Kullanıcı Adı Giriniz");
+        }else if(girilenSifre.equals("")){
+            JOptionPane.showMessageDialog(this, "Şifre Giriniz");
+        }else{
+            
+            if(girilenKullanıcıAdı.equals(kullanıcıAdı) && Objects.equals(girilenSifre, kullanıcıSifre)){
+                System.out.println("Hoşgeldiniz");
+            }else{
+                JOptionPane.showMessageDialog(this, "Kullanıcı Adınız veya Şifreniz Yanlış");
+            }
+            
+            
+        }
+        
+        
+    }//GEN-LAST:event_jButton_GirisYapActionPerformed
+
+    private void jTextField_KullanıcıAdıKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_KullanıcıAdıKeyPressed
+       
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            jButton_GirisYap.doClick();
+        }
+        
+    }//GEN-LAST:event_jTextField_KullanıcıAdıKeyPressed
+
+    private void jPasswordField_SifreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField_SifreKeyPressed
+        
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            jButton_GirisYap.doClick();
+        }
+        
+    }//GEN-LAST:event_jPasswordField_SifreKeyPressed
+
+    private void jTextField_KurtarmaKoduKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_KurtarmaKoduKeyPressed
+        
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            jButton_GirisYap.doClick();
+        }
+        
+    }//GEN-LAST:event_jTextField_KurtarmaKoduKeyPressed
 
     /**
      * @param args the command line arguments
