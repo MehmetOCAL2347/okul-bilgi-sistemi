@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 
 /**
  *
@@ -37,6 +38,8 @@ public class GirisEkrani extends javax.swing.JFrame {
         initComponents();
         initComponents_2(false);
         
+        this.setLocation(dim.width/2 - this.getSize().width/2, dim.height/2 - this.getSize().height/2);
+        
     }
     
     
@@ -52,10 +55,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         if(acılıs){
             jLabel_UserLogin.setIcon(renkVeIconlar.getUser2());
         }else{
-            jLabel_UserLogin.setIcon(renkVeIconlar.getUser());
-            
-            this.setLocation(dim.width/2 - this.getSize().width/2, dim.height/2 - this.getSize().height/2);
-            
+            jLabel_UserLogin.setIcon(renkVeIconlar.getUser());            
         }
     
     }
@@ -376,6 +376,31 @@ public class GirisEkrani extends javax.swing.JFrame {
                 System.out.println("Kurtarma Kodu Mailinize gönderiliyor");
                 
                 initComponents_2(true);
+                
+                SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
+                    @Override
+                    protected Boolean doInBackground() throws Exception {
+                        
+                        for(int i= 120; i>= 0; i--){
+                            
+                            jLabel_Sayac.setText(String.valueOf(i));
+                            Thread.sleep(100);
+                            
+                        }
+                        
+                        return true;
+                    }   
+
+                    @Override
+                    protected void done() {
+                        
+                        initComponents_2(false);
+                        System.out.println("Süreniz Bitti");
+                        
+                    }                
+                };
+                
+                worker.execute();
                 
             }            
             
