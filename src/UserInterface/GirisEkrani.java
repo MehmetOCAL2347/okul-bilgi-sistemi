@@ -11,6 +11,7 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -362,8 +363,25 @@ public class GirisEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_SifremiUnuttumMouseExited
 
     private void jLabel_SifremiUnuttumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SifremiUnuttumMouseClicked
+              
+        String kullanıcıAdı = jTextField_KullanıcıAdı.getText();
+        kullanıcıAdı = kullanıcıAdı.replaceAll(" ", "");
+        jTextField_KullanıcıAdı.setText(kullanıcıAdı);
         
-        initComponents_2(true);
+        if(!kullanıcıAdı.equals("")){   // Mail Gönderilcek
+            
+            int dialogButton = JOptionPane.showConfirmDialog(this, "Kurtarma Kodu Mailinize Gönderilsin mi?", "Uyarı", JOptionPane.YES_NO_OPTION);
+        
+            if(dialogButton == 0){  // Evet
+                System.out.println("Kurtarma Kodu Mailinize gönderiliyor");
+                
+                initComponents_2(true);
+                
+            }            
+            
+        }else{
+            JOptionPane.showMessageDialog(this, "Kullanıcı Adı Girmediniz.");
+        }
         
     }//GEN-LAST:event_jLabel_SifremiUnuttumMouseClicked
 
