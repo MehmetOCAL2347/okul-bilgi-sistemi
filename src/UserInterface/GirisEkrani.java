@@ -6,6 +6,7 @@
 package UserInterface;
 
 import ArayuzIslemleri.RenkVeIconlar;
+import SQLIslemleri.SQLKullanıcıIslemleri;
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -25,7 +26,12 @@ public class GirisEkrani extends javax.swing.JFrame {
     // Classlar
     
     RenkVeIconlar renkVeIconlar = new RenkVeIconlar();
-    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();  
+    
+    // Classlar - Sonradan Silinebilir
+    
+    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri();
+    
     
     // Değişkenler
     
@@ -47,7 +53,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         initComponents_2(false);
         
         this.setLocation(dim.width/2 - this.getSize().width/2, dim.height/2 - this.getSize().height/2);
-        
+                
     }
     
     
@@ -404,10 +410,15 @@ public class GirisEkrani extends javax.swing.JFrame {
                 System.out.println("Kurtarma Kodu Mailinize gönderiliyor");
                 
                 initComponents_2(true);
+                sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
+                
+                
                 
                 SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
                     @Override
                     protected Boolean doInBackground() throws Exception {
+                        
+                        
                         
                         for(int i= 120; i>= 0; i--){
                             
