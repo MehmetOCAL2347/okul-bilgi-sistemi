@@ -1,6 +1,7 @@
 package MailConfig;
 
 import java.util.Properties;
+import java.util.Random;
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -57,7 +58,7 @@ public class MailIslemleri {
     
     public void mailGonder(String mailAtılacakAdres) throws AddressException, MessagingException{
     
-        this.sifreKurtarmaKodu = "123jasd";  // Burdaki değişkeni metodumuzla yapıcaz
+        this.sifreKurtarmaKodu = kurtarmaSifresiUret();
         
         mesaj = new MimeMessage(session);
         mesaj.setFrom(new InternetAddress(mailAdresim));
@@ -67,6 +68,26 @@ public class MailIslemleri {
         
         Transport.send(mesaj);
         
+    }
+    
+    
+    public String kurtarmaSifresiUret(){
+    
+        int sifreUzunlugu = 10;
+        String buyukHarfler = "ABCDEFGHIJKLMONPRSTWQYZ";
+        String kucukHarfler = buyukHarfler.toLowerCase();
+        String rakamlar = "1234567890";
+        String rakamVeHarfler = buyukHarfler + kucukHarfler + rakamlar;
+        
+        StringBuilder sifreOlusturucu = new StringBuilder();
+        Random rand = new Random();
+        
+        for(int i = 0; i < sifreUzunlugu; i++){
+            
+            sifreOlusturucu.append(rakamVeHarfler.charAt(rand.nextInt(rakamVeHarfler.length())));
+            
+        }        
+        return sifreOlusturucu.toString();        
     }
     
     
