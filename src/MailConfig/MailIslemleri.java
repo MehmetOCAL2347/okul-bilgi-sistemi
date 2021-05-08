@@ -89,6 +89,9 @@ public class MailIslemleri {
         }        
         return sifreOlusturucu.toString();        
     }
-    
+
+    public String getSifreKurtarmaKodu() {
+        return sifreKurtarmaKodu;
+    }
     
 }

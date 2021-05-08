@@ -1,6 +1,7 @@
 package UserInterface;
 
 import ArayuzIslemleri.RenkVeIconlar;
+import MailConfig.MailIslemleri;
 import SQLIslemleri.SQLKullanıcıIslemleri;
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
@@ -24,12 +25,14 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     // Classlar - Sonradan Silinebilir
     
-    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri();
-    
+    MailIslemleri mail = new MailIslemleri();    
+    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(mail);
+        
     // Değişkenler
     
     public Integer posX;
     public Integer posY;
+    private boolean sifreKurtarmaIslemi;
     
     
     // Değişkenler - Sonradan Silinecek
@@ -406,6 +409,7 @@ public class GirisEkrani extends javax.swing.JFrame {
                 
                 try {
                     sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
+                                        
                 } catch (MessagingException ex) {
                     Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -460,9 +464,23 @@ public class GirisEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_MoveMouseDragged
 
     private void jButton_GirisYapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GirisYapActionPerformed
+                      
+        this.sifreKurtarmaIslemi = jTextField_KurtarmaKodu.isVisible();  // Eğer visible ise o zm nkullanııcı sifrekurtarma işlemi yapıyor
         
+        if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
+        
+            System.out.println("Şu anda Giriş İşlemi Yapılıyor");
+            
+        }else{  // Şifre Kurtarma işlemi yapıyorum
+        
+            System.out.println("Şu anda Şifre Kurtarma İşlemi Yapılıyor");
+            
+        }
+        
+        
+        /*
         String girilenKullanıcıAdı = jTextField_KullanıcıAdı.getText();
-        String girilenSifre = new String(jPasswordField_Sifre.getPassword());
+        String girilenSifre = new String(jPasswordField_Sifre.getPassword());     
         
         if(girilenKullanıcıAdı.equals("") && girilenSifre.equals("")){
             JOptionPane.showMessageDialog(this, "Kullanıcı Adı ve Şifresi Giriniz");
@@ -480,7 +498,7 @@ public class GirisEkrani extends javax.swing.JFrame {
             
             
         }
-        
+        */
         
     }//GEN-LAST:event_jButton_GirisYapActionPerformed
 

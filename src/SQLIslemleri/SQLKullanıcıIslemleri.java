@@ -1,10 +1,7 @@
 package SQLIslemleri;
 
 import MailConfig.MailIslemleri;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.mail.MessagingException;
-import javax.swing.JOptionPane;
 
 public class SQLKullanıcıIslemleri {
     
@@ -16,10 +13,18 @@ public class SQLKullanıcıIslemleri {
     
     // Classlar
     
-    MailIslemleri mail = new MailIslemleri();
+    //MailIslemleri mail = new MailIslemleri();    
+    
+    private MailIslemleri mail;
     
     
+    // Constructor
+
+    public SQLKullanıcıIslemleri(MailIslemleri mail) {
+        this.mail = mail;
+    }
         
+    
     public void kullanıcıBul(String kullanıcıAdı){    
         
         // Bu bilgiler DB'den gelicek
