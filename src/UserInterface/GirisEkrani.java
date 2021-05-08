@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UserInterface;
 
 import ArayuzIslemleri.RenkVeIconlar;
@@ -17,10 +12,6 @@ import java.util.Objects;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
-/**
- *
- * @author MehmetÖcalMagis
- */
 public class GirisEkrani extends javax.swing.JFrame {
     
     // Classlar
@@ -31,7 +22,6 @@ public class GirisEkrani extends javax.swing.JFrame {
     // Classlar - Sonradan Silinebilir
     
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri();
-    
     
     // Değişkenler
     
@@ -410,9 +400,6 @@ public class GirisEkrani extends javax.swing.JFrame {
                 System.out.println("Kurtarma Kodu Mailinize gönderiliyor");
                 
                 initComponents_2(true);
-                sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
-                
-                
                 
                 SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
                     @Override
