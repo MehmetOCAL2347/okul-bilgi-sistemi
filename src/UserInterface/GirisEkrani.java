@@ -9,6 +9,9 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
@@ -397,9 +400,16 @@ public class GirisEkrani extends javax.swing.JFrame {
             int dialogButton = JOptionPane.showConfirmDialog(this, "Kurtarma Kodu Mailinize Gönderilsin mi?", "Uyarı", JOptionPane.YES_NO_OPTION);
         
             if(dialogButton == 0){  // Evet
-                System.out.println("Kurtarma Kodu Mailinize gönderiliyor");
+               
                 
                 initComponents_2(true);
+                
+                try {
+                    sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
+                } catch (MessagingException ex) {
+                    Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
                 
                 SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
                     @Override
