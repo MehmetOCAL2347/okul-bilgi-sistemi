@@ -1,5 +1,6 @@
 package UserInterface;
 
+import ArayuzIslemleri.GirisEkranIslemleri;
 import ArayuzIslemleri.RenkVeIconlar;
 import MailConfig.MailIslemleri;
 import SQLIslemleri.SQLKullanıcıIslemleri;
@@ -9,7 +10,6 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -22,12 +22,10 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     RenkVeIconlar renkVeIconlar = new RenkVeIconlar();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();  
-    
-    // Classlar - Sonradan Silinebilir
-    
     MailIslemleri mail = new MailIslemleri();    
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(mail);
-        
+    GirisEkranIslemleri girisEkran;
+    
     // Değişkenler
     
     public Integer posX;
@@ -61,6 +59,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         
         jTextField_KullanıcıAdı.setVisible(!acılıs);
         jPasswordField_Sifre.setVisible(!acılıs);
+        jLabel_SifremiUnuttum.setVisible(!acılıs);
         
         if(acılıs){
             jLabel_UserLogin.setIcon(renkVeIconlar.getUser2());
@@ -424,7 +423,7 @@ public class GirisEkrani extends javax.swing.JFrame {
                         for(int i= 120; i>= 0; i--){
                             
                             jLabel_Sayac.setText(String.valueOf(i));
-                            Thread.sleep(100);
+                            Thread.sleep(1000);
                             
                         }
                         
@@ -466,14 +465,18 @@ public class GirisEkrani extends javax.swing.JFrame {
     private void jButton_GirisYapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GirisYapActionPerformed
                       
         this.sifreKurtarmaIslemi = jTextField_KurtarmaKodu.isVisible();  // Eğer visible ise o zm nkullanııcı sifrekurtarma işlemi yapıyor
+        girisEkran = new GirisEkranIslemleri(jTextField_KullanıcıAdı, jTextField_KurtarmaKodu, jPasswordField_Sifre);
         
         if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
         
-            System.out.println("Şu anda Giriş İşlemi Yapılıyor");
+            girisEkran.girisYap(kullanıcıAdı, kullanıcıSifre);
+            JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
             
         }else{  // Şifre Kurtarma işlemi yapıyorum
         
             System.out.println("Şu anda Şifre Kurtarma İşlemi Yapılıyor");
+            girisEkran.sifreKurtar(mail.getSifreKurtarmaKodu());
+            JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
             
         }
         
