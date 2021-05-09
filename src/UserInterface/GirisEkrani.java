@@ -32,6 +32,8 @@ public class GirisEkrani extends javax.swing.JFrame {
     public Integer posY;
     private boolean sifreKurtarmaIslemi;
     
+    private boolean sayacDurdur = false;
+    private boolean sifreSonuc = false;
     
     // Değişkenler - Sonradan Silinecek
     
@@ -422,9 +424,15 @@ public class GirisEkrani extends javax.swing.JFrame {
                         
                         for(int i= 120; i>= 0; i--){
                             
-                            jLabel_Sayac.setText(String.valueOf(i));
-                            Thread.sleep(1000);
+                            if(!sifreSonuc){
                             
+                                jLabel_Sayac.setText(String.valueOf(i));
+                                Thread.sleep(10);
+                            }else {
+                            
+                                sayacDurdur = true;
+                                return true;
+                            }                            
                         }
                         
                         return true;
@@ -434,7 +442,17 @@ public class GirisEkrani extends javax.swing.JFrame {
                     protected void done() {
                         
                         initComponents_2(false);
-                        System.out.println("Süreniz Bitti");
+                        
+                        if(!sayacDurdur){
+                            
+                            JOptionPane.showMessageDialog(GirisEkrani.this, "Süreniz Bitti");
+                        }else {
+                        
+                            JOptionPane.showMessageDialog(GirisEkrani.this, kullanıcıSifre);
+                            jPasswordField_Sifre.setText(kullanıcıSifre);
+                        }
+                        
+                        
                         
                     }                
                 };
@@ -467,41 +485,36 @@ public class GirisEkrani extends javax.swing.JFrame {
         this.sifreKurtarmaIslemi = jTextField_KurtarmaKodu.isVisible();  // Eğer visible ise o zm nkullanııcı sifrekurtarma işlemi yapıyor
         girisEkran = new GirisEkranIslemleri(jTextField_KullanıcıAdı, jTextField_KurtarmaKodu, jPasswordField_Sifre);
         
+        boolean girisSonuc = false;
+        boolean sifreSonuc = false;
+        
         if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
         
-            girisEkran.girisYap(kullanıcıAdı, kullanıcıSifre);
-            JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
+            girisSonuc = girisEkran.girisYap(kullanıcıAdı, kullanıcıSifre);
             
-        }else{  // Şifre Kurtarma işlemi yapıyorum
-        
-            System.out.println("Şu anda Şifre Kurtarma İşlemi Yapılıyor");
-            girisEkran.sifreKurtar(mail.getSifreKurtarmaKodu());
-            JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
             
-        }
-        
-        
-        /*
-        String girilenKullanıcıAdı = jTextField_KullanıcıAdı.getText();
-        String girilenSifre = new String(jPasswordField_Sifre.getPassword());     
-        
-        if(girilenKullanıcıAdı.equals("") && girilenSifre.equals("")){
-            JOptionPane.showMessageDialog(this, "Kullanıcı Adı ve Şifresi Giriniz");
-        }else if(girilenKullanıcıAdı.equals("")){
-            JOptionPane.showMessageDialog(this, "Kullanıcı Adı Giriniz");
-        }else if(girilenSifre.equals("")){
-            JOptionPane.showMessageDialog(this, "Şifre Giriniz");
-        }else{
+            if(girisSonuc){
             
-            if(girilenKullanıcıAdı.equals(kullanıcıAdı) && Objects.equals(girilenSifre, kullanıcıSifre)){
-                System.out.println("Hoşgeldiniz");
-            }else{
-                JOptionPane.showMessageDialog(this, "Kullanıcı Adınız veya Şifreniz Yanlış");
+                // Jframe Olustur
+            }else {
+            
+                JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
             }
             
             
+        }else{  // Şifre Kurtarma işlemi yapıyorum
+        
+            sifreSonuc = girisEkran.sifreKurtar(mail.getSifreKurtarmaKodu());            
+            
+            if(sifreSonuc){
+                
+                this.sifreSonuc = true;
+            }else{
+            
+                JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
+            }
+            
         }
-        */
         
     }//GEN-LAST:event_jButton_GirisYapActionPerformed
 
