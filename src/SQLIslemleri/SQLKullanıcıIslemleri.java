@@ -7,8 +7,7 @@ import javax.mail.MessagingException;
 public class SQLKullanıcıIslemleri {
     
     // Değişikenler
-    
-    private String mailAtılacakAdres = "";    
+      
     private String unutulanSifre = "";    
     
     
@@ -24,11 +23,16 @@ public class SQLKullanıcıIslemleri {
     }
         
     
-    public void kullanıcıBul(String kullanıcıAdı){    
+    public Kullanıcı kullanıcıBul(String kullanıcıAdı){    
         
         // Bu bilgiler DB'den gelicek
-        this.mailAtılacakAdres = "udemyokulbilgisistemi@gmail.com";   
-        this.unutulanSifre = "123456";
+        Kullanıcı kullanıcı;
+        
+        // DB'den kullanıcıAdı kullanıcımızı bulucaz.
+        kullanıcı = new Kullanıcı(26, "Mehmet", "ÖCAL", "mehmet", "123456789", "Admin", "udemyokulbilgisistemi@gmail.com");
+        
+        return kullanıcı;
+        
         
     }    
     
@@ -46,20 +50,18 @@ public class SQLKullanıcıIslemleri {
     }
     
     
-    public void sifremiUnuttum(String kullanıcıAdı) throws MessagingException{
+    public boolean sifremiUnuttum(Kullanıcı kullanıcı) throws MessagingException{                
         
-        kullanıcıBul(kullanıcıAdı);
-        
-        if(!mailAtılacakAdres.equals("")){            
+        if(!kullanıcı.getEMail().equals("")){            
             
             System.out.println("Mail Gönderme İşlemlerine Devam edilecek");            
-            mail.mailGonder(mailAtılacakAdres);
-            
+            mail.mailGonder(kullanıcı.getEMail());
+            return true;
                        
         }else{
         
             System.out.println("Kullanıcı Maili bulunamadı. >> Uyarı göndericez");
-            
+            return false;            
         }
     
     }

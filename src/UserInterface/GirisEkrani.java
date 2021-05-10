@@ -391,11 +391,15 @@ public class GirisEkrani extends javax.swing.JFrame {
 
     private void jLabel_SifremiUnuttumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SifremiUnuttumMouseClicked
               
-        String kullanıcıAdı = jTextField_KullanıcıAdı.getText();
-        kullanıcıAdı = kullanıcıAdı.replaceAll(" ", "");
-        jTextField_KullanıcıAdı.setText(kullanıcıAdı);                
+        String girilenkullanıcıAdı = jTextField_KullanıcıAdı.getText();
+        girilenkullanıcıAdı = girilenkullanıcıAdı.replaceAll(" ", "");
+        jTextField_KullanıcıAdı.setText(girilenkullanıcıAdı);      
         
-        if(!kullanıcıAdı.equals("")){   // Mail Gönderilcek
+        Kullanıcı kullanıcı;
+        
+        boolean mailAdresiBulunduMu = false;
+        
+        if(!girilenkullanıcıAdı.equals("")){   // Mail Gönderilcek
             
             int dialogButton = JOptionPane.showConfirmDialog(this, "Kurtarma Kodu Mailinize Gönderilsin mi?", "Uyarı", JOptionPane.YES_NO_OPTION);
         
@@ -404,26 +408,23 @@ public class GirisEkrani extends javax.swing.JFrame {
                 
                 initComponents_2(true);
                 
-                try {                                        
-                    sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
-                                                            
-                } catch (MessagingException ex) {
-                    Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                
-                SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
+                try {   
+                    
+                    kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenkullanıcıAdı);                    
+                    mailAdresiBulunduMu = sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcı);
+                    
+                    // True veya false olma durumunu incelycez 
+                    
+                    SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
                     @Override
                     protected Boolean doInBackground() throws Exception {
-                        
-                        
-                        
+                                                
                         for(int i= 120; i>= 0; i--){
                             
                             if(!sifreSonuc){
                             
                                 jLabel_Sayac.setText(String.valueOf(i));
-                                Thread.sleep(10);
+                                Thread.sleep(1000);
                             }else {
                             
                                 sayacDurdur = true;
@@ -444,17 +445,20 @@ public class GirisEkrani extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(GirisEkrani.this, "Süreniz Bitti");
                         }else {
                         
-                            //JOptionPane.showMessageDialog(GirisEkrani.this, kullanıcıSifre);
-                            //jPasswordField_Sifre.setText(kullanıcıSifre);                        
+                            JOptionPane.showMessageDialog(GirisEkrani.this, "Kullanıcı Şifreniz: " + kullanıcı.getKullanıcıSifre());
+                            jPasswordField_Sifre.setText(kullanıcı.getKullanıcıSifre());                        
                         }
-                        
-                        
-                        
                     }                
                 };
                 
                 worker.execute();
+                                                            
+                } catch (MessagingException ex) {
+                    Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
+                
+                                
             }            
             
         }else{
