@@ -2,6 +2,7 @@ package UserInterface;
 
 import ArayuzIslemleri.GirisEkranIslemleri;
 import ArayuzIslemleri.RenkVeIconlar;
+import Kullanıcılar.Kullanıcı;
 import MailConfig.MailIslemleri;
 import SQLIslemleri.SQLKullanıcıIslemleri;
 import com.sun.glass.events.KeyEvent;
@@ -34,12 +35,7 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     private boolean sayacDurdur = false;
     private boolean sifreSonuc = false;
-    
-    // Değişkenler - Sonradan Silinecek
-    
-    public String kullanıcıAdı = "mehmet";
-    public String kullanıcıSifre = "123456";
-    
+        
 
     /**
      * Creates new form GirisEkrani
@@ -448,8 +444,8 @@ public class GirisEkrani extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(GirisEkrani.this, "Süreniz Bitti");
                         }else {
                         
-                            JOptionPane.showMessageDialog(GirisEkrani.this, kullanıcıSifre);
-                            jPasswordField_Sifre.setText(kullanıcıSifre);                        
+                            //JOptionPane.showMessageDialog(GirisEkrani.this, kullanıcıSifre);
+                            //jPasswordField_Sifre.setText(kullanıcıSifre);                        
                         }
                         
                         
@@ -484,17 +480,25 @@ public class GirisEkrani extends javax.swing.JFrame {
                       
         this.sifreKurtarmaIslemi = jTextField_KurtarmaKodu.isVisible();  // Eğer visible ise o zm nkullanııcı sifrekurtarma işlemi yapıyor
         girisEkran = new GirisEkranIslemleri(jTextField_KullanıcıAdı, jTextField_KurtarmaKodu, jPasswordField_Sifre);
+        
+        String girilenKullanıcıAdı = jTextField_KullanıcıAdı.getText();
+        String girilenKullanıcıSifre = new String(jPasswordField_Sifre.getPassword());
                 
         boolean girisSonuc = false;
         boolean sifreSonuc = false;
+        
+        Kullanıcı kullanıcı;
                 
         if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
         
-            girisSonuc = girisEkran.girisYap(kullanıcıAdı, kullanıcıSifre);
+            kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenKullanıcıAdı, girilenKullanıcıSifre);
+            
+            girisSonuc = girisEkran.kullanıcıAdıVeSifreKontrol(kullanıcı.getKullanıcıAdı(), kullanıcı.getKullanıcıSifre());
             
             
             if(girisSonuc){
                                 
+                System.out.println("Hoşgeldiniz");
                 // Jframe Olustur
             }else {
             

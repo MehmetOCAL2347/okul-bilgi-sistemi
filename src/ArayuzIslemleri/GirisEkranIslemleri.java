@@ -41,7 +41,7 @@ public class GirisEkranIslemleri {
     
     // Giriş Yap Metodları
     
-    public boolean girisYap(String kullanıcıAdı, String kullanıcıSifre){
+    public boolean kullanıcıAdıVeSifreKontrol(String kullanıcıAdı, String kullanıcıSifre){
         
         boolean bosGirisAlanKontrol = bosGirisKontrol();
         boolean sifreGirisKontrol = sifreKontrol(kullanıcıAdı, kullanıcıSifre);

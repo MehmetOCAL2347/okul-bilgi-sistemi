@@ -1,5 +1,6 @@
 package SQLIslemleri;
 
+import Kullanıcılar.Kullanıcı;
 import MailConfig.MailIslemleri;
 import javax.mail.MessagingException;
 
@@ -12,8 +13,6 @@ public class SQLKullanıcıIslemleri {
     
     
     // Classlar
-    
-    //MailIslemleri mail = new MailIslemleri();    
     
     private MailIslemleri mail;
     
@@ -32,6 +31,19 @@ public class SQLKullanıcıIslemleri {
         this.unutulanSifre = "123456";
         
     }    
+    
+    
+    public Kullanıcı kullanıcıBul(String girilenKullanıcıAdı, String girilenKullanıcıSifre){
+    
+        Kullanıcı kullanıcı;
+        
+        
+        // DB'den kullanıcıAdı ve Kullnaıcı sifresiyle kullanıcımızı bulucaz.
+        kullanıcı = new Kullanıcı(26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
+        
+        
+        return kullanıcı;
+    }
     
     
     public void sifremiUnuttum(String kullanıcıAdı) throws MessagingException{
