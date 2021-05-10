@@ -155,7 +155,7 @@ public class GirisEkranIslemleri {
             return false;
         }
     }
-
+    
     public String getSonucMesaj() {
         return sonucMesaj;
     }

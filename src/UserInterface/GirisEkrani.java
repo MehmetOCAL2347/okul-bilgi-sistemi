@@ -397,7 +397,7 @@ public class GirisEkrani extends javax.swing.JFrame {
               
         String kullanıcıAdı = jTextField_KullanıcıAdı.getText();
         kullanıcıAdı = kullanıcıAdı.replaceAll(" ", "");
-        jTextField_KullanıcıAdı.setText(kullanıcıAdı);
+        jTextField_KullanıcıAdı.setText(kullanıcıAdı);                
         
         if(!kullanıcıAdı.equals("")){   // Mail Gönderilcek
             
@@ -408,9 +408,9 @@ public class GirisEkrani extends javax.swing.JFrame {
                 
                 initComponents_2(true);
                 
-                try {
+                try {                                        
                     sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcıAdı);
-                                        
+                                                            
                 } catch (MessagingException ex) {
                     Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -449,7 +449,7 @@ public class GirisEkrani extends javax.swing.JFrame {
                         }else {
                         
                             JOptionPane.showMessageDialog(GirisEkrani.this, kullanıcıSifre);
-                            jPasswordField_Sifre.setText(kullanıcıSifre);
+                            jPasswordField_Sifre.setText(kullanıcıSifre);                        
                         }
                         
                         
@@ -484,17 +484,17 @@ public class GirisEkrani extends javax.swing.JFrame {
                       
         this.sifreKurtarmaIslemi = jTextField_KurtarmaKodu.isVisible();  // Eğer visible ise o zm nkullanııcı sifrekurtarma işlemi yapıyor
         girisEkran = new GirisEkranIslemleri(jTextField_KullanıcıAdı, jTextField_KurtarmaKodu, jPasswordField_Sifre);
-        
+                
         boolean girisSonuc = false;
         boolean sifreSonuc = false;
-        
+                
         if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
         
             girisSonuc = girisEkran.girisYap(kullanıcıAdı, kullanıcıSifre);
             
             
             if(girisSonuc){
-            
+                                
                 // Jframe Olustur
             }else {
             

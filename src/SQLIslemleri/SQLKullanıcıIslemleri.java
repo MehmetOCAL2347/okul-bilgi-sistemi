@@ -17,7 +17,7 @@ public class SQLKullanıcıIslemleri {
     
     private MailIslemleri mail;
     
-    
+          
     // Constructor
 
     public SQLKullanıcıIslemleri(MailIslemleri mail) {
