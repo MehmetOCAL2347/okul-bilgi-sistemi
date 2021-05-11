@@ -29,7 +29,7 @@ public class SQLKullanıcıIslemleri {
         Kullanıcı kullanıcı;
         
         // DB'den kullanıcıAdı kullanıcımızı bulucaz.
-        kullanıcı = new Kullanıcı(26, "Mehmet", "ÖCAL", "mehmet", "123456789", "Admin", "udemyokulbilgisistemi@gmail.com");
+        kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456789", "Admin", "udemyokulbilgisistemi@gmail.com");
         
         return kullanıcı;
         
@@ -43,7 +43,7 @@ public class SQLKullanıcıIslemleri {
         
         
         // DB'den kullanıcıAdı ve Kullnaıcı sifresiyle kullanıcımızı bulucaz.
-        kullanıcı = new Kullanıcı(26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
+        kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
         
         
         return kullanıcı;

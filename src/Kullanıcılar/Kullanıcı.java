@@ -2,6 +2,7 @@ package Kullanıcılar;
 
 public class Kullanıcı {
     
+    private Integer id;
     private Integer yas;
     private String isim;
     private String soyIsım;
@@ -10,7 +11,8 @@ public class Kullanıcı {
     private String role;
     private String EMail;
 
-    public Kullanıcı(Integer yas, String isim, String soyIsım, String kullanıcıAdı, String kullanıcıSifre, String role, String EMail) {
+    public Kullanıcı(Integer id, Integer yas, String isim, String soyIsım, String kullanıcıAdı, String kullanıcıSifre, String role, String EMail) {        
+        this.id = id;
         this.yas = yas;
         this.isim = isim;
         this.soyIsım = soyIsım;
@@ -18,8 +20,8 @@ public class Kullanıcı {
         this.kullanıcıSifre = kullanıcıSifre;
         this.role = role;
         this.EMail = EMail;
-    }
-
+    } 
+    
     public Integer getYas() {
         return yas;
     }
