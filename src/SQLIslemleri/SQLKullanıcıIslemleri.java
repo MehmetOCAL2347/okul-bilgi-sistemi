@@ -4,11 +4,11 @@ import Kullanıcılar.Kullanıcı;
 import MailConfig.MailIslemleri;
 import javax.mail.MessagingException;
 
-public class SQLKullanıcıIslemleri {
+public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     // Değişikenler
       
-    private String unutulanSifre = "";    
+    private String unutulanSifre = ""; 
     
     
     // Classlar
@@ -18,9 +18,12 @@ public class SQLKullanıcıIslemleri {
           
     // Constructor
 
-    public SQLKullanıcıIslemleri(MailIslemleri mail) {
+    public SQLKullanıcıIslemleri(MailIslemleri mail, String DBIsmi) {
+        super(DBIsmi);
         this.mail = mail;
     }
+
+    
         
     
     public Kullanıcı kullanıcıBul(String kullanıcıAdı){    
@@ -41,7 +44,7 @@ public class SQLKullanıcıIslemleri {
     
         Kullanıcı kullanıcı;
         
-        
+                
         // DB'den kullanıcıAdı ve Kullnaıcı sifresiyle kullanıcımızı bulucaz.
         kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
         
@@ -64,6 +67,6 @@ public class SQLKullanıcıIslemleri {
             return false;            
         }
     
-    }
-    
+    }    
+
 }

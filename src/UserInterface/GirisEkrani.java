@@ -19,12 +19,16 @@ import javax.swing.SwingWorker;
 
 public class GirisEkrani extends javax.swing.JFrame {
     
+    // Değişkenler - DBIsımlerı
+    
+    private String DB_KULLANICI = "kullanıcı";
+    
     // Classlar
     
     RenkVeIconlar renkVeIconlar = new RenkVeIconlar();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();  
     MailIslemleri mail = new MailIslemleri();    
-    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(mail);
+    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(mail, DB_KULLANICI);
     GirisEkranIslemleri girisEkran;
     
     // Değişkenler
