@@ -14,7 +14,7 @@ public class SQLBaglantı {
     final String PAROLA = "";
     final String HOST = "localhost";
     final String JDBC = "jdbc:mysql://";
-    final String DRIVER = "com.mysql.cj.jdbC.Driver";
+    final String DRIVER = "com.mysql.cj.jdbc.Driver";
     final Integer PORT = 3306;
     
     String DBIsmi;

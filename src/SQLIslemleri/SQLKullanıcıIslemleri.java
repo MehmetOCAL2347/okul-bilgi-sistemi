@@ -2,13 +2,15 @@ package SQLIslemleri;
 
 import Kullanıcılar.Kullanıcı;
 import MailConfig.MailIslemleri;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.mail.MessagingException;
 
 public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     // Değişikenler
-      
-    private String unutulanSifre = ""; 
+    
+    private final String KULLANICI_ADI_SIFRESI = "SELECT * FROM kullanıcı WHERE kullanıcıAdı=? AND kullanıcıSifre=?";
     
     
     // Classlar
@@ -40,11 +42,23 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     }    
     
     
-    public Kullanıcı kullanıcıBul(String girilenKullanıcıAdı, String girilenKullanıcıSifre){
+    public Kullanıcı kullanıcıBul(String girilenKullanıcıAdı, String girilenKullanıcıSifre) throws SQLException{
     
-        Kullanıcı kullanıcı;
+        Kullanıcı kullanıcı;             
+       
+        komuttamamlayıcı = baglantı.prepareStatement(KULLANICI_ADI_SIFRESI);
+        komuttamamlayıcı.setString(1, girilenKullanıcıAdı);
+        komuttamamlayıcı.setString(2, girilenKullanıcıSifre);
         
-                
+        ResultSet sonuc = komuttamamlayıcı.executeQuery();
+        
+        while(sonuc.next()){
+        
+            System.out.println("id:" + sonuc.getInt("id"));
+            System.out.println("yas:" + sonuc.getInt("yas"));
+            System.out.println("isim:" + sonuc.getString("isim"));
+        }
+        
         // DB'den kullanıcıAdı ve Kullnaıcı sifresiyle kullanıcımızı bulucaz.
         kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
         

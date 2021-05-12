@@ -11,6 +11,7 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -21,7 +22,7 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     // Değişkenler - DBIsımlerı
     
-    private String DB_KULLANICI = "kullanıcı";
+    private String DB_KULLANICI = "kullanıcılar";
     
     // Classlar
     
@@ -497,22 +498,28 @@ public class GirisEkrani extends javax.swing.JFrame {
         
         Kullanıcı kullanıcı;
                 
-        if(!sifreKurtarmaIslemi){  // Giriş işlemleri yapıyoruz
-        
-            kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenKullanıcıAdı, girilenKullanıcıSifre);
+        if(!sifreKurtarmaIslemi){  
             
-            girisSonuc = girisEkran.kullanıcıAdıVeSifreKontrol(kullanıcı.getKullanıcıAdı(), kullanıcı.getKullanıcıSifre());
+            try {
+            // Giriş işlemleri yapıyoruz
             
-            
-            if(girisSonuc){
-                                
-                System.out.println("Hoşgeldiniz");
-                // Jframe Olustur
-            }else {
-            
-                JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
+                kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenKullanıcıAdı, girilenKullanıcıSifre);
+
+                girisSonuc = girisEkran.kullanıcıAdıVeSifreKontrol(kullanıcı.getKullanıcıAdı(), kullanıcı.getKullanıcıSifre());
+
+
+                if(girisSonuc){
+
+                    System.out.println("Hoşgeldiniz");
+                    // Jframe Olustur
+                }else {
+
+                    JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+                        
             
         }else{  // Şifre Kurtarma işlemi yapıyorum
         
