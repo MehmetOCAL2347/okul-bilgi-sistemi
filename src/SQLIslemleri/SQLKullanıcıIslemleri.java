@@ -44,7 +44,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     public Kullanıcı kullanıcıBul(String girilenKullanıcıAdı, String girilenKullanıcıSifre) throws SQLException{
     
-        Kullanıcı kullanıcı;             
+        Kullanıcı kullanıcı = null;
        
         komuttamamlayıcı = baglantı.prepareStatement(KULLANICI_ADI_SIFRESI);
         komuttamamlayıcı.setString(1, girilenKullanıcıAdı);
@@ -52,21 +52,30 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         
         ResultSet sonuc = komuttamamlayıcı.executeQuery();
         
-        while(sonuc.next()){
+         while(sonuc.next()){
         
-            System.out.println("id:" + sonuc.getInt("id"));
-            System.out.println("yas:" + sonuc.getInt("yas"));
-            System.out.println("isim:" + sonuc.getString("isim"));
+            kullanıcı = new Kullanıcı(
+            
+                    sonuc.getInt("id"),
+                    sonuc.getInt("yas"),
+                    sonuc.getString("isim"),
+                    sonuc.getString("soyIsim"),
+                    sonuc.getString("kullanıcıAdı"),
+                    sonuc.getString("kullanıcıSifre"),
+                    sonuc.getString("role"),
+                    sonuc.getString("EMail")
+                    
+            );
         }
         
         // DB'den kullanıcıAdı ve Kullnaıcı sifresiyle kullanıcımızı bulucaz.
-        kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
+        //kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456", "Admin", "udemyokulbilgisistemi@gmail.com");
         
         
         return kullanıcı;
     }
     
-    
+            
     public boolean sifremiUnuttum(Kullanıcı kullanıcı) throws MessagingException{                
         
         if(!kullanıcı.getEMail().equals("")){            

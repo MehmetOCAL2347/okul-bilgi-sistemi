@@ -20,10 +20,7 @@ public class GirisEkranIslemleri {
     // Değişkenlerimiz - Mesaj
     
     private String sonucMesaj;
-    
-    private String sonucGiris_BosAlan;
-    private String sonucGiris_Mesaj;
-    
+        
     private String sonucKurtarma_BosAlan;
     private String sonucKurtarma_Mesaj;
 
@@ -40,19 +37,21 @@ public class GirisEkranIslemleri {
     
     
     // Giriş Yap Metodları
+        
     
-    public boolean kullanıcıAdıVeSifreKontrol(String kullanıcıAdı, String kullanıcıSifre){
-        
-        boolean bosGirisAlanKontrol = bosGirisKontrol();
-        boolean sifreGirisKontrol = sifreKontrol(kullanıcıAdı, kullanıcıSifre);
-        
-        if(!bosGirisAlanKontrol){
-        
-            this.sonucMesaj = this.sonucGiris_BosAlan;
+    public boolean bosGirisKontrol(){
+    
+        if(girilenKullanıcıAdı.equals("") && girilenSifre.equals("")){
+            
+            this.sonucMesaj = "Kullanıcı Adı ve Şifresi Giriniz.";
             return false;
-        }else if(!sifreGirisKontrol){
+        }else if(girilenKullanıcıAdı.equals("")){
+            
+            this.sonucMesaj = "Kullanıcı Adı Giriniz.";
+            return false;
+        }else if(girilenSifre.equals("")){
         
-            this.sonucMesaj = this.sonucGiris_Mesaj;
+            this.sonucMesaj = "Şifre Giriniz";
             return false;
         }else {
         
@@ -60,46 +59,7 @@ public class GirisEkranIslemleri {
             return true;
         }
         
-    }
-    
-    protected boolean bosGirisKontrol(){
-    
-        if(girilenKullanıcıAdı.equals("") && girilenSifre.equals("")){
-            
-            this.sonucGiris_BosAlan = "Kullanıcı Adı ve Şifresi Giriniz.";
-            return false;
-        }else if(girilenKullanıcıAdı.equals("")){
-            
-            this.sonucGiris_BosAlan = "Kullanıcı Adı Giriniz.";
-            return false;
-        }else if(girilenSifre.equals("")){
-        
-            this.sonucGiris_BosAlan = "Şifre Giriniz";
-            return false;
-        }else {
-        
-            this.sonucGiris_BosAlan = "Başarılı";
-            return true;
-        }
-        
-    }
-    
-    
-    protected boolean sifreKontrol(String kullanıcıAdı, String kullanıcıSifre){
-    
-        if(girilenKullanıcıAdı.equals(kullanıcıAdı) && Objects.equals(girilenSifre, kullanıcıSifre)){
-        
-            this.sonucGiris_Mesaj = "Başarılı";
-            return true;
-            
-        }else{
-            
-            this.sonucGiris_Mesaj = "Kullanıcı Adınız veya Şifreniz Yanlış Girildi";
-            return false;
-        }
-        
-    }
-    
+    }    
     
     
     // Şifre Kurtarma Metodları

@@ -499,27 +499,36 @@ public class GirisEkrani extends javax.swing.JFrame {
         Kullanıcı kullanıcı;
                 
         if(!sifreKurtarmaIslemi){  
-            
+                        
             try {
             // Giriş işlemleri yapıyoruz
             
-                kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenKullanıcıAdı, girilenKullanıcıSifre);
-
-                girisSonuc = girisEkran.kullanıcıAdıVeSifreKontrol(kullanıcı.getKullanıcıAdı(), kullanıcı.getKullanıcıSifre());
-
-
+                girisSonuc = girisEkran.bosGirisKontrol();
+                
                 if(girisSonuc){
-
-                    System.out.println("Hoşgeldiniz");
-                    // Jframe Olustur
-                }else {
-
+                
+                    kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenKullanıcıAdı, girilenKullanıcıSifre);
+                    
+                    if(kullanıcı == null){
+                        throw new NullPointerException();
+                    }else {
+                    
+                        this.setVisible(false);
+                        OBSUI obsUI = new OBSUI(kullanıcı);
+                        obsUI.setVisible(true);
+                    }
+                    
+                }else{
                     JOptionPane.showMessageDialog(this, girisEkran.getSonucMesaj());
                 }
+            
+                
             } catch (SQLException ex) {
                 Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NullPointerException ex){
+                JOptionPane.showMessageDialog(this, "Hatalı Kullanıcı Adı veya Şifresi Girdiniz");
             }
-                        
+                   
             
         }else{  // Şifre Kurtarma işlemi yapıyorum
         
