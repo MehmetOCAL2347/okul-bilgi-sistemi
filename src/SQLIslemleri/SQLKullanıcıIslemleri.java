@@ -15,6 +15,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     // SQL - kullanıcı tablosu
     
     private final String KULLANICI_ADI_SIFRESI = "SELECT * FROM kullanıcı WHERE kullanıcıAdı=? AND kullanıcıSifre=?";
+    private final String KULLANICI_ADI = "SELECT * FROM kullanıcı WHERE kullanıcıAdı=?";
     
     // SQL - admin tablosu
     
@@ -47,13 +48,31 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
         
     
-    public Kullanıcı kullanıcıBul(String kullanıcıAdı){    
+    public Kullanıcı kullanıcıBul(String girilenkullanıcıAdı) throws SQLException{    
         
-        // Bu bilgiler DB'den gelicek
-        Kullanıcı kullanıcı;
+        Kullanıcı kullanıcı = null;  
         
-        // DB'den kullanıcıAdı kullanıcımızı bulucaz.
-        kullanıcı = new Kullanıcı(0, 26, "Mehmet", "ÖCAL", "mehmet", "123456789", "Admin", "udemyokulbilgisistemi@gmail.com");
+        komuttamamlayıcı = baglantı.prepareStatement(KULLANICI_ADI);
+        komuttamamlayıcı.setString(1, girilenkullanıcıAdı);
+        
+        ResultSet sonuc = komuttamamlayıcı.executeQuery();
+        
+        while(sonuc.next()){
+        
+            kullanıcı = new Kullanıcı(
+            
+                    sonuc.getInt("id"),
+                    sonuc.getInt("yas"),
+                    sonuc.getString("isim"),
+                    sonuc.getString("soyIsim"),
+                    sonuc.getString("kullanıcıAdı"),
+                    sonuc.getString("kullanıcıSifre"),
+                    sonuc.getString("role"),
+                    sonuc.getString("EMail")
+                    
+            );
+            
+        }       
         
         return kullanıcı;
         

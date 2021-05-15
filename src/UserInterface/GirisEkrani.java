@@ -408,57 +408,67 @@ public class GirisEkrani extends javax.swing.JFrame {
             
             int dialogButton = JOptionPane.showConfirmDialog(this, "Kurtarma Kodu Mailinize Gönderilsin mi?", "Uyarı", JOptionPane.YES_NO_OPTION);
         
-            if(dialogButton == 0){  // Evet
-               
-                
-                initComponents_2(true);
-                
+            if(dialogButton == 0){  // Evet                 
+                                
                 try {   
                     
-                    kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenkullanıcıAdı);                    
-                    mailAdresiBulunduMu = sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcı);
+                    kullanıcı = sqlKullanıcıIslemleri.kullanıcıBul(girilenkullanıcıAdı);
                     
-                    // True veya false olma durumunu incelycez 
-                    
-                    SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
-                    @Override
-                    protected Boolean doInBackground() throws Exception {
-                                                
-                        for(int i= 120; i>= 0; i--){
-                            
-                            if(!sifreSonuc){
-                            
-                                jLabel_Sayac.setText(String.valueOf(i));
-                                Thread.sleep(1000);
-                            }else {
-                            
-                                sayacDurdur = true;
-                                return true;
-                            }                            
-                        }
+                    if(kullanıcı == null){
+                        throw new NullPointerException();
+                    }else{
                         
-                        return true;
-                    }   
+                        initComponents_2(true);
+                        
+                        mailAdresiBulunduMu = sqlKullanıcıIslemleri.sifremiUnuttum(kullanıcı);
+                    
+                        // True veya false olma durumunu incelycez 
+                    
+                        SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
+                        @Override
+                        protected Boolean doInBackground() throws Exception {
 
-                    @Override
-                    protected void done() {
+                            for(int i= 120; i>= 0; i--){
+
+                                if(!sifreSonuc){
+
+                                    jLabel_Sayac.setText(String.valueOf(i));
+                                    Thread.sleep(1000);
+                                }else {
+
+                                    sayacDurdur = true;
+                                    return true;
+                                }                            
+                            }
+
+                            return true;
+                        }   
+
+                        @Override
+                        protected void done() {
+
+                            initComponents_2(false);
+
+                            if(!sayacDurdur){
+
+                                JOptionPane.showMessageDialog(GirisEkrani.this, "Süreniz Bitti");
+                            }else {
+
+                                JOptionPane.showMessageDialog(GirisEkrani.this, "Kullanıcı Şifreniz: " + kullanıcı.getKullanıcıSifre());
+                                jPasswordField_Sifre.setText(kullanıcı.getKullanıcıSifre());                        
+                            }
+                        }                
+                    };
+
+                    worker.execute();
                         
-                        initComponents_2(false);
-                        
-                        if(!sayacDurdur){
-                            
-                            JOptionPane.showMessageDialog(GirisEkrani.this, "Süreniz Bitti");
-                        }else {
-                        
-                            JOptionPane.showMessageDialog(GirisEkrani.this, "Kullanıcı Şifreniz: " + kullanıcı.getKullanıcıSifre());
-                            jPasswordField_Sifre.setText(kullanıcı.getKullanıcıSifre());                        
-                        }
-                    }                
-                };
-                
-                worker.execute();
-                                                            
+                    }          
+                                                                                    
                 } catch (MessagingException ex) {
+                    Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (NullPointerException ex){
+                    JOptionPane.showMessageDialog(this, "Girilen Kullanıcı Adı İle Kullanıcı Bulunamadı");
+                } catch (SQLException ex) {
                     Logger.getLogger(GirisEkrani.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
