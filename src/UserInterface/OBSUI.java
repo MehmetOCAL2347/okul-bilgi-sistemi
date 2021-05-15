@@ -7,6 +7,9 @@ package UserInterface;
 
 import Kullanıcılar.Admin;
 import Kullanıcılar.Kullanıcı;
+import Kullanıcılar.Ogrenci;
+import Kullanıcılar.Ogretmen;
+import Kullanıcılar.OkulMuduru;
 
 /**
  *
@@ -15,6 +18,9 @@ import Kullanıcılar.Kullanıcı;
 public class OBSUI extends javax.swing.JFrame {
 
     Admin admin;
+    Ogrenci ogrenci;
+    Ogretmen ogretmen;
+    OkulMuduru okulMuduru;
     
     /**
      * Creates new form OBSUI
@@ -26,11 +32,24 @@ public class OBSUI extends javax.swing.JFrame {
     public OBSUI(Kullanıcı kullanıcı) {
         initComponents();
         
-        admin = (Admin) kullanıcı;
         
-        System.out.println("Hoşgeldin " + kullanıcı.getIsim());
-        System.out.println("Hoşgeldin " + kullanıcı.getRole());
-        System.out.println("Admin Şifresi" + admin.getAdminSifresi());
+        switch (kullanıcı.getRole()) {
+            case "Admin":
+                admin = (Admin) kullanıcı;
+                break;
+            case "Ogrenci":
+                ogrenci = (Ogrenci) kullanıcı;
+                break;
+            case "Ogretmen":
+                ogretmen = (Ogretmen) kullanıcı;
+                break;
+            case "OkulMuduru":
+                okulMuduru = (OkulMuduru) kullanıcı;
+                break;
+            default:
+                kullanıcı = null;
+                break;
+        } 
     }
 
     /**
