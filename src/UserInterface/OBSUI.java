@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UserInterface;
 
+import ArayuzIslemleri.OBSEkranIslemleri;
 import Kullanıcılar.Admin;
 import Kullanıcılar.Kullanıcı;
 import Kullanıcılar.Ogrenci;
 import Kullanıcılar.Ogretmen;
 import Kullanıcılar.OkulMuduru;
+import Paneller.PanelAtama;
+import Paneller.PanelKullanıcı;
+import Paneller.PanelOkul;
+import Paneller.PanelSınav;
+import Paneller.PanelSınıf;
 import javax.swing.DefaultListModel;
 
 public class OBSUI extends javax.swing.JFrame {
@@ -18,32 +19,29 @@ public class OBSUI extends javax.swing.JFrame {
     Ogrenci ogrenci;
     Ogretmen ogretmen;
     OkulMuduru okulMuduru;
-    
+        
     // Sonradan Başka Bir Class Üzerinden getirilcek
     DefaultListModel modelTumOkullar = new DefaultListModel();
     
+    OBSEkranIslemleri obsEkranIslemleri;
+    PanelAtama panelAtama;
+    PanelKullanıcı panelKullanıcı;
+    PanelOkul panelOkul;
+    PanelSınav panelSınav;
+    PanelSınıf panelSınıf;
+        
     /**
      * Creates new form OBSUI
      */
     public OBSUI() {
-        initComponents();
-        
-        jPanel8.setVisible(false);
-        jPanel9.setVisible(true);
-        
-        jPanel_Kullanıcı.setVisible(false);
-        jPanel_Okul.setVisible(false);
-        jPanel_Ogretmen.setVisible(false);
-        jPanel_Sınıf.setVisible(false);
-        jPanel_Sınav.setVisible(true);
-        
-        
-        
+        initComponents();                
+        initComponent_New();
+         
     }
     
     public OBSUI(Kullanıcı kullanıcı) {
         initComponents();
-        
+        initComponent_New();
         
         switch (kullanıcı.getRole()) {
             case "Admin":
@@ -63,7 +61,21 @@ public class OBSUI extends javax.swing.JFrame {
                 break;
         } 
     }
-
+    
+    
+    public void initComponent_New(){
+    
+        panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
+        panelKullanıcı = new PanelKullanıcı(jToggleButton_Kullanıcı, jPanel_Kullanıcı);
+        panelOkul = new PanelOkul(jToggleButton_Okul, jPanel_Okul);
+        panelSınav = new PanelSınav(jToggleButton_Sınav, jPanel_Sınav);
+        panelSınıf = new PanelSınıf(jToggleButton_Sınıf, jPanel_Sınıf);
+        
+        obsEkranIslemleri = new OBSEkranIslemleri(panelKullanıcı, panelAtama, panelOkul, panelSınav, panelSınıf);
+        obsEkranIslemleri.initComponent_UI();
+        
+    }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,7 +102,7 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel_MenuBar = new javax.swing.JPanel();
         jToggleButton_Kullanıcı = new javax.swing.JToggleButton();
         jToggleButton_Okul = new javax.swing.JToggleButton();
-        jToggleButton_Ogretmen = new javax.swing.JToggleButton();
+        jToggleButton_Atama = new javax.swing.JToggleButton();
         jToggleButton_Sınıf = new javax.swing.JToggleButton();
         jToggleButton_Sınav = new javax.swing.JToggleButton();
         jPanel_Header2 = new javax.swing.JPanel();
@@ -136,7 +148,7 @@ public class OBSUI extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jTextField6 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jPanel_Ogretmen = new javax.swing.JPanel();
+        jPanel_Atama = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -290,17 +302,37 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel_MenuBar.setBackground(new java.awt.Color(188, 189, 220));
 
         jToggleButton_Kullanıcı.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
+        jToggleButton_Kullanıcı.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton_KullanıcıItemStateChanged(evt);
+            }
+        });
 
         jToggleButton_Okul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/school.png"))); // NOI18N
+        jToggleButton_Okul.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton_OkulItemStateChanged(evt);
+            }
+        });
 
-        jToggleButton_Ogretmen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/teacher.png"))); // NOI18N
+        jToggleButton_Atama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/teacher.png"))); // NOI18N
+        jToggleButton_Atama.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton_AtamaItemStateChanged(evt);
+            }
+        });
 
         jToggleButton_Sınıf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/class.png"))); // NOI18N
+        jToggleButton_Sınıf.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton_SınıfItemStateChanged(evt);
+            }
+        });
 
         jToggleButton_Sınav.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exam.png"))); // NOI18N
-        jToggleButton_Sınav.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton_SınavActionPerformed(evt);
+        jToggleButton_Sınav.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton_SınavItemStateChanged(evt);
             }
         });
 
@@ -310,7 +342,7 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel_MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jToggleButton_Kullanıcı, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jToggleButton_Okul, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jToggleButton_Ogretmen, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jToggleButton_Atama, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jToggleButton_Sınıf, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jToggleButton_Sınav, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
@@ -322,7 +354,7 @@ public class OBSUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton_Okul, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton_Ogretmen, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToggleButton_Atama, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton_Sınıf, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -928,22 +960,22 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel_OgretmenLayout = new javax.swing.GroupLayout(jPanel_Ogretmen);
-        jPanel_Ogretmen.setLayout(jPanel_OgretmenLayout);
-        jPanel_OgretmenLayout.setHorizontalGroup(
-            jPanel_OgretmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_OgretmenLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel_AtamaLayout = new javax.swing.GroupLayout(jPanel_Atama);
+        jPanel_Atama.setLayout(jPanel_AtamaLayout);
+        jPanel_AtamaLayout.setHorizontalGroup(
+            jPanel_AtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_AtamaLayout.createSequentialGroup()
                 .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel_OgretmenLayout.setVerticalGroup(
-            jPanel_OgretmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel_AtamaLayout.setVerticalGroup(
+            jPanel_AtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel_CardBody.add(jPanel_Ogretmen, "card4");
+        jPanel_CardBody.add(jPanel_Atama, "card4");
 
         jPanel19.setBackground(new java.awt.Color(239, 237, 245));
 
@@ -1925,7 +1957,6 @@ public class OBSUI extends javax.swing.JFrame {
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2015,9 +2046,35 @@ public class OBSUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton_SınavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton_SınavActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton_SınavActionPerformed
+    private void jToggleButton_KullanıcıItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_KullanıcıItemStateChanged
+        
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Kullanıcı);
+        
+    }//GEN-LAST:event_jToggleButton_KullanıcıItemStateChanged
+
+    private void jToggleButton_OkulItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_OkulItemStateChanged
+        
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Okul);
+        
+    }//GEN-LAST:event_jToggleButton_OkulItemStateChanged
+
+    private void jToggleButton_AtamaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_AtamaItemStateChanged
+        
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Atama);
+        
+    }//GEN-LAST:event_jToggleButton_AtamaItemStateChanged
+
+    private void jToggleButton_SınıfItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_SınıfItemStateChanged
+        
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınıf);
+        
+    }//GEN-LAST:event_jToggleButton_SınıfItemStateChanged
+
+    private void jToggleButton_SınavItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_SınavItemStateChanged
+       
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınav);
+        
+    }//GEN-LAST:event_jToggleButton_SınavItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -2161,13 +2218,13 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanel_AnaPanel;
+    private javax.swing.JPanel jPanel_Atama;
     private javax.swing.JPanel jPanel_CardBody;
     private javax.swing.JPanel jPanel_Footer;
     private javax.swing.JPanel jPanel_Header1;
     private javax.swing.JPanel jPanel_Header2;
     private javax.swing.JPanel jPanel_Kullanıcı;
     private javax.swing.JPanel jPanel_MenuBar;
-    private javax.swing.JPanel jPanel_Ogretmen;
     private javax.swing.JPanel jPanel_Okul;
     private javax.swing.JPanel jPanel_Sınav;
     private javax.swing.JPanel jPanel_Sınıf;
@@ -2238,8 +2295,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JToggleButton jToggleButton_Atama;
     private javax.swing.JToggleButton jToggleButton_Kullanıcı;
-    private javax.swing.JToggleButton jToggleButton_Ogretmen;
     private javax.swing.JToggleButton jToggleButton_Okul;
     private javax.swing.JToggleButton jToggleButton_Sınav;
     private javax.swing.JToggleButton jToggleButton_Sınıf;

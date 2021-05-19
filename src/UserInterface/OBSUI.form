@@ -146,7 +146,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jToggleButton_Kullanıcı" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="jToggleButton_Okul" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="jToggleButton_Ogretmen" min="-2" pref="84" max="-2" attributes="0"/>
+                  <Component id="jToggleButton_Atama" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="jToggleButton_Sınıf" min="-2" pref="84" max="-2" attributes="0"/>
                   <Component id="jToggleButton_Sınav" min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
@@ -159,7 +159,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jToggleButton_Okul" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jToggleButton_Ogretmen" min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="jToggleButton_Atama" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jToggleButton_Sınıf" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -176,6 +176,9 @@
                   <Image iconType="3" name="/Images/add.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton_Kullan&#x131;c&#x131;ItemStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton_Okul">
               <Properties>
@@ -183,13 +186,19 @@
                   <Image iconType="3" name="/Images/school.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton_OkulItemStateChanged"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton_Ogretmen">
+            <Component class="javax.swing.JToggleButton" name="jToggleButton_Atama">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/teacher.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton_AtamaItemStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton_S&#x131;n&#x131;f">
               <Properties>
@@ -197,6 +206,9 @@
                   <Image iconType="3" name="/Images/class.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton_S&#x131;n&#x131;fItemStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton_S&#x131;nav">
               <Properties>
@@ -205,7 +217,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton_S&#x131;navActionPerformed"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton_S&#x131;navItemStateChanged"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1278,7 +1290,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel_Ogretmen">
+            <Container class="javax.swing.JPanel" name="jPanel_Atama">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card4"/>
@@ -3110,7 +3122,6 @@
                                   <Component id="jPanel30" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jProgressBar1" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jButton5" min="-2" pref="51" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jButton4" min="-2" pref="51" max="-2" attributes="0"/>
