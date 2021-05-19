@@ -11,6 +11,7 @@ import Paneller.PanelKullanıcı;
 import Paneller.PanelOkul;
 import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
+import UIKullanıcı.UIKullanıcı;
 import javax.swing.DefaultListModel;
 
 public class OBSUI extends javax.swing.JFrame {
@@ -29,6 +30,7 @@ public class OBSUI extends javax.swing.JFrame {
     PanelOkul panelOkul;
     PanelSınav panelSınav;
     PanelSınıf panelSınıf;
+    UIKullanıcı iuKullanıcı;
         
     /**
      * Creates new form OBSUI
@@ -65,8 +67,10 @@ public class OBSUI extends javax.swing.JFrame {
     
     public void initComponent_New(Kullanıcı kullanıcı){
     
+        iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
+        
         panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
-        panelKullanıcı = new PanelKullanıcı(jToggleButton_Kullanıcı, jPanel_Kullanıcı);
+        panelKullanıcı = new PanelKullanıcı(iuKullanıcı, jToggleButton_Kullanıcı, jPanel_Kullanıcı);
         panelOkul = new PanelOkul(jToggleButton_Okul, jPanel_Okul);
         panelSınav = new PanelSınav(jToggleButton_Sınav, jPanel_Sınav);
         panelSınıf = new PanelSınıf(jToggleButton_Sınıf, jPanel_Sınıf);

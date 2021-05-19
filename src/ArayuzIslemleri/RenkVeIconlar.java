@@ -2,6 +2,7 @@
 package ArayuzIslemleri;
 
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -22,9 +23,20 @@ public class RenkVeIconlar {
     private Color mavi = new Color(43,81,154);
 
     
+    // Modeller
     
+    private String roleMudur[] = {" ", "Ogrenci"};
+    private String roleAdmin[] = {" ", "OkulMuduru", "Ogretmen"};    
+    private DefaultComboBoxModel modelMudur = new DefaultComboBoxModel(roleMudur);
+    private DefaultComboBoxModel modelAdmin = new DefaultComboBoxModel(roleAdmin);
 
-    
+    public DefaultComboBoxModel getModelMudur() {
+        return modelMudur;
+    }
+
+    public DefaultComboBoxModel getModelAdmin() {
+        return modelAdmin;
+    }
     
     public Icon getCancel() {
         return cancel;

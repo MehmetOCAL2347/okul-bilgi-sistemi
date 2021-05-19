@@ -16,6 +16,8 @@ public class OBSEkranIslemleri {
     private PanelSınav panelSınav;
     private PanelSınıf panelSınıf;
     private Kullanıcı kullanıcı;
+    
+    RenkVeIconlar renkVeIconlar = new RenkVeIconlar();
 
     public OBSEkranIslemleri(PanelKullanıcı panelKullanıcı, PanelAtama panelAtama, PanelOkul panelOkul, PanelSınav panelSınav, PanelSınıf panelSınıf, Kullanıcı kullanıcı) {
         this.panelKullanıcı = panelKullanıcı;
@@ -41,6 +43,12 @@ public class OBSEkranIslemleri {
         panelSınıf.getjPanel().setVisible(false);
         
         System.out.println("Kullanıcı Rolu: " + this.kullanıcı.getRole());
+        
+        if(this.kullanıcı.getRole().equals("OkulMuduru")){
+            panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelMudur());
+        }else if(this.kullanıcı.getRole().equals("Admin")){
+            panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelAdmin());
+        }
                 
     }
     
