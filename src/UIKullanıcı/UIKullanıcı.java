@@ -46,6 +46,27 @@ public class UIKullanıcı {
         this.jPanel_DosyaOku = jPanel_DosyaOku;
     }
 
+    public void kullanıcıEkbilgilerBaslangıc(){
+    
+        jPanel_OgretmenlikEkBilgiler.setVisible(true);
+        jPanel_OgrenciEkBilgiler.setVisible(false);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setSelectedIndex(0);
+        jComboBox_OgrencilikBaslangıcYılı.setSelectedIndex(0);
+        jComboBox_MudurlukBaslangıcYılı.setSelectedIndex(0);
+        jComboBox_Brans.setSelectedIndex(0);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setEnabled(false);
+        jComboBox_OgrencilikBaslangıcYılı.setEnabled(false);
+        jComboBox_MudurlukBaslangıcYılı.setEnabled(false);
+        jComboBox_Brans.setEnabled(false);
+        
+        jSpinner_Yas.setValue(25);
+        jSpinner_atamaPuanı.setValue(70);
+        jSpinner_atamaPuanı.setEnabled(false);
+        
+    }
+    
     public JTextField getjTextField_isim() {
         return jTextField_isim;
     }

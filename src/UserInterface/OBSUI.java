@@ -400,18 +400,23 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(239, 237, 245));
 
         jTextField_isim.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_isim.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField_isim.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Isim", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jTextField_soyisim.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_soyisim.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField_soyisim.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Soy Isim", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jTextField_kullanıcıAdı.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_kullanıcıAdı.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField_kullanıcıAdı.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Kullanici Adi", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jTextField_KullanıcıSifre.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_KullanıcıSifre.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField_KullanıcıSifre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Kullanici Sifre", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jTextField_EMail.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_EMail.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField_EMail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "E-Mail", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jButton_Yenile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refresh.png"))); // NOI18N
@@ -478,6 +483,9 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(252, 251, 253));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Role ve Yas", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
+        jComboBox_Role.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
+        jSpinner_Yas.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jSpinner_Yas.setModel(new javax.swing.SpinnerNumberModel(25, 5, 70, 1));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -526,8 +534,10 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(252, 251, 253));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Ogretmenlik ve Puan", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
+        jComboBox_OgretmenlikBaslangıcYili.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox_OgretmenlikBaslangıcYili.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
 
+        jSpinner_atamaPuanı.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jSpinner_atamaPuanı.setModel(new javax.swing.SpinnerNumberModel(70, 0, 100, 1));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -554,6 +564,7 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(252, 251, 253));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Brans", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
+        jComboBox_Brans.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox_Brans.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Matematik", "Türkçe", "İngilizce" }));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -576,6 +587,7 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(252, 251, 253));
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Okul Muduru", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
+        jComboBox_MudurlukBaslangıcYılı.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox_MudurlukBaslangıcYılı.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -626,6 +638,7 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(252, 251, 253));
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Ogrenci", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
+        jComboBox_OgrencilikBaslangıcYılı.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBox_OgrencilikBaslangıcYılı.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);

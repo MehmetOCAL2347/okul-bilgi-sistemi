@@ -12,7 +12,7 @@ public class PanelKullanıcı extends Panel{
         super(jToggleButton, jPanel);
         this.uiKullanıcı = uiKullanıcı;
     }
-
+    
     public UIKullanıcı getUiKullanıcı() {
         return uiKullanıcı;
     }
