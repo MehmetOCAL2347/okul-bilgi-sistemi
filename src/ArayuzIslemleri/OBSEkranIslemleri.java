@@ -1,5 +1,6 @@
 package ArayuzIslemleri;
 
+import Kullanıcılar.Kullanıcı;
 import Paneller.PanelAtama;
 import Paneller.PanelKullanıcı;
 import Paneller.PanelOkul;
@@ -14,13 +15,15 @@ public class OBSEkranIslemleri {
     private PanelOkul panelOkul;
     private PanelSınav panelSınav;
     private PanelSınıf panelSınıf;
-    
-    public OBSEkranIslemleri(PanelKullanıcı panelKullanıcı, PanelAtama panelAtama, PanelOkul panelOkul, PanelSınav panelSınav, PanelSınıf panelSınıf) {
+    private Kullanıcı kullanıcı;
+
+    public OBSEkranIslemleri(PanelKullanıcı panelKullanıcı, PanelAtama panelAtama, PanelOkul panelOkul, PanelSınav panelSınav, PanelSınıf panelSınıf, Kullanıcı kullanıcı) {
         this.panelKullanıcı = panelKullanıcı;
         this.panelAtama = panelAtama;
         this.panelOkul = panelOkul;
         this.panelSınav = panelSınav;
         this.panelSınıf = panelSınıf;
+        this.kullanıcı = kullanıcı;
     }
     
     public void initComponent_UI(){
@@ -36,6 +39,8 @@ public class OBSEkranIslemleri {
         panelOkul.getjPanel().setVisible(false);
         panelSınav.getjPanel().setVisible(false);
         panelSınıf.getjPanel().setVisible(false);
+        
+        System.out.println("Kullanıcı Rolu: " + this.kullanıcı.getRole());
                 
     }
     
