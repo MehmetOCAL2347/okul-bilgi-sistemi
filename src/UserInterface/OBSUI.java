@@ -484,6 +484,11 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Role ve Yas", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jComboBox_Role.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jComboBox_Role.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_RoleActionPerformed(evt);
+            }
+        });
 
         jSpinner_Yas.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jSpinner_Yas.setModel(new javax.swing.SpinnerNumberModel(25, 5, 70, 1));
@@ -2092,6 +2097,12 @@ public class OBSUI extends javax.swing.JFrame {
         obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınav);
         
     }//GEN-LAST:event_jToggleButton_SınavItemStateChanged
+
+    private void jComboBox_RoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_RoleActionPerformed
+        
+        obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().kullanıcıRole_Component(jComboBox_Role.getSelectedItem().toString());
+        
+    }//GEN-LAST:event_jComboBox_RoleActionPerformed
 
     /**
      * @param args the command line arguments

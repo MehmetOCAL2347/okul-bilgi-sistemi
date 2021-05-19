@@ -67,6 +67,73 @@ public class UIKullanıcı {
         
     }
     
+    public void kullanıcıRole_Component(String role){
+    
+        if(role.equals(" ")){     
+            
+            kullanıcıEkbilgilerBaslangıc();
+            
+        }else if(role.equals("Ogretmen")){
+            
+            ogretmen_Component();
+            
+        }else if(role.equals("OkulMuduru")){
+            
+            okulMuduru_Component();
+            
+        }else if(role.equals("Ogrenci")){
+            
+            ogrenci_Component();
+        }
+        
+    }
+    
+    protected void ogretmen_Component(){
+    
+        jPanel_OgretmenlikEkBilgiler.setVisible(true);
+        jPanel_OgrenciEkBilgiler.setVisible(false);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setEnabled(true);
+        jComboBox_Brans.setEnabled(true);
+        jComboBox_MudurlukBaslangıcYılı.setEnabled(false);
+        jComboBox_MudurlukBaslangıcYılı.setSelectedIndex(0);
+        
+        jSpinner_atamaPuanı.setEnabled(true);
+        
+    }
+    
+    protected void okulMuduru_Component(){
+    
+        jPanel_OgretmenlikEkBilgiler.setVisible(true);
+        jPanel_OgrenciEkBilgiler.setVisible(false);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setEnabled(true);
+        jComboBox_Brans.setEnabled(true);
+        jComboBox_MudurlukBaslangıcYılı.setEnabled(true);
+        
+        jSpinner_atamaPuanı.setEnabled(true);
+        
+    }
+    
+    protected void ogrenci_Component(){
+    
+        jPanel_OgrenciEkBilgiler.setVisible(true);
+        jPanel_OgretmenlikEkBilgiler.setVisible(false);
+        
+        jComboBox_OgrencilikBaslangıcYılı.setEnabled(true);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setEnabled(false);
+        jComboBox_MudurlukBaslangıcYılı.setEnabled(false);
+        jComboBox_Brans.setEnabled(false);        
+        jSpinner_atamaPuanı.setEnabled(false);
+        
+        jComboBox_OgretmenlikBaslangıcYili.setSelectedIndex(0);
+        jComboBox_MudurlukBaslangıcYılı.setSelectedIndex(0);
+        jComboBox_Brans.setSelectedIndex(0);       
+        jSpinner_atamaPuanı.setValue(70);
+        
+    }
+    
     public JTextField getjTextField_isim() {
         return jTextField_isim;
     }

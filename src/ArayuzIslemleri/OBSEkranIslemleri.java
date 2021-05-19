@@ -252,5 +252,29 @@ public class OBSEkranIslemleri {
         panelSınıf.getjPanel().setVisible(true);
         
     }
+
+    
+    
+    public PanelKullanıcı getPanelKullanıcı() {
+        return panelKullanıcı;
+    }
+
+    public PanelAtama getPanelAtama() {
+        return panelAtama;
+    }
+
+    public PanelOkul getPanelOkul() {
+        return panelOkul;
+    }
+
+    public PanelSınav getPanelSınav() {
+        return panelSınav;
+    }
+
+    public PanelSınıf getPanelSınıf() {
+        return panelSınıf;
+    }
+    
+    
     
 }
