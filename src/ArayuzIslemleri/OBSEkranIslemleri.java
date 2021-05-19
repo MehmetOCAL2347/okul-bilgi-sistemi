@@ -29,28 +29,61 @@ public class OBSEkranIslemleri {
     }
     
     public void initComponent_UI(){
-    
-        panelKullanıcı.getjToggleButton().setSelected(true);
-        panelAtama.getjToggleButton().setSelected(false);
-        panelOkul.getjToggleButton().setSelected(false);
-        panelSınav.getjToggleButton().setSelected(false);
-        panelSınıf.getjToggleButton().setSelected(false);
-        
-        panelKullanıcı.getjPanel().setVisible(true);
-        panelAtama.getjPanel().setVisible(false);
-        panelOkul.getjPanel().setVisible(false);
-        panelSınav.getjPanel().setVisible(false);
-        panelSınıf.getjPanel().setVisible(false);
-        
-        System.out.println("Kullanıcı Rolu: " + this.kullanıcı.getRole());
-        
+            
         if(this.kullanıcı.getRole().equals("OkulMuduru")){
-            panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelMudur());
-        }else if(this.kullanıcı.getRole().equals("Admin")){
-            panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelAdmin());
+            okulMuduru_Ekranı();            
+        }else if(this.kullanıcı.getRole().equals("Admin")){                                  
+            admin_Ekranı();            
+        }else if(this.kullanıcı.getRole().equals("Ogretmen")){            
+            ogretmen_Ekranı();        
+        }else if(this.kullanıcı.getRole().equals("Ogrenci")){        
+            ogrenci_Ekranı();            
+        }else {
+            System.out.println("Kullanıcı Rolu Tanımlanamadı");
         }
                 
     }
+    
+    protected void okulMuduru_Ekranı(){
+    
+        panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelMudur());
+        panelKullanıcı.getjToggleButton().setSelected(true);
+        panelSınav.getjToggleButton().setVisible(false);
+        panelAtama.getjToggleButton().setVisible(false);
+        panelOkul.getjToggleButton().setVisible(false);
+        panelSınıf.getjToggleButton().setVisible(false);
+        
+    }
+    
+    protected void admin_Ekranı(){
+    
+        panelKullanıcı.getUiKullanıcı().getjComboBox_Role().setModel(renkVeIconlar.getModelAdmin());
+        panelKullanıcı.getjToggleButton().setSelected(true);
+        panelSınav.getjToggleButton().setVisible(false);
+        panelSınıf.getjToggleButton().setVisible(false);
+        
+    }
+    
+    protected void ogretmen_Ekranı(){
+    
+        panelSınıf.getjToggleButton().setSelected(true);
+        panelKullanıcı.getjToggleButton().setVisible(false);
+        panelSınav.getjToggleButton().setVisible(false);
+        panelOkul.getjToggleButton().setVisible(false);
+        panelAtama.getjToggleButton().setVisible(false);
+        
+    }
+    
+    protected void ogrenci_Ekranı(){
+    
+        panelSınav.getjToggleButton().setSelected(true);
+        panelKullanıcı.getjToggleButton().setVisible(false);
+        panelSınıf.getjToggleButton().setVisible(false);
+        panelOkul.getjToggleButton().setVisible(false);
+        panelAtama.getjToggleButton().setVisible(false);
+        
+    }
+    
     
     public void btnItemStateChanged(JToggleButton jToggleBtn){
     
