@@ -1,5 +1,6 @@
 package UIKullanıcı;
 
+import com.mysql.cj.util.StringUtils;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -46,6 +47,87 @@ public class UIKullanıcı {
         this.jPanel_DosyaOku = jPanel_DosyaOku;
     }
 
+    
+    public void kullanıcıTanımla() throws Exception{
+    
+        bosAlanKontrol();
+        
+    }
+    
+    protected void bosAlanKontrol() throws Exception{
+    
+        bosComponentKontrol(jTextField_isim, "İsim");
+        bosComponentKontrol(jTextField_soyisim, "Soyisim");
+        bosComponentKontrol(jTextField_kullanıcıAdı, "Kullanıcı Adı");
+        bosComponentKontrol(jTextField_KullanıcıSifre, "Kullanıcı Şifre");
+        bosComponentKontrol(jTextField_EMail, "EMail");        
+        bosComponentKontrol(jComboBox_Role, "Role");
+        bosComponentKontrol(jSpinner_Yas, "Yas", 5, 70);
+        
+        if(jComboBox_Role.getSelectedItem().toString().equals("OkulMuduru")){
+        
+            bosComponentKontrol(jComboBox_OgretmenlikBaslangıcYili, "Ogretmenlik Başlangıcı");
+            bosComponentKontrol(jComboBox_Brans, "Brans");
+            bosComponentKontrol(jComboBox_MudurlukBaslangıcYılı, "Müdürlük Başlangıcı");
+            bosComponentKontrol(jSpinner_atamaPuanı, "Atama Puanı", 0, 100);
+            
+        }else if(jComboBox_Role.getSelectedItem().toString().equals("Ogretmen")){
+            
+            bosComponentKontrol(jComboBox_OgretmenlikBaslangıcYili, "Ogretmenlik Başlangıcı");
+            bosComponentKontrol(jComboBox_Brans, "Brans");
+            bosComponentKontrol(jSpinner_atamaPuanı, "Atama Puanı", 0, 100);
+        
+        }else if(jComboBox_Role.getSelectedItem().toString().equals("Ogrenci")){
+        
+            bosComponentKontrol(jComboBox_OgrencilikBaslangıcYılı, "Öğrencilik Başlangıcı");
+            
+        }
+        
+        
+    }
+    
+    protected void bosComponentKontrol(JTextField yaziAlani, String alanAdı) throws Exception{
+    
+        String deger = yaziAlani.getText();
+        deger = deger.replaceAll(" ", "");
+        yaziAlani.setText(deger);
+        
+        if(StringUtils.isEmptyOrWhitespaceOnly(deger)){
+            throw new Exception(alanAdı + " Alanı Boş Bırakılamaz");
+        }        
+    }
+    
+    protected void bosComponentKontrol(JComboBox comboBox, String alanAdi) throws Exception{
+    
+        Integer secilenDeger = comboBox.getSelectedIndex();
+        boolean comboBoxGorunurMu = comboBox.isVisible();
+        boolean comboBoxEnableMı = comboBox.isEnabled();
+        
+        if(comboBoxGorunurMu && comboBoxEnableMı){
+        
+            if(secilenDeger == 0){
+                throw new Exception(alanAdi + " Kutusu Boş Bırakılamaz");
+            }            
+        }    
+    }
+    
+    protected void bosComponentKontrol(JSpinner spinner, String alanAdi, Integer minDeger, Integer maxDeger) throws Exception{
+    
+        Integer spinnerDeger = (Integer) spinner.getValue();
+        boolean spinnerGorunurMu = spinner.isVisible();
+        boolean spinnerEnableMı = spinner.isEnabled();
+        
+        if(spinnerGorunurMu && spinnerEnableMı){
+            
+            if(spinnerDeger < minDeger){
+                throw new Exception(alanAdi + " Sayacı " + minDeger + " 'den küçük olamaz");
+            }else if(spinnerDeger > maxDeger){
+                throw new Exception(alanAdi + " Sayacı " + maxDeger + " 'den büyük olamaz");
+            }            
+        }        
+    }
+    
+    
     public void kullanıcıEkbilgilerBaslangıc(){
     
         jPanel_OgretmenlikEkBilgiler.setVisible(true);

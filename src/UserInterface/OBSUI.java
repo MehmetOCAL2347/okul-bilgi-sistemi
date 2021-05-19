@@ -12,7 +12,10 @@ import Paneller.PanelOkul;
 import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
 import UIKullanıcı.UIKullanıcı;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 public class OBSUI extends javax.swing.JFrame {
 
@@ -422,6 +425,11 @@ public class OBSUI extends javax.swing.JFrame {
         jButton_Yenile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refresh.png"))); // NOI18N
 
         jButton_KayıtOlustur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
+        jButton_KayıtOlustur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_KayıtOlusturActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -2103,6 +2111,16 @@ public class OBSUI extends javax.swing.JFrame {
         obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().kullanıcıRole_Component(jComboBox_Role.getSelectedItem().toString());
         
     }//GEN-LAST:event_jComboBox_RoleActionPerformed
+
+    private void jButton_KayıtOlusturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_KayıtOlusturActionPerformed
+        
+        try {
+            obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().kullanıcıTanımla();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getLocalizedMessage());
+        }
+        
+    }//GEN-LAST:event_jButton_KayıtOlusturActionPerformed
 
     /**
      * @param args the command line arguments

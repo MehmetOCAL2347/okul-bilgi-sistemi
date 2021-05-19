@@ -484,6 +484,9 @@
                               <Image iconType="3" name="/Images/checked.png"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Kay&#x131;tOlusturActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
