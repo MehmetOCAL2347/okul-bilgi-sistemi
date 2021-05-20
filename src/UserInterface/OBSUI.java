@@ -2122,6 +2122,12 @@ public class OBSUI extends javax.swing.JFrame {
             
             sonuc = sqlKullanıcıIslemleri.kullanıcıOlustur(kullanıcı);
             
+            if(!sonuc){
+                throw new Exception("Kullanıcı Oluşturulamadı");
+            }else{
+                JOptionPane.showMessageDialog(this, "Kullanıcı Kaydı Başarıyla Tamamlandı");
+            }
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getLocalizedMessage());
         }

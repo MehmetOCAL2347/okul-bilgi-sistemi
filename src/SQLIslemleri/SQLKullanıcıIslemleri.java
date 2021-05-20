@@ -27,14 +27,17 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     // SQL - ogrenci tablosu
     
     private final String OGRENCI_ID = "SELECT * FROM ogrenci WHERE id=?";
+    private final String OGRENCI_YENI = "INSERT INTO ogrenci VALUES(?,?,0,-100)";
     
     // SQL - ogretmen tablosu
     
     private final String OGRETMEN_ID = "SELECT * FROM ogretmen WHERE id=?";
+    private final String OGRETMEN_YENI = "INSERT INTO ogretmen VALUES(?,?,?,?,0)";
     
     // SQL - okulmuduru tablosu
     
     private final String OKULMUDURU_ID = "SELECT * FROM ogretmen INNER JOIN okulmuduru WHERE ogretmen.id=?";
+    private final String OKULMUDURU_YENI = "INSERT INTO okulmuduru VALUES(?,?)";
     
     // Classlar
     
@@ -70,6 +73,10 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
             komuttamamlayıcı.setString(7, kullanıcı.getEMail());
             komuttamamlayıcı.executeUpdate();
             baglantı.commit(); 
+            
+            yeniKullanıcıId = yeniKullanıcıId(kullanıcı);
+            kullanıcıEkbilgileriOlustur(kullanıcı, yeniKullanıcıId);
+            
             kullanıcıOlusturulduMu = true;
             
         } catch (SQLException ex) {
@@ -83,6 +90,86 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         return kullanıcıOlusturulduMu;
     }
         
+    
+    protected Integer yeniKullanıcıId(Kullanıcı kullanıcı) throws SQLException{
+    
+        Integer id = -100;
+        
+        komuttamamlayıcı = baglantı.prepareStatement(KULLANICI_ADI);
+        komuttamamlayıcı.setString(1, kullanıcı.getKullanıcıAdı());
+        
+        ResultSet sonuc = komuttamamlayıcı.executeQuery();
+        
+        while(sonuc.next()){
+            id = sonuc.getInt("id");
+        }
+        
+        return id;
+        
+    }
+    
+    
+    protected void kullanıcıEkbilgileriOlustur(Kullanıcı kullanıcı, Integer id){
+    
+        try {
+            baglantı.setAutoCommit(false);
+            
+            if(kullanıcı.getRole().equals("Ogretmen")){
+                
+                Ogretmen ogretmen = (Ogretmen) kullanıcı;
+                
+                komuttamamlayıcı = baglantı.prepareStatement(OGRETMEN_YENI);
+                komuttamamlayıcı.setInt(1, id);
+                komuttamamlayıcı.setInt(2, ogretmen.getAtamaPuanı());
+                komuttamamlayıcı.setInt(3, ogretmen.getOgretmenlikBaslangicTarihi());
+                komuttamamlayıcı.setString(4, ogretmen.getBrans());
+                komuttamamlayıcı.executeUpdate();
+                baglantı.commit();
+            
+            }else if(kullanıcı.getRole().equals("Ogrenci")){
+                
+                Ogrenci ogrenci = (Ogrenci) kullanıcı;
+                
+                komuttamamlayıcı = baglantı.prepareStatement(OGRENCI_YENI);
+                komuttamamlayıcı.setInt(1, id);
+                komuttamamlayıcı.setInt(2, ogrenci.getOkulaBaslamaTarihi());
+                komuttamamlayıcı.executeUpdate();
+                baglantı.commit();
+            
+            }else if(kullanıcı.getRole().equals("OkulMuduru")){
+                
+                Ogretmen ogretmen = (Ogretmen) kullanıcı;
+                
+                komuttamamlayıcı = baglantı.prepareStatement(OGRETMEN_YENI);
+                komuttamamlayıcı.setInt(1, id);
+                komuttamamlayıcı.setInt(2, ogretmen.getAtamaPuanı());
+                komuttamamlayıcı.setInt(3, ogretmen.getOgretmenlikBaslangicTarihi());
+                komuttamamlayıcı.setString(4, ogretmen.getBrans());
+                komuttamamlayıcı.executeUpdate();
+                baglantı.commit();
+                
+                OkulMuduru okulMuduru = (OkulMuduru) kullanıcı;
+                
+                komuttamamlayıcı = baglantı.prepareStatement(OKULMUDURU_YENI);
+                komuttamamlayıcı.setInt(1, id);
+                komuttamamlayıcı.setInt(2, okulMuduru.getMudurlukBaslangicTarihi());
+                komuttamamlayıcı.executeUpdate();
+                baglantı.commit();
+            
+            }
+            
+            
+        } catch (SQLException ex) {
+            
+            try {
+                baglantı.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SQLKullanıcıIslemleri.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            
+        }
+        
+    }
     
     public Kullanıcı kullanıcıBul(String girilenkullanıcıAdı) throws SQLException{    
         
