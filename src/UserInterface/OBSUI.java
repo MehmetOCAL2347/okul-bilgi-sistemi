@@ -11,9 +11,8 @@ import Paneller.PanelKullanıcı;
 import Paneller.PanelOkul;
 import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
+import SQLIslemleri.SQLKullanıcıIslemleri;
 import UIKullanıcı.UIKullanıcı;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -34,7 +33,9 @@ public class OBSUI extends javax.swing.JFrame {
     PanelSınav panelSınav;
     PanelSınıf panelSınıf;
     UIKullanıcı iuKullanıcı;
-        
+            
+    SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
+    
     /**
      * Creates new form OBSUI
      */
@@ -69,7 +70,7 @@ public class OBSUI extends javax.swing.JFrame {
     
     
     public void initComponent_New(Kullanıcı kullanıcı){
-    
+            
         iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
         
         panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
@@ -2113,9 +2114,14 @@ public class OBSUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_RoleActionPerformed
 
     private void jButton_KayıtOlusturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_KayıtOlusturActionPerformed
+                
+        boolean sonuc = false;
         
         try {
-            obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().kullanıcıTanımla();
+            Kullanıcı kullanıcı = obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().kullanıcıTanımla();
+            
+            sonuc = sqlKullanıcıIslemleri.kullanıcıOlustur(kullanıcı);
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getLocalizedMessage());
         }

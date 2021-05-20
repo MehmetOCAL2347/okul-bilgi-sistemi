@@ -8,6 +8,8 @@ import Kullanıcılar.OkulMuduru;
 import MailConfig.MailIslemleri;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.MessagingException;
 
 public class SQLKullanıcıIslemleri extends SQLBaglantı{
@@ -16,6 +18,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     private final String KULLANICI_ADI_SIFRESI = "SELECT * FROM kullanıcı WHERE kullanıcıAdı=? AND kullanıcıSifre=?";
     private final String KULLANICI_ADI = "SELECT * FROM kullanıcı WHERE kullanıcıAdı=?";
+    private final String KULLANICI_YENI = "INSERT INTO kullanıcı VALUES(NULL,?,?,?,?,?,?,?)";
     
     // SQL - admin tablosu
     
@@ -45,7 +48,40 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         this.mail = mail;
     }
 
+    public SQLKullanıcıIslemleri(String DBIsmi) {
+        super(DBIsmi);
+    }
     
+    public boolean kullanıcıOlustur(Kullanıcı kullanıcı){
+    
+        boolean kullanıcıOlusturulduMu = false;
+        Integer yeniKullanıcıId;
+        
+        try {
+            
+            baglantı.setAutoCommit(false);
+            komuttamamlayıcı = baglantı.prepareStatement(KULLANICI_YENI);
+            komuttamamlayıcı.setInt(1, kullanıcı.getYas());
+            komuttamamlayıcı.setString(2, kullanıcı.getIsim());
+            komuttamamlayıcı.setString(3, kullanıcı.getSoyIsım());
+            komuttamamlayıcı.setString(4, kullanıcı.getKullanıcıAdı());
+            komuttamamlayıcı.setString(5, kullanıcı.getKullanıcıSifre());
+            komuttamamlayıcı.setString(6, kullanıcı.getRole());
+            komuttamamlayıcı.setString(7, kullanıcı.getEMail());
+            komuttamamlayıcı.executeUpdate();
+            baglantı.commit(); 
+            kullanıcıOlusturulduMu = true;
+            
+        } catch (SQLException ex) {
+            
+            try {
+                baglantı.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SQLKullanıcıIslemleri.class.getName()).log(Level.SEVERE, null, ex1);
+            }            
+        }
+        return kullanıcıOlusturulduMu;
+    }
         
     
     public Kullanıcı kullanıcıBul(String girilenkullanıcıAdı) throws SQLException{    
@@ -214,6 +250,6 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
             return false;            
         }
     
-    }    
-
+    }  
+      
 }

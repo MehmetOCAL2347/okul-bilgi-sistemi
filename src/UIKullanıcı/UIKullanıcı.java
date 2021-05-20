@@ -1,5 +1,9 @@
 package UIKullanıcı;
 
+import Kullanıcılar.Kullanıcı;
+import Kullanıcılar.Ogrenci;
+import Kullanıcılar.Ogretmen;
+import Kullanıcılar.OkulMuduru;
 import com.mysql.cj.util.StringUtils;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -48,14 +52,10 @@ public class UIKullanıcı {
     }
 
     
-    public void kullanıcıTanımla() throws Exception{
-    
-        bosAlanKontrol();
+    public Kullanıcı kullanıcıTanımla() throws Exception{
+                    
+        Kullanıcı kullanıcı = null;
         
-    }
-    
-    protected void bosAlanKontrol() throws Exception{
-    
         bosComponentKontrol(jTextField_isim, "İsim");
         bosComponentKontrol(jTextField_soyisim, "Soyisim");
         bosComponentKontrol(jTextField_kullanıcıAdı, "Kullanıcı Adı");
@@ -71,19 +71,84 @@ public class UIKullanıcı {
             bosComponentKontrol(jComboBox_MudurlukBaslangıcYılı, "Müdürlük Başlangıcı");
             bosComponentKontrol(jSpinner_atamaPuanı, "Atama Puanı", 0, 100);
             
+            kullanıcı = yeniMudurOlustur();  // OkulMuduru objesine çevir
+                        
         }else if(jComboBox_Role.getSelectedItem().toString().equals("Ogretmen")){
             
             bosComponentKontrol(jComboBox_OgretmenlikBaslangıcYili, "Ogretmenlik Başlangıcı");
             bosComponentKontrol(jComboBox_Brans, "Brans");
             bosComponentKontrol(jSpinner_atamaPuanı, "Atama Puanı", 0, 100);
+            
+            kullanıcı = yeniOgretmenOlustur();
         
         }else if(jComboBox_Role.getSelectedItem().toString().equals("Ogrenci")){
         
             bosComponentKontrol(jComboBox_OgrencilikBaslangıcYılı, "Öğrencilik Başlangıcı");
             
+            kullanıcı = yeniOgrenciOlustur();
+            
         }
         
-        
+        return kullanıcı;
+    }
+    
+    protected Kullanıcı yeniMudurOlustur(){
+    
+        OkulMuduru okulMuduru = new OkulMuduru(
+                Integer.valueOf(jComboBox_MudurlukBaslangıcYılı.getSelectedItem().toString()), 
+                (Integer)jSpinner_atamaPuanı.getValue(), 
+                Integer.valueOf(jComboBox_OgretmenlikBaslangıcYili.getSelectedItem().toString()),
+                jComboBox_Brans.getSelectedItem().toString(), 
+                0, 
+                0, 
+                (Integer)jSpinner_Yas.getValue(), 
+                jTextField_isim.getText(), 
+                jTextField_soyisim.getText(), 
+                jTextField_kullanıcıAdı.getText(), 
+                jTextField_KullanıcıSifre.getText(), 
+                jComboBox_Role.getSelectedItem().toString(), 
+                jTextField_EMail.getText()
+        );
+        return okulMuduru;
+    }
+    
+    protected Kullanıcı yeniOgretmenOlustur(){
+    
+        Ogretmen ogretmen = new Ogretmen( 
+                (Integer)jSpinner_atamaPuanı.getValue(), 
+                Integer.valueOf(jComboBox_OgretmenlikBaslangıcYili.getSelectedItem().toString()),
+                jComboBox_Brans.getSelectedItem().toString(), 
+                0, 
+                0, 
+                (Integer)jSpinner_Yas.getValue(), 
+                jTextField_isim.getText(), 
+                jTextField_soyisim.getText(), 
+                jTextField_kullanıcıAdı.getText(), 
+                jTextField_KullanıcıSifre.getText(), 
+                jComboBox_Role.getSelectedItem().toString(), 
+                jTextField_EMail.getText()
+        );
+        return ogretmen;
+    }
+    
+    protected Kullanıcı yeniOgrenciOlustur(){
+    
+        Ogrenci ogrenci = new Ogrenci(
+                
+                Integer.valueOf(jComboBox_OgrencilikBaslangıcYılı.getSelectedItem().toString()),
+                0,
+                -100,
+                0, 
+                (Integer)jSpinner_Yas.getValue(), 
+                jTextField_isim.getText(), 
+                jTextField_soyisim.getText(), 
+                jTextField_kullanıcıAdı.getText(), 
+                jTextField_KullanıcıSifre.getText(), 
+                jComboBox_Role.getSelectedItem().toString(), 
+                jTextField_EMail.getText()
+                
+        );
+        return ogrenci;
     }
     
     protected void bosComponentKontrol(JTextField yaziAlani, String alanAdı) throws Exception{

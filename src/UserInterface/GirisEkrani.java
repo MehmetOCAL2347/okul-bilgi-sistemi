@@ -22,7 +22,7 @@ public class GirisEkrani extends javax.swing.JFrame {
     
     // Değişkenler - DBIsımlerı
     
-    private String DB_KULLANICI = "kullanıcılar";
+    static String DB_KULLANICI = "kullanıcılar";
     
     // Classlar
     
@@ -50,7 +50,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         initComponents_2(false);
         
         jTextField_KullanıcıAdı.setText("ayse1");
-        jPasswordField_Sifre.setText(new String("ayse1"));
+        jPasswordField_Sifre.setText(new String("ayse1"));        
         
         this.setLocation(dim.width/2 - this.getSize().width/2, dim.height/2 - this.getSize().height/2);
                 
