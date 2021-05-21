@@ -31,6 +31,7 @@ public class OBSEkranIslemleri {
     public void initComponent_UI(){
         
         panelKullanıcı.getUiKullanıcı().kullanıcıEkbilgilerBaslangıc();
+        panelKullanıcı.getUiKullanıcı().dosyaOku();
             
         if(this.kullanıcı.getRole().equals("OkulMuduru")){
             okulMuduru_Ekranı();            

@@ -5,8 +5,20 @@ import Kullanıcılar.Ogrenci;
 import Kullanıcılar.Ogretmen;
 import Kullanıcılar.OkulMuduru;
 import com.mysql.cj.util.StringUtils;
+import java.awt.Color;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.DropTargetDropEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -30,7 +42,9 @@ public class UIKullanıcı {
     private JComboBox jComboBox_MudurlukBaslangıcYılı;
     private JComboBox jComboBox_OgrencilikBaslangıcYılı;
     private JPanel jPanel_DosyaOku;
-
+    
+    private File secilenDosya;
+    
     public UIKullanıcı(JTextField jTextField_isim, JTextField jTextField_soyisim, JTextField jTextField_kullanıcıAdı, JTextField jTextField_KullanıcıSifre, JTextField jTextField_EMail, JButton jButton_Yenile, JButton jButton_KayıtOlustur, JComboBox jComboBox_Role, JSpinner jSpinner_Yas, JPanel jPanel_OgretmenlikEkBilgiler, JPanel jPanel_OgrenciEkBilgiler, JComboBox jComboBox_OgretmenlikBaslangıcYili, JSpinner jSpinner_atamaPuanı, JComboBox jComboBox_Brans, JComboBox jComboBox_MudurlukBaslangıcYılı, JComboBox jComboBox_OgrencilikBaslangıcYılı, JPanel jPanel_DosyaOku) {
         this.jTextField_isim = jTextField_isim;
         this.jTextField_soyisim = jTextField_soyisim;
@@ -51,7 +65,41 @@ public class UIKullanıcı {
         this.jPanel_DosyaOku = jPanel_DosyaOku;
     }
 
+    public void dosyaOku(){
     
+        jPanel_DosyaOku.setDropTarget(new DropTarget(){
+            @Override
+            public synchronized void drop(DropTargetDropEvent dtde) {
+                
+                dtde.acceptDrop(DnDConstants.ACTION_COPY);
+                
+                try {
+                    List<File> droppfiles = (List<File>) dtde.getTransferable().getTransferData(DataFlavor.javaFileListFlavor);
+                    
+                    if(droppfiles.size() != 1){
+                        JOptionPane.showMessageDialog(null, "Seçilen Dosya Boş Olamaz");
+                    }else{
+                    
+                        for(File file : droppfiles){
+                        
+                            secilenDosya = file;
+                            
+                        }
+                        
+                        jPanel_DosyaOku.setBackground(Color.GREEN);
+                        
+                    }
+                    
+                } catch (UnsupportedFlavorException | IOException ex) {
+                    Logger.getLogger(UIKullanıcı.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+        
+        });
+    }
+    
+        
     public Kullanıcı kullanıcıTanımla() throws Exception{
                     
         Kullanıcı kullanıcı = null;
@@ -279,6 +327,10 @@ public class UIKullanıcı {
         jComboBox_Brans.setSelectedIndex(0);       
         jSpinner_atamaPuanı.setValue(70);
         
+    }
+
+    public File getSecilenDosya() {
+        return secilenDosya;
     }
     
     public JTextField getjTextField_isim() {
