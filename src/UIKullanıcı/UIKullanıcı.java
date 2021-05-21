@@ -12,7 +12,11 @@ import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DropTarget;
 import java.awt.dnd.DropTargetDropEvent;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +26,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class UIKullanıcı {
     
@@ -64,7 +72,64 @@ public class UIKullanıcı {
         this.jComboBox_OgrencilikBaslangıcYılı = jComboBox_OgrencilikBaslangıcYılı;
         this.jPanel_DosyaOku = jPanel_DosyaOku;
     }
-
+    
+    public LinkedList<Ogrenci> excelOku() throws FileNotFoundException, IOException{
+    
+        LinkedList<Ogrenci> ogrenciler = new LinkedList<>();
+        LinkedList<String> satırDegerleri = new LinkedList<>();
+        Ogrenci ogrenci;
+        Integer sutunSayısı = 7;
+        
+        FileInputStream dosya = new FileInputStream(secilenDosya);
+        XSSFWorkbook excel = new XSSFWorkbook(dosya);
+        XSSFSheet sayfa = excel.getSheetAt(0);
+        
+        Iterator<Row> satırIterator = sayfa.iterator();
+        
+        while(satırIterator.hasNext()){
+        
+            Row satır = satırIterator.next();
+            
+            for(int i=0; i<sutunSayısı; i++){
+            
+                if(satır.getCell(i).getCellType() == CellType.NUMERIC){
+                
+                    satırDegerleri.add(String.valueOf((int) satır.getCell(i).getNumericCellValue()));
+                    
+                }else{
+                    satırDegerleri.add(satır.getCell(i).getStringCellValue());
+                }
+                
+            }
+            
+            ogrenci = new Ogrenci(
+            
+                    Integer.valueOf(satırDegerleri.get(0)),
+                    0,
+                    -100,
+                    0,
+                    Integer.valueOf(satırDegerleri.get(1)),
+                    satırDegerleri.get(2),
+                    satırDegerleri.get(3),
+                    satırDegerleri.get(4),
+                    satırDegerleri.get(5),
+                    "Ogrenci",
+                    satırDegerleri.get(6)
+            
+            );
+            
+            satırDegerleri.clear();
+            ogrenciler.add(ogrenci);
+            
+        }
+        
+        excel.close();
+        dosya.close();
+        
+        return ogrenciler;
+        
+    }
+     
     public void dosyaOku(){
     
         jPanel_DosyaOku.setDropTarget(new DropTarget(){

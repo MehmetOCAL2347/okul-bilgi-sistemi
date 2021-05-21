@@ -13,6 +13,11 @@ import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
 import SQLIslemleri.SQLKullanıcıIslemleri;
 import UIKullanıcı.UIKullanıcı;
+import java.awt.Color;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -677,6 +682,11 @@ public class OBSUI extends javax.swing.JFrame {
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/upload.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_DosyaOkuLayout = new javax.swing.GroupLayout(jPanel_DosyaOku);
         jPanel_DosyaOku.setLayout(jPanel_DosyaOkuLayout);
@@ -2133,6 +2143,27 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton_KayıtOlusturActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+       
+        LinkedList<Ogrenci> ogrenciler;
+        
+        if(jPanel_DosyaOku.getBackground() == Color.GREEN && evt.getClickCount() == 2){
+        
+            try {
+                ogrenciler = obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().excelOku();
+                
+                System.out.println(ogrenciler.get(0).getIsim());
+                System.out.println(ogrenciler.get(1).getIsim());
+                System.out.println(ogrenciler.get(2).getIsim());
+                
+            } catch (IOException ex) {
+                Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
