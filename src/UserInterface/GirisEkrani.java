@@ -49,8 +49,8 @@ public class GirisEkrani extends javax.swing.JFrame {
         initComponents();
         initComponents_2(false);
         
-        jTextField_KullanıcıAdı.setText("ayse1");
-        jPasswordField_Sifre.setText(new String("ayse1"));        
+        jTextField_KullanıcıAdı.setText("enesaktas");
+        jPasswordField_Sifre.setText(new String("enesaktas"));        
         
         this.setLocation(dim.width/2 - this.getSize().width/2, dim.height/2 - this.getSize().height/2);
                 

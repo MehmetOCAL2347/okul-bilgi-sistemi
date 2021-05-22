@@ -12,6 +12,7 @@ import Paneller.PanelOkul;
 import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
 import SQLIslemleri.SQLKullanıcıIslemleri;
+import Sorular.Soru;
 import UIKullanıcı.UIKullanıcı;
 import java.awt.Color;
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class OBSUI extends javax.swing.JFrame {
     UIKullanıcı iuKullanıcı;
             
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
-    
+        
     /**
      * Creates new form OBSUI
      */
@@ -1292,6 +1293,11 @@ public class OBSUI extends javax.swing.JFrame {
         jScrollPane7.setViewportView(jTextArea3);
 
         jButton_SınavBaslat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
+        jButton_SınavBaslat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_SınavBaslatActionPerformed(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2188,6 +2194,18 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jButton_SınavBaslatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SınavBaslatActionPerformed
+        
+        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(1);
+        jButton_SınavBaslat.setEnabled(false);
+        System.out.println(soru.getSoru());
+        System.out.println(soru.getCevap_A());
+        System.out.println(soru.getCevap_B());
+        System.out.println(soru.getCevap_C());
+        System.out.println(soru.getCevap_D());
+        
+    }//GEN-LAST:event_jButton_SınavBaslatActionPerformed
 
     /**
      * @param args the command line arguments
