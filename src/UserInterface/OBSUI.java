@@ -19,6 +19,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class OBSUI extends javax.swing.JFrame {
@@ -53,7 +54,30 @@ public class OBSUI extends javax.swing.JFrame {
     public OBSUI(Kullanıcı kullanıcı) {
         initComponents();
         initComponent_New(kullanıcı);
+    }
+    
+    
+    public void initComponent_New(Kullanıcı kullanıcı){
         
+        OBSUI.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        kullanıcıRoleBelirle(kullanıcı);
+            
+        iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
+        
+        panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
+        panelKullanıcı = new PanelKullanıcı(iuKullanıcı, jToggleButton_Kullanıcı, jPanel_Kullanıcı);
+        panelOkul = new PanelOkul(jToggleButton_Okul, jPanel_Okul);
+        panelSınav = new PanelSınav(jToggleButton_Sınav, jPanel_Sınav);
+        panelSınıf = new PanelSınıf(jToggleButton_Sınıf, jPanel_Sınıf);
+        
+        obsEkranIslemleri = new OBSEkranIslemleri(panelKullanıcı, panelAtama, panelOkul, panelSınav, panelSınıf, kullanıcı);
+        obsEkranIslemleri.initComponent_UI();
+        
+    }
+    
+    public void kullanıcıRoleBelirle(Kullanıcı kullanıcı){
+    
         switch (kullanıcı.getRole()) {
             case "Admin":
                 admin = (Admin) kullanıcı;
@@ -70,22 +94,7 @@ public class OBSUI extends javax.swing.JFrame {
             default:
                 kullanıcı = null;
                 break;
-        } 
-    }
-    
-    
-    public void initComponent_New(Kullanıcı kullanıcı){
-            
-        iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
-        
-        panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
-        panelKullanıcı = new PanelKullanıcı(iuKullanıcı, jToggleButton_Kullanıcı, jPanel_Kullanıcı);
-        panelOkul = new PanelOkul(jToggleButton_Okul, jPanel_Okul);
-        panelSınav = new PanelSınav(jToggleButton_Sınav, jPanel_Sınav);
-        panelSınıf = new PanelSınıf(jToggleButton_Sınıf, jPanel_Sınıf);
-        
-        obsEkranIslemleri = new OBSEkranIslemleri(panelKullanıcı, panelAtama, panelOkul, panelSınav, panelSınıf, kullanıcı);
-        obsEkranIslemleri.initComponent_UI();
+        }
         
     }
         
@@ -203,11 +212,11 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel24 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        jLabel_OgrenciIsmı = new javax.swing.JLabel();
+        jLabel_OgrenciSoyismi = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
+        jButton_SınavBaslat = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
@@ -1267,11 +1276,11 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel26.setText("Soyisim:");
 
-        jLabel27.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel27.setText("Öğrenci İsmi");
+        jLabel_OgrenciIsmı.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel_OgrenciIsmı.setText("Öğrenci İsmi");
 
-        jLabel28.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel28.setText("Öğrenci Soyismi");
+        jLabel_OgrenciSoyismi.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel_OgrenciSoyismi.setText("Öğrenci Soyismi");
 
         jTextArea3.setEditable(false);
         jTextArea3.setBackground(new java.awt.Color(239, 237, 245));
@@ -1282,7 +1291,7 @@ public class OBSUI extends javax.swing.JFrame {
         jTextArea3.setWrapStyleWord(true);
         jScrollPane7.setViewportView(jTextArea3);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
+        jButton_SınavBaslat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1813,15 +1822,15 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_SınavBaslat, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel_OgrenciIsmı, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_OgrenciSoyismi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel31, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1832,15 +1841,15 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_OgrenciIsmı, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_OgrenciSoyismi, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_SınavBaslat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 37, Short.MAX_VALUE)
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2115,6 +2124,18 @@ public class OBSUI extends javax.swing.JFrame {
        
         obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınav);
         
+        if(jToggleButton_Sınav.isSelected()){
+            jLabel_OgrenciIsmı.setText(ogrenci.getIsim());
+            jLabel_OgrenciSoyismi.setText(ogrenci.getSoyIsım());
+            
+            if(ogrenci.getSınavPuanı() == -100){
+                jButton_SınavBaslat.setEnabled(true);
+            }else{
+                jButton_SınavBaslat.setEnabled(false);
+            }
+            
+        }
+                
     }//GEN-LAST:event_jToggleButton_SınavItemStateChanged
 
     private void jComboBox_RoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_RoleActionPerformed
@@ -2220,8 +2241,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton_KayıtOlustur;
+    private javax.swing.JButton jButton_SınavBaslat;
     private javax.swing.JButton jButton_Yenile;
     private javax.swing.JComboBox<String> jComboBox_Brans;
     private javax.swing.JComboBox<String> jComboBox_MudurlukBaslangıcYılı;
@@ -2247,8 +2268,6 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -2267,6 +2286,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel_OgrenciIsmı;
+    private javax.swing.JLabel jLabel_OgrenciSoyismi;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

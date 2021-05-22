@@ -2061,7 +2061,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane7" alignment="2" max="32767" attributes="0"/>
-                                  <Component id="jButton6" alignment="2" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="jButton_SınavBaslat" alignment="2" min="-2" pref="53" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel25" alignment="1" max="32767" attributes="0"/>
@@ -2069,8 +2069,8 @@
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel_OgrenciIsmı" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel_OgrenciSoyismi" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="jPanel31" alignment="2" min="-2" max="-2" attributes="0"/>
@@ -2086,17 +2086,17 @@
                               <EmptySpace pref="42" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel27" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgrenciIsmı" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel28" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgrenciSoyismi" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="35" max="32767" attributes="0"/>
                               <Component id="jScrollPane7" pref="134" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="jButton_SınavBaslat" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" pref="37" max="32767" attributes="0"/>
                               <Component id="jLabel29" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2125,7 +2125,7 @@
                         <Property name="text" type="java.lang.String" value="Soyisim:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel27">
+                    <Component class="javax.swing.JLabel" name="jLabel_OgrenciIsm&#x131;">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="18" style="0"/>
@@ -2133,7 +2133,7 @@
                         <Property name="text" type="java.lang.String" value="&#xd6;&#x11f;renci &#x130;smi"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel28">
+                    <Component class="javax.swing.JLabel" name="jLabel_OgrenciSoyismi">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="18" style="0"/>
@@ -2165,7 +2165,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JButton" name="jButton6">
+                    <Component class="javax.swing.JButton" name="jButton_S&#x131;navBaslat">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Images/checked.png"/>
