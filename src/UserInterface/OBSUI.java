@@ -2147,15 +2147,18 @@ public class OBSUI extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        
         LinkedList<Ogrenci> ogrenciler;
+        boolean sonuc = false;
         
         if(jPanel_DosyaOku.getBackground() == Color.GREEN && evt.getClickCount() == 2){
         
             try {
                 ogrenciler = obsEkranIslemleri.getPanelKullanıcı().getUiKullanıcı().excelOku();
                 
-                System.out.println(ogrenciler.get(0).getIsim());
-                System.out.println(ogrenciler.get(1).getIsim());
-                System.out.println(ogrenciler.get(2).getIsim());
+                for(Ogrenci ogrenci : ogrenciler){
+                    
+                    sonuc = sqlKullanıcıIslemleri.kullanıcıOlustur(ogrenci);
+                    
+                }
                 
             } catch (IOException ex) {
                 Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
