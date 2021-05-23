@@ -28,6 +28,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     private final String OGRENCI_ID = "SELECT * FROM ogrenci WHERE id=?";
     private final String OGRENCI_YENI = "INSERT INTO ogrenci VALUES(?,?,0,-100)";
+    private final String OGRENCI_NOTU = "UPDATE ogrenci SET sınavPuanı=? WHERE id=?";
     
     // SQL - ogretmen tablosu
     
@@ -55,6 +56,35 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         super(DBIsmi);
     }
     
+    public boolean ogrenciNotuGir(Kullanıcı kullanıcı, Integer puan){
+    
+        boolean ogrenciNotuGuncellendiMi = false;
+        
+        try {
+            baglantı.setAutoCommit(false);
+            
+            komuttamamlayıcı = baglantı.prepareStatement(OGRENCI_NOTU);
+            komuttamamlayıcı.setInt(1, puan);
+            komuttamamlayıcı.setInt(2, kullanıcı.getId());
+            
+            komuttamamlayıcı.executeUpdate();
+            baglantı.commit();
+            ogrenciNotuGuncellendiMi = true;
+            
+        } catch (SQLException ex) {
+            try {
+                baglantı.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SQLKullanıcıIslemleri.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        }
+        
+        
+        
+        return ogrenciNotuGuncellendiMi;
+        
+    }
+           
     public boolean kullanıcıOlustur(Kullanıcı kullanıcı){
     
         boolean kullanıcıOlusturulduMu = false;

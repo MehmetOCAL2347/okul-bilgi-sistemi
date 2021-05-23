@@ -40,7 +40,9 @@ public class OBSUI extends javax.swing.JFrame {
     PanelSınav panelSınav;
     PanelSınıf panelSınıf;
     UIKullanıcı iuKullanıcı;
-            
+    
+    Integer soruId = 1;
+    
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
         
     /**
@@ -282,19 +284,19 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton45 = new javax.swing.JRadioButton();
         jPanel25 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextArea_Soru = new javax.swing.JTextArea();
         jPanel26 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton_CevapA = new javax.swing.JRadioButton();
         jPanel27 = new javax.swing.JPanel();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton_CevapB = new javax.swing.JRadioButton();
         jPanel28 = new javax.swing.JPanel();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton_CevapC = new javax.swing.JRadioButton();
         jPanel29 = new javax.swing.JPanel();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton_CevapD = new javax.swing.JRadioButton();
         jPanel30 = new javax.swing.JPanel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jRadioButton_Bos = new javax.swing.JRadioButton();
+        jButton_Ileri = new javax.swing.JButton();
+        jButton_Geri = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1865,24 +1867,24 @@ public class OBSUI extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(252, 251, 253));
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(252, 251, 253));
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(4);
-        jTextArea2.setText("Soru");
-        jTextArea2.setWrapStyleWord(true);
-        jScrollPane6.setViewportView(jTextArea2);
+        jTextArea_Soru.setEditable(false);
+        jTextArea_Soru.setBackground(new java.awt.Color(252, 251, 253));
+        jTextArea_Soru.setColumns(20);
+        jTextArea_Soru.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextArea_Soru.setLineWrap(true);
+        jTextArea_Soru.setRows(4);
+        jTextArea_Soru.setText("Soru");
+        jTextArea_Soru.setWrapStyleWord(true);
+        jScrollPane6.setViewportView(jTextArea_Soru);
 
         jPanel26.setBackground(new java.awt.Color(252, 251, 253));
         jPanel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton1.setBackground(new java.awt.Color(252, 251, 253));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jRadioButton1.setText("Cevap A");
-        jRadioButton1.setEnabled(false);
+        jRadioButton_CevapA.setBackground(new java.awt.Color(252, 251, 253));
+        buttonGroup1.add(jRadioButton_CevapA);
+        jRadioButton_CevapA.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jRadioButton_CevapA.setText("Cevap A");
+        jRadioButton_CevapA.setEnabled(false);
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1890,22 +1892,22 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton_CevapA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_CevapA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel27.setBackground(new java.awt.Color(252, 251, 253));
         jPanel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton2.setBackground(new java.awt.Color(252, 251, 253));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jRadioButton2.setText("Cevap B");
-        jRadioButton2.setEnabled(false);
+        jRadioButton_CevapB.setBackground(new java.awt.Color(252, 251, 253));
+        buttonGroup1.add(jRadioButton_CevapB);
+        jRadioButton_CevapB.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jRadioButton_CevapB.setText("Cevap B");
+        jRadioButton_CevapB.setEnabled(false);
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -1913,22 +1915,22 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton_CevapB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_CevapB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel28.setBackground(new java.awt.Color(252, 251, 253));
         jPanel28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton3.setBackground(new java.awt.Color(252, 251, 253));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jRadioButton3.setText("Cevap C");
-        jRadioButton3.setEnabled(false);
+        jRadioButton_CevapC.setBackground(new java.awt.Color(252, 251, 253));
+        buttonGroup1.add(jRadioButton_CevapC);
+        jRadioButton_CevapC.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jRadioButton_CevapC.setText("Cevap C");
+        jRadioButton_CevapC.setEnabled(false);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -1936,22 +1938,22 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel28Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton_CevapC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_CevapC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel29.setBackground(new java.awt.Color(252, 251, 253));
         jPanel29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton4.setBackground(new java.awt.Color(252, 251, 253));
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jRadioButton4.setText("Cevap D");
-        jRadioButton4.setEnabled(false);
+        jRadioButton_CevapD.setBackground(new java.awt.Color(252, 251, 253));
+        buttonGroup1.add(jRadioButton_CevapD);
+        jRadioButton_CevapD.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jRadioButton_CevapD.setText("Cevap D");
+        jRadioButton_CevapD.setEnabled(false);
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -1959,22 +1961,22 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton_CevapD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_CevapD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel30.setBackground(new java.awt.Color(252, 251, 253));
         jPanel30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton5.setBackground(new java.awt.Color(252, 251, 253));
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jRadioButton5.setText("Boş");
-        jRadioButton5.setEnabled(false);
+        jRadioButton_Bos.setBackground(new java.awt.Color(252, 251, 253));
+        buttonGroup1.add(jRadioButton_Bos);
+        jRadioButton_Bos.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jRadioButton_Bos.setText("Boş");
+        jRadioButton_Bos.setEnabled(false);
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -1982,19 +1984,29 @@ public class OBSUI extends javax.swing.JFrame {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton_Bos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_Bos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/next.png"))); // NOI18N
-        jButton4.setEnabled(false);
+        jButton_Ileri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/next.png"))); // NOI18N
+        jButton_Ileri.setEnabled(false);
+        jButton_Ileri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_IleriActionPerformed(evt);
+            }
+        });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/previous.png"))); // NOI18N
-        jButton5.setEnabled(false);
+        jButton_Geri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/previous.png"))); // NOI18N
+        jButton_Geri.setEnabled(false);
+        jButton_Geri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_GeriActionPerformed(evt);
+            }
+        });
 
         jProgressBar1.setStringPainted(true);
 
@@ -2013,9 +2025,9 @@ public class OBSUI extends javax.swing.JFrame {
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_Geri, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_Ileri, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2036,8 +2048,8 @@ public class OBSUI extends javax.swing.JFrame {
                 .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton_Ileri, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Geri, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -2197,15 +2209,78 @@ public class OBSUI extends javax.swing.JFrame {
 
     private void jButton_SınavBaslatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SınavBaslatActionPerformed
         
-        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(1);
-        jButton_SınavBaslat.setEnabled(false);
-        System.out.println(soru.getSoru());
-        System.out.println(soru.getCevap_A());
-        System.out.println(soru.getCevap_B());
-        System.out.println(soru.getCevap_C());
-        System.out.println(soru.getCevap_D());
+        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
+        jButton_SınavBaslat.setEnabled(false);        
         
+        jRadioButton_CevapA.setEnabled(true);
+        jRadioButton_CevapB.setEnabled(true);
+        jRadioButton_CevapC.setEnabled(true);
+        jRadioButton_CevapD.setEnabled(true);        
+        jRadioButton_Bos.setEnabled(true);
+        jButton_Geri.setEnabled(true);
+        jButton_Ileri.setEnabled(true);
+        
+        jTextArea_Soru.setText(soru.getSoru());
+        jRadioButton_CevapA.setText(soru.getCevap_A());
+        jRadioButton_CevapB.setText(soru.getCevap_B());
+        jRadioButton_CevapC.setText(soru.getCevap_C());
+        jRadioButton_CevapD.setText(soru.getCevap_D());
+        
+                
+                
     }//GEN-LAST:event_jButton_SınavBaslatActionPerformed
+
+    private void jButton_IleriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IleriActionPerformed
+       
+        soruId++;
+        boolean sonuc = false;
+        
+        if(soruId < 1){
+            soruId = 1;
+        }else if(soruId > 10){
+            int dialogButton = JOptionPane.showConfirmDialog(this, "Sınav Tamamlansın Mı?", "Uyarı", JOptionPane.YES_NO_OPTION);
+        
+            if(dialogButton == 0){  // Evet 
+                
+                // PUanı hesaplatcaz
+                sonuc = sqlKullanıcıIslemleri.ogrenciNotuGir(ogrenci, 80);
+                
+                if(sonuc){
+                    JOptionPane.showMessageDialog(this, "Ogrenci Notu Güncellendi");
+                }else {
+                    JOptionPane.showMessageDialog(this, "Ogrenci Notu Girilirken Hata Oluştu");
+                }
+                
+            }
+        }
+        
+        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
+        jTextArea_Soru.setText(soru.getSoru());
+        jRadioButton_CevapA.setText(soru.getCevap_A());
+        jRadioButton_CevapB.setText(soru.getCevap_B());
+        jRadioButton_CevapC.setText(soru.getCevap_C());
+        jRadioButton_CevapD.setText(soru.getCevap_D());
+        
+    }//GEN-LAST:event_jButton_IleriActionPerformed
+
+    private void jButton_GeriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GeriActionPerformed
+       
+        soruId--;
+        
+        if(soruId < 1){
+            soruId = 1;
+        }else if(soruId > 10){
+            soruId = 10;
+        }
+        
+        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
+        jTextArea_Soru.setText(soru.getSoru());
+        jRadioButton_CevapA.setText(soru.getCevap_A());
+        jRadioButton_CevapB.setText(soru.getCevap_B());
+        jRadioButton_CevapC.setText(soru.getCevap_C());
+        jRadioButton_CevapD.setText(soru.getCevap_D());
+        
+    }//GEN-LAST:event_jButton_GeriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2257,8 +2332,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton_Geri;
+    private javax.swing.JButton jButton_Ileri;
     private javax.swing.JButton jButton_KayıtOlustur;
     private javax.swing.JButton jButton_SınavBaslat;
     private javax.swing.JButton jButton_Yenile;
@@ -2360,7 +2435,6 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Sınav;
     private javax.swing.JPanel jPanel_Sınıf;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
@@ -2371,7 +2445,6 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton17;
     private javax.swing.JRadioButton jRadioButton18;
     private javax.swing.JRadioButton jRadioButton19;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton20;
     private javax.swing.JRadioButton jRadioButton21;
     private javax.swing.JRadioButton jRadioButton22;
@@ -2382,7 +2455,6 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton27;
     private javax.swing.JRadioButton jRadioButton28;
     private javax.swing.JRadioButton jRadioButton29;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton30;
     private javax.swing.JRadioButton jRadioButton31;
     private javax.swing.JRadioButton jRadioButton32;
@@ -2393,18 +2465,21 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton37;
     private javax.swing.JRadioButton jRadioButton38;
     private javax.swing.JRadioButton jRadioButton39;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton40;
     private javax.swing.JRadioButton jRadioButton41;
     private javax.swing.JRadioButton jRadioButton42;
     private javax.swing.JRadioButton jRadioButton43;
     private javax.swing.JRadioButton jRadioButton44;
     private javax.swing.JRadioButton jRadioButton45;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JRadioButton jRadioButton_Bos;
+    private javax.swing.JRadioButton jRadioButton_CevapA;
+    private javax.swing.JRadioButton jRadioButton_CevapB;
+    private javax.swing.JRadioButton jRadioButton_CevapC;
+    private javax.swing.JRadioButton jRadioButton_CevapD;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2418,8 +2493,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea_Soru;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField_EMail;
     private javax.swing.JTextField jTextField_KullanıcıSifre;

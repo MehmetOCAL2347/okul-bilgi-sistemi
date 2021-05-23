@@ -48,5 +48,9 @@ public class Kullanıcı {
 
     public String getEMail() {
         return EMail;
-    }
+    }  
+
+    public Integer getId() {
+        return id;
+    }    
 }
