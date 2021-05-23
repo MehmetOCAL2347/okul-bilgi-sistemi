@@ -16,6 +16,7 @@ import Sorular.Soru;
 import UIKullanıcı.UIKullanıcı;
 import java.awt.Color;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,7 +42,9 @@ public class OBSUI extends javax.swing.JFrame {
     PanelSınıf panelSınıf;
     UIKullanıcı iuKullanıcı;
     
-    Integer soruId = 1;
+    Integer soruId = 1;  
+    LinkedHashMap<Integer, String> ogrenciCevaplar = new LinkedHashMap<>();
+    LinkedHashMap<Integer, String> dogruCevaplar = new LinkedHashMap<>();
     
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
         
@@ -64,7 +67,7 @@ public class OBSUI extends javax.swing.JFrame {
         
         OBSUI.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        kullanıcıRoleBelirle(kullanıcı);
+        kullanıcıRoleBelirle(kullanıcı);        
             
         iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
         
@@ -297,7 +300,7 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_Bos = new javax.swing.JRadioButton();
         jButton_Ileri = new javax.swing.JButton();
         jButton_Geri = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar_Soru = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2008,7 +2011,7 @@ public class OBSUI extends javax.swing.JFrame {
             }
         });
 
-        jProgressBar1.setStringPainted(true);
+        jProgressBar_Soru.setStringPainted(true);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -2023,7 +2026,7 @@ public class OBSUI extends javax.swing.JFrame {
                     .addComponent(jPanel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jProgressBar_Soru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(jButton_Geri, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2051,7 +2054,7 @@ public class OBSUI extends javax.swing.JFrame {
                     .addComponent(jButton_Ileri, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Geri, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jProgressBar_Soru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel_SınavLayout = new javax.swing.GroupLayout(jPanel_Sınav);
@@ -2226,24 +2229,68 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_CevapC.setText(soru.getCevap_C());
         jRadioButton_CevapD.setText(soru.getCevap_D());
         
-                
+        for(int i = 1; i < 11; i++){
+            
+            String dogruCevap = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(i).getDogruCevap();
+            dogruCevaplar.put(i, dogruCevap);
+            
+        }               
                 
     }//GEN-LAST:event_jButton_SınavBaslatActionPerformed
 
     private void jButton_IleriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IleriActionPerformed
        
-        soruId++;
+        
         boolean sonuc = false;
+        Integer puan = 0;
+        
+        if(jRadioButton_CevapA.isSelected()){
+            ogrenciCevaplar.put(soruId, "A");
+        }else if(jRadioButton_CevapB.isSelected()){
+            ogrenciCevaplar.put(soruId, "B");
+        }else if(jRadioButton_CevapC.isSelected()){
+            ogrenciCevaplar.put(soruId, "C");
+        }else if(jRadioButton_CevapD.isSelected()){
+            ogrenciCevaplar.put(soruId, "D");
+        }else {
+            ogrenciCevaplar.put(soruId, "BOS");
+        }
+        
+        buttonGroup1.clearSelection();
+        jProgressBar_Soru.setValue(jProgressBar_Soru.getValue() + 10);
+        soruId++;
         
         if(soruId < 1){
             soruId = 1;
         }else if(soruId > 10){
             int dialogButton = JOptionPane.showConfirmDialog(this, "Sınav Tamamlansın Mı?", "Uyarı", JOptionPane.YES_NO_OPTION);
         
-            if(dialogButton == 0){  // Evet 
+            if(dialogButton == 0){  // Evet                                
                 
                 // PUanı hesaplatcaz
-                sonuc = sqlKullanıcıIslemleri.ogrenciNotuGir(ogrenci, 80);
+                
+                for(int i = 1; i<11; i++){
+                    if(ogrenciCevaplar.get(i).equals(dogruCevaplar.get(i))){
+                        puan +=10;
+                    }
+                }
+                
+                sonuc = sqlKullanıcıIslemleri.ogrenciNotuGir(ogrenci, puan); 
+                
+                jRadioButton_CevapA.setEnabled(false);
+                jRadioButton_CevapB.setEnabled(false);
+                jRadioButton_CevapC.setEnabled(false);
+                jRadioButton_CevapD.setEnabled(false);        
+                jRadioButton_Bos.setEnabled(false);
+                jButton_Geri.setEnabled(false);
+                jButton_Ileri.setEnabled(false);
+                
+                jTextArea_Soru.setText("");
+                jRadioButton_CevapA.setText("Cevap A");
+                jRadioButton_CevapB.setText("Cevap B");
+                jRadioButton_CevapC.setText("Cevap C");
+                jRadioButton_CevapD.setText("Cevap D");
+                
                 
                 if(sonuc){
                     JOptionPane.showMessageDialog(this, "Ogrenci Notu Güncellendi");
@@ -2252,14 +2299,16 @@ public class OBSUI extends javax.swing.JFrame {
                 }
                 
             }
+        }else {
+            Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
+            jTextArea_Soru.setText(soru.getSoru());
+            jRadioButton_CevapA.setText(soru.getCevap_A());
+            jRadioButton_CevapB.setText(soru.getCevap_B());
+            jRadioButton_CevapC.setText(soru.getCevap_C());
+            jRadioButton_CevapD.setText(soru.getCevap_D());
         }
         
-        Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
-        jTextArea_Soru.setText(soru.getSoru());
-        jRadioButton_CevapA.setText(soru.getCevap_A());
-        jRadioButton_CevapB.setText(soru.getCevap_B());
-        jRadioButton_CevapC.setText(soru.getCevap_C());
-        jRadioButton_CevapD.setText(soru.getCevap_D());
+        
         
     }//GEN-LAST:event_jButton_IleriActionPerformed
 
@@ -2272,7 +2321,8 @@ public class OBSUI extends javax.swing.JFrame {
         }else if(soruId > 10){
             soruId = 10;
         }
-        
+           
+        jProgressBar_Soru.setValue(jProgressBar_Soru.getValue() - 10);
         Soru soru = obsEkranIslemleri.getPanelSınav().getIuSınav().soruGetir(soruId);
         jTextArea_Soru.setText(soru.getSoru());
         jRadioButton_CevapA.setText(soru.getCevap_A());
@@ -2434,7 +2484,7 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Okul;
     private javax.swing.JPanel jPanel_Sınav;
     private javax.swing.JPanel jPanel_Sınıf;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar_Soru;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;

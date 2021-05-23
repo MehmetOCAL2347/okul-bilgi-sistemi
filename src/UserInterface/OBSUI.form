@@ -3168,7 +3168,7 @@
                                   <Component id="jPanel28" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jPanel30" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jProgressBar1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jProgressBar_Soru" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jButton_Geri" min="-2" pref="51" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -3201,7 +3201,7 @@
                                   <Component id="jButton_Geri" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jProgressBar1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jProgressBar_Soru" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3484,7 +3484,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_GeriActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+                    <Component class="javax.swing.JProgressBar" name="jProgressBar_Soru">
                       <Properties>
                         <Property name="stringPainted" type="boolean" value="true"/>
                       </Properties>

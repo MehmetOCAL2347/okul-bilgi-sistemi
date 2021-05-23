@@ -276,6 +276,6 @@ public class OBSEkranIslemleri {
         return panelSınıf;
     }
     
-    
+        
     
 }
