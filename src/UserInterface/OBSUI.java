@@ -13,6 +13,7 @@ import Paneller.PanelSınav;
 import Paneller.PanelSınıf;
 import SQLIslemleri.SQLKullanıcıIslemleri;
 import Sorular.Soru;
+import Tablolar.Tablo;
 import UIKullanıcı.UIKullanıcı;
 import java.awt.Color;
 import java.io.IOException;
@@ -42,6 +43,8 @@ public class OBSUI extends javax.swing.JFrame {
     PanelSınıf panelSınıf;
     UIKullanıcı iuKullanıcı;
     
+    Tablo okulMuduruTablosu;
+    
     Integer soruId = 1;  
     LinkedHashMap<Integer, String> ogrenciCevaplar = new LinkedHashMap<>();
     LinkedHashMap<Integer, String> dogruCevaplar = new LinkedHashMap<>();
@@ -70,6 +73,8 @@ public class OBSUI extends javax.swing.JFrame {
         kullanıcıRoleBelirle(kullanıcı);        
             
         iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
+                
+        okulMuduruTablosu = new Tablo(jTable_OkulMuduru);
         
         panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
         panelKullanıcı = new PanelKullanıcı(iuKullanıcı, jToggleButton_Kullanıcı, jPanel_Kullanıcı);
@@ -170,7 +175,7 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_OkulMuduru = new javax.swing.JTable();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -788,9 +793,9 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Henuz Atamasi Yapılmamis Mudurler");
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_OkulMuduru.setAutoCreateRowSorter(true);
+        jTable_OkulMuduru.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTable_OkulMuduru.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -813,10 +818,10 @@ public class OBSUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(40);
-        jTable1.setSelectionBackground(new java.awt.Color(204, 0, 51));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jTable1);
+        jTable_OkulMuduru.setRowHeight(40);
+        jTable_OkulMuduru.setSelectionBackground(new java.awt.Color(204, 0, 51));
+        jTable_OkulMuduru.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(jTable_OkulMuduru);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2700,9 +2705,9 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSpinner jSpinner_Yas;
     private javax.swing.JSpinner jSpinner_atamaPuanı;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable_OkulMuduru;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea_OgrenciBilgi;
     private javax.swing.JTextArea jTextArea_Soru;

@@ -2,6 +2,7 @@
 package ArayuzIslemleri;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -21,7 +22,11 @@ public class RenkVeIconlar {
     // Renkler
     
     private Color mavi = new Color(43,81,154);
-
+    private Color mor = new Color(75,0,130);
+    
+    // Fontlar
+    
+    private Font fontArialBold_16 = new Font("Arial", Font.BOLD, 16);
     
     // Modeller
     
@@ -30,6 +35,13 @@ public class RenkVeIconlar {
     private DefaultComboBoxModel modelMudur = new DefaultComboBoxModel(roleMudur);
     private DefaultComboBoxModel modelAdmin = new DefaultComboBoxModel(roleAdmin);
 
+    public Color getMor() {
+        return mor;
+    }
+
+    public Font getFontArialBold_16() {
+        return fontArialBold_16;
+    }
     public DefaultComboBoxModel getModelMudur() {
         return modelMudur;
     }

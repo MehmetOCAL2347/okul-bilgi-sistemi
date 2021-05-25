@@ -7,5 +7,5 @@ public class PanelOkul extends Panel{
 
     public PanelOkul(JToggleButton jToggleButton, JPanel jPanel) {
         super(jToggleButton, jPanel);
-    }
+    }    
 }
