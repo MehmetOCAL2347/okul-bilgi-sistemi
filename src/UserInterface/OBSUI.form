@@ -4,25 +4,25 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru1">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru2">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru3">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru4">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup6">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru5">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup7">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru6">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup8">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru7">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup9">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru8">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup10">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru9">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup11">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Soru10">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -2148,7 +2148,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea3">
+                        <Component class="javax.swing.JTextArea" name="jTextArea_OgrenciBilgi">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2248,25 +2248,25 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel30" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_1A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_1B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_1C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_1D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_1A" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_1B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_1C" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jRadioButton9" alignment="0" pref="27" max="32767" attributes="0"/>
+                                          <Component id="jRadioButton_1D" alignment="0" pref="27" max="32767" attributes="0"/>
                                           <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
@@ -2284,46 +2284,46 @@
                                 <Property name="text" type="java.lang.String" value="1"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_1A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup2"/>
+                                  <ComponentRef name="buttonGroup_Soru1"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_1B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup2"/>
+                                  <ComponentRef name="buttonGroup_Soru1"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_1C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup2"/>
+                                  <ComponentRef name="buttonGroup_Soru1"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_1D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup2"/>
+                                  <ComponentRef name="buttonGroup_Soru1"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2343,13 +2343,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel33" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton18" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_4A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton19" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_4B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton20" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_4C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton21" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_4D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2357,10 +2357,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel33" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton18" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton19" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton20" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton21" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_4A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_4B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_4C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_4D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2374,46 +2374,46 @@
                                 <Property name="text" type="java.lang.String" value="4"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton18">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_4A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup5"/>
+                                  <ComponentRef name="buttonGroup_Soru4"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton19">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_4B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup5"/>
+                                  <ComponentRef name="buttonGroup_Soru4"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton20">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_4C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup5"/>
+                                  <ComponentRef name="buttonGroup_Soru4"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton21">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_4D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup5"/>
+                                  <ComponentRef name="buttonGroup_Soru4"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2433,13 +2433,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel32" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_3A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_3B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_3C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_3D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2447,10 +2447,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel32" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton14" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton15" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton16" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton17" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_3A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_3B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_3C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_3D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2464,46 +2464,46 @@
                                 <Property name="text" type="java.lang.String" value="3"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton14">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_3A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup4"/>
+                                  <ComponentRef name="buttonGroup_Soru3"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton15">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_3B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup4"/>
+                                  <ComponentRef name="buttonGroup_Soru3"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_3C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup4"/>
+                                  <ComponentRef name="buttonGroup_Soru3"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton17">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_3D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup4"/>
+                                  <ComponentRef name="buttonGroup_Soru3"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2523,13 +2523,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel36" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton30" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_7A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton31" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_7B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton32" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_7C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton33" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_7D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2537,10 +2537,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel36" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton30" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton31" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton32" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton33" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_7A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_7B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_7C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_7D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2554,46 +2554,46 @@
                                 <Property name="text" type="java.lang.String" value="7"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton30">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_7A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup8"/>
+                                  <ComponentRef name="buttonGroup_Soru7"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton31">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_7B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup8"/>
+                                  <ComponentRef name="buttonGroup_Soru7"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton32">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_7C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup8"/>
+                                  <ComponentRef name="buttonGroup_Soru7"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton33">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_7D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup8"/>
+                                  <ComponentRef name="buttonGroup_Soru7"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2613,13 +2613,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel31" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_2A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_2B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_2C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_2D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2627,10 +2627,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel31" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton10" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton11" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton12" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton13" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_2A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_2B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_2C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_2D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2644,46 +2644,46 @@
                                 <Property name="text" type="java.lang.String" value="2"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_2A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup3"/>
+                                  <ComponentRef name="buttonGroup_Soru2"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton11">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_2B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup3"/>
+                                  <ComponentRef name="buttonGroup_Soru2"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_2C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup3"/>
+                                  <ComponentRef name="buttonGroup_Soru2"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_2D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup3"/>
+                                  <ComponentRef name="buttonGroup_Soru2"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2703,13 +2703,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel34" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton22" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_5A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton23" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_5B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton24" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_5C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton25" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_5D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2717,10 +2717,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel34" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton22" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton23" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton24" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton25" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_5A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_5B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_5C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_5D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2734,46 +2734,46 @@
                                 <Property name="text" type="java.lang.String" value="5"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton22">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_5A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup6"/>
+                                  <ComponentRef name="buttonGroup_Soru5"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton23">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_5B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup6"/>
+                                  <ComponentRef name="buttonGroup_Soru5"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton24">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_5C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup6"/>
+                                  <ComponentRef name="buttonGroup_Soru5"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton25">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_5D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup6"/>
+                                  <ComponentRef name="buttonGroup_Soru5"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2793,13 +2793,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel35" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton26" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_6A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_6B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton28" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_6C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton29" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_6D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2810,10 +2810,10 @@
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel35" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jRadioButton26" alignment="1" pref="27" max="32767" attributes="0"/>
-                                          <Component id="jRadioButton27" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jRadioButton28" max="32767" attributes="0"/>
-                                          <Component id="jRadioButton29" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jRadioButton_6A" alignment="1" pref="27" max="32767" attributes="0"/>
+                                          <Component id="jRadioButton_6B" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jRadioButton_6C" max="32767" attributes="0"/>
+                                          <Component id="jRadioButton_6D" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2829,46 +2829,46 @@
                                 <Property name="text" type="java.lang.String" value="6"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton26">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_6A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup7"/>
+                                  <ComponentRef name="buttonGroup_Soru6"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton27">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_6B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup7"/>
+                                  <ComponentRef name="buttonGroup_Soru6"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton28">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_6C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup7"/>
+                                  <ComponentRef name="buttonGroup_Soru6"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton29">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_6D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup7"/>
+                                  <ComponentRef name="buttonGroup_Soru6"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2888,13 +2888,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel38" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton38" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_9A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton39" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_9B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton40" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_9C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton41" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_9D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2902,10 +2902,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel38" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton38" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton39" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton40" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton41" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_9A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_9B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_9C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_9D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2919,46 +2919,46 @@
                                 <Property name="text" type="java.lang.String" value="9"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton38">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_9A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup10"/>
+                                  <ComponentRef name="buttonGroup_Soru9"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton39">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_9B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup10"/>
+                                  <ComponentRef name="buttonGroup_Soru9"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton40">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_9C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup10"/>
+                                  <ComponentRef name="buttonGroup_Soru9"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton41">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_9D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup10"/>
+                                  <ComponentRef name="buttonGroup_Soru9"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -2978,13 +2978,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel37" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton34" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_8A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton35" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_8B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton36" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_8C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton37" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_8D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2992,10 +2992,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel37" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton34" alignment="0" pref="27" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton36" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton37" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton35" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_8A" alignment="0" pref="27" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_8C" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_8D" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_8B" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -3009,46 +3009,46 @@
                                 <Property name="text" type="java.lang.String" value="8"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton34">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_8A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup9"/>
+                                  <ComponentRef name="buttonGroup_Soru8"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton35">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_8B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup9"/>
+                                  <ComponentRef name="buttonGroup_Soru8"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton36">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_8C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup9"/>
+                                  <ComponentRef name="buttonGroup_Soru8"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton37">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_8D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup9"/>
+                                  <ComponentRef name="buttonGroup_Soru8"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -3068,13 +3068,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel39" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton42" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_10A" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton43" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_10B" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton44" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_10C" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton45" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton_10D" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3082,10 +3082,10 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel39" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton42" alignment="0" pref="28" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton43" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton44" max="32767" attributes="0"/>
-                                  <Component id="jRadioButton45" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_10A" alignment="0" pref="28" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_10B" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_10C" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton_10D" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -3099,46 +3099,46 @@
                                 <Property name="text" type="java.lang.String" value="10"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton42">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_10A">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup11"/>
+                                  <ComponentRef name="buttonGroup_Soru10"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton43">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_10B">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup11"/>
+                                  <ComponentRef name="buttonGroup_Soru10"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton44">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_10C">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup11"/>
+                                  <ComponentRef name="buttonGroup_Soru10"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton45">
+                            <Component class="javax.swing.JRadioButton" name="jRadioButton_10D">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="buttonGroup11"/>
+                                  <ComponentRef name="buttonGroup_Soru10"/>
                                 </Property>
                                 <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
@@ -3275,6 +3275,9 @@
                             <Property name="text" type="java.lang.String" value="Cevap A"/>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton_CevapAItemStateChanged"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3321,6 +3324,9 @@
                             <Property name="text" type="java.lang.String" value="Cevap B"/>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton_CevapBItemStateChanged"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3367,6 +3373,9 @@
                             <Property name="text" type="java.lang.String" value="Cevap C"/>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton_CevapCItemStateChanged"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3413,6 +3422,9 @@
                             <Property name="text" type="java.lang.String" value="Cevap D"/>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton_CevapDItemStateChanged"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3459,6 +3471,9 @@
                             <Property name="text" type="java.lang.String" value="Bo&#x15f;"/>
                             <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton_BosItemStateChanged"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

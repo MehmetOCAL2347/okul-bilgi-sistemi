@@ -45,7 +45,7 @@ public class OBSUI extends javax.swing.JFrame {
     Integer soruId = 1;  
     LinkedHashMap<Integer, String> ogrenciCevaplar = new LinkedHashMap<>();
     LinkedHashMap<Integer, String> dogruCevaplar = new LinkedHashMap<>();
-    
+        
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
         
     /**
@@ -79,7 +79,7 @@ public class OBSUI extends javax.swing.JFrame {
         
         obsEkranIslemleri = new OBSEkranIslemleri(panelKullanıcı, panelAtama, panelOkul, panelSınav, panelSınıf, kullanıcı);
         obsEkranIslemleri.initComponent_UI();
-        
+               
     }
     
     public void kullanıcıRoleBelirle(Kullanıcı kullanıcı){
@@ -114,16 +114,16 @@ public class OBSUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
-        buttonGroup5 = new javax.swing.ButtonGroup();
-        buttonGroup6 = new javax.swing.ButtonGroup();
-        buttonGroup7 = new javax.swing.ButtonGroup();
-        buttonGroup8 = new javax.swing.ButtonGroup();
-        buttonGroup9 = new javax.swing.ButtonGroup();
-        buttonGroup10 = new javax.swing.ButtonGroup();
-        buttonGroup11 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru1 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru2 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru3 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru4 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru5 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru6 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru7 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru8 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru9 = new javax.swing.ButtonGroup();
+        buttonGroup_Soru10 = new javax.swing.ButtonGroup();
         jPanel_AnaPanel = new javax.swing.JPanel();
         jPanel_Header1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -221,70 +221,70 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel_OgrenciIsmı = new javax.swing.JLabel();
         jLabel_OgrenciSoyismi = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jTextArea_OgrenciBilgi = new javax.swing.JTextArea();
         jButton_SınavBaslat = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton_1A = new javax.swing.JRadioButton();
+        jRadioButton_1B = new javax.swing.JRadioButton();
+        jRadioButton_1C = new javax.swing.JRadioButton();
+        jRadioButton_1D = new javax.swing.JRadioButton();
         jPanel33 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        jRadioButton18 = new javax.swing.JRadioButton();
-        jRadioButton19 = new javax.swing.JRadioButton();
-        jRadioButton20 = new javax.swing.JRadioButton();
-        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton_4A = new javax.swing.JRadioButton();
+        jRadioButton_4B = new javax.swing.JRadioButton();
+        jRadioButton_4C = new javax.swing.JRadioButton();
+        jRadioButton_4D = new javax.swing.JRadioButton();
         jPanel34 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jRadioButton16 = new javax.swing.JRadioButton();
-        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton_3A = new javax.swing.JRadioButton();
+        jRadioButton_3B = new javax.swing.JRadioButton();
+        jRadioButton_3C = new javax.swing.JRadioButton();
+        jRadioButton_3D = new javax.swing.JRadioButton();
         jPanel35 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jRadioButton30 = new javax.swing.JRadioButton();
-        jRadioButton31 = new javax.swing.JRadioButton();
-        jRadioButton32 = new javax.swing.JRadioButton();
-        jRadioButton33 = new javax.swing.JRadioButton();
+        jRadioButton_7A = new javax.swing.JRadioButton();
+        jRadioButton_7B = new javax.swing.JRadioButton();
+        jRadioButton_7C = new javax.swing.JRadioButton();
+        jRadioButton_7D = new javax.swing.JRadioButton();
         jPanel36 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton_2A = new javax.swing.JRadioButton();
+        jRadioButton_2B = new javax.swing.JRadioButton();
+        jRadioButton_2C = new javax.swing.JRadioButton();
+        jRadioButton_2D = new javax.swing.JRadioButton();
         jPanel37 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
-        jRadioButton22 = new javax.swing.JRadioButton();
-        jRadioButton23 = new javax.swing.JRadioButton();
-        jRadioButton24 = new javax.swing.JRadioButton();
-        jRadioButton25 = new javax.swing.JRadioButton();
+        jRadioButton_5A = new javax.swing.JRadioButton();
+        jRadioButton_5B = new javax.swing.JRadioButton();
+        jRadioButton_5C = new javax.swing.JRadioButton();
+        jRadioButton_5D = new javax.swing.JRadioButton();
         jPanel38 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
-        jRadioButton26 = new javax.swing.JRadioButton();
-        jRadioButton27 = new javax.swing.JRadioButton();
-        jRadioButton28 = new javax.swing.JRadioButton();
-        jRadioButton29 = new javax.swing.JRadioButton();
+        jRadioButton_6A = new javax.swing.JRadioButton();
+        jRadioButton_6B = new javax.swing.JRadioButton();
+        jRadioButton_6C = new javax.swing.JRadioButton();
+        jRadioButton_6D = new javax.swing.JRadioButton();
         jPanel39 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
-        jRadioButton38 = new javax.swing.JRadioButton();
-        jRadioButton39 = new javax.swing.JRadioButton();
-        jRadioButton40 = new javax.swing.JRadioButton();
-        jRadioButton41 = new javax.swing.JRadioButton();
+        jRadioButton_9A = new javax.swing.JRadioButton();
+        jRadioButton_9B = new javax.swing.JRadioButton();
+        jRadioButton_9C = new javax.swing.JRadioButton();
+        jRadioButton_9D = new javax.swing.JRadioButton();
         jPanel40 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
-        jRadioButton34 = new javax.swing.JRadioButton();
-        jRadioButton35 = new javax.swing.JRadioButton();
-        jRadioButton36 = new javax.swing.JRadioButton();
-        jRadioButton37 = new javax.swing.JRadioButton();
+        jRadioButton_8A = new javax.swing.JRadioButton();
+        jRadioButton_8B = new javax.swing.JRadioButton();
+        jRadioButton_8C = new javax.swing.JRadioButton();
+        jRadioButton_8D = new javax.swing.JRadioButton();
         jPanel41 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        jRadioButton42 = new javax.swing.JRadioButton();
-        jRadioButton43 = new javax.swing.JRadioButton();
-        jRadioButton44 = new javax.swing.JRadioButton();
-        jRadioButton45 = new javax.swing.JRadioButton();
+        jRadioButton_10A = new javax.swing.JRadioButton();
+        jRadioButton_10B = new javax.swing.JRadioButton();
+        jRadioButton_10C = new javax.swing.JRadioButton();
+        jRadioButton_10D = new javax.swing.JRadioButton();
         jPanel25 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea_Soru = new javax.swing.JTextArea();
@@ -1288,14 +1288,14 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel_OgrenciSoyismi.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel_OgrenciSoyismi.setText("Öğrenci Soyismi");
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(239, 237, 245));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(4);
-        jTextArea3.setWrapStyleWord(true);
-        jScrollPane7.setViewportView(jTextArea3);
+        jTextArea_OgrenciBilgi.setEditable(false);
+        jTextArea_OgrenciBilgi.setBackground(new java.awt.Color(239, 237, 245));
+        jTextArea_OgrenciBilgi.setColumns(20);
+        jTextArea_OgrenciBilgi.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextArea_OgrenciBilgi.setLineWrap(true);
+        jTextArea_OgrenciBilgi.setRows(4);
+        jTextArea_OgrenciBilgi.setWrapStyleWord(true);
+        jScrollPane7.setViewportView(jTextArea_OgrenciBilgi);
 
         jButton_SınavBaslat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
         jButton_SınavBaslat.addActionListener(new java.awt.event.ActionListener() {
@@ -1316,21 +1316,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("1");
 
-        jRadioButton6.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup2.add(jRadioButton6);
-        jRadioButton6.setEnabled(false);
+        jRadioButton_1A.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru1.add(jRadioButton_1A);
+        jRadioButton_1A.setEnabled(false);
 
-        jRadioButton7.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup2.add(jRadioButton7);
-        jRadioButton7.setEnabled(false);
+        jRadioButton_1B.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru1.add(jRadioButton_1B);
+        jRadioButton_1B.setEnabled(false);
 
-        jRadioButton8.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup2.add(jRadioButton8);
-        jRadioButton8.setEnabled(false);
+        jRadioButton_1C.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru1.add(jRadioButton_1C);
+        jRadioButton_1C.setEnabled(false);
 
-        jRadioButton9.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup2.add(jRadioButton9);
-        jRadioButton9.setEnabled(false);
+        jRadioButton_1D.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru1.add(jRadioButton_1D);
+        jRadioButton_1D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1339,23 +1339,23 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton6)
+                .addComponent(jRadioButton_1A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton7)
+                .addComponent(jRadioButton_1B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton8)
+                .addComponent(jRadioButton_1C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton9)
+                .addComponent(jRadioButton_1D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jRadioButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_1A, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_1B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_1C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(jRadioButton_1D, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(2, 2, 2))
         );
@@ -1366,21 +1366,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel33.setText("4");
 
-        jRadioButton18.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup5.add(jRadioButton18);
-        jRadioButton18.setEnabled(false);
+        jRadioButton_4A.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru4.add(jRadioButton_4A);
+        jRadioButton_4A.setEnabled(false);
 
-        jRadioButton19.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup5.add(jRadioButton19);
-        jRadioButton19.setEnabled(false);
+        jRadioButton_4B.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru4.add(jRadioButton_4B);
+        jRadioButton_4B.setEnabled(false);
 
-        jRadioButton20.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup5.add(jRadioButton20);
-        jRadioButton20.setEnabled(false);
+        jRadioButton_4C.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru4.add(jRadioButton_4C);
+        jRadioButton_4C.setEnabled(false);
 
-        jRadioButton21.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup5.add(jRadioButton21);
-        jRadioButton21.setEnabled(false);
+        jRadioButton_4D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru4.add(jRadioButton_4D);
+        jRadioButton_4D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -1389,22 +1389,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton18)
+                .addComponent(jRadioButton_4A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton19)
+                .addComponent(jRadioButton_4B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton20)
+                .addComponent(jRadioButton_4C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton21)
+                .addComponent(jRadioButton_4D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton18, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_4A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_4B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_4C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_4D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel34.setBackground(new java.awt.Color(255, 204, 204));
@@ -1413,21 +1413,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("3");
 
-        jRadioButton14.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup4.add(jRadioButton14);
-        jRadioButton14.setEnabled(false);
+        jRadioButton_3A.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru3.add(jRadioButton_3A);
+        jRadioButton_3A.setEnabled(false);
 
-        jRadioButton15.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup4.add(jRadioButton15);
-        jRadioButton15.setEnabled(false);
+        jRadioButton_3B.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru3.add(jRadioButton_3B);
+        jRadioButton_3B.setEnabled(false);
 
-        jRadioButton16.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup4.add(jRadioButton16);
-        jRadioButton16.setEnabled(false);
+        jRadioButton_3C.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru3.add(jRadioButton_3C);
+        jRadioButton_3C.setEnabled(false);
 
-        jRadioButton17.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup4.add(jRadioButton17);
-        jRadioButton17.setEnabled(false);
+        jRadioButton_3D.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru3.add(jRadioButton_3D);
+        jRadioButton_3D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -1436,22 +1436,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton14)
+                .addComponent(jRadioButton_3A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton15)
+                .addComponent(jRadioButton_3B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton16)
+                .addComponent(jRadioButton_3C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton17)
+                .addComponent(jRadioButton_3D)
                 .addGap(0, 18, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_3A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_3B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_3C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_3D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel35.setBackground(new java.awt.Color(255, 204, 204));
@@ -1460,21 +1460,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setText("7");
 
-        jRadioButton30.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup8.add(jRadioButton30);
-        jRadioButton30.setEnabled(false);
+        jRadioButton_7A.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru7.add(jRadioButton_7A);
+        jRadioButton_7A.setEnabled(false);
 
-        jRadioButton31.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup8.add(jRadioButton31);
-        jRadioButton31.setEnabled(false);
+        jRadioButton_7B.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru7.add(jRadioButton_7B);
+        jRadioButton_7B.setEnabled(false);
 
-        jRadioButton32.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup8.add(jRadioButton32);
-        jRadioButton32.setEnabled(false);
+        jRadioButton_7C.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru7.add(jRadioButton_7C);
+        jRadioButton_7C.setEnabled(false);
 
-        jRadioButton33.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup8.add(jRadioButton33);
-        jRadioButton33.setEnabled(false);
+        jRadioButton_7D.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru7.add(jRadioButton_7D);
+        jRadioButton_7D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -1483,22 +1483,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton30)
+                .addComponent(jRadioButton_7A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton31)
+                .addComponent(jRadioButton_7B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton32)
+                .addComponent(jRadioButton_7C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton33)
+                .addComponent(jRadioButton_7D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton30, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_7A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_7B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_7C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_7D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel36.setBackground(new java.awt.Color(255, 255, 255));
@@ -1507,21 +1507,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("2");
 
-        jRadioButton10.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup3.add(jRadioButton10);
-        jRadioButton10.setEnabled(false);
+        jRadioButton_2A.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru2.add(jRadioButton_2A);
+        jRadioButton_2A.setEnabled(false);
 
-        jRadioButton11.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup3.add(jRadioButton11);
-        jRadioButton11.setEnabled(false);
+        jRadioButton_2B.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru2.add(jRadioButton_2B);
+        jRadioButton_2B.setEnabled(false);
 
-        jRadioButton12.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup3.add(jRadioButton12);
-        jRadioButton12.setEnabled(false);
+        jRadioButton_2C.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru2.add(jRadioButton_2C);
+        jRadioButton_2C.setEnabled(false);
 
-        jRadioButton13.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup3.add(jRadioButton13);
-        jRadioButton13.setEnabled(false);
+        jRadioButton_2D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru2.add(jRadioButton_2D);
+        jRadioButton_2D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -1530,22 +1530,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton10)
+                .addComponent(jRadioButton_2A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton11)
+                .addComponent(jRadioButton_2B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton12)
+                .addComponent(jRadioButton_2C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton13)
+                .addComponent(jRadioButton_2D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_2A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_2B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_2C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_2D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel37.setBackground(new java.awt.Color(255, 204, 204));
@@ -1554,21 +1554,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("5");
 
-        jRadioButton22.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup6.add(jRadioButton22);
-        jRadioButton22.setEnabled(false);
+        jRadioButton_5A.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru5.add(jRadioButton_5A);
+        jRadioButton_5A.setEnabled(false);
 
-        jRadioButton23.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup6.add(jRadioButton23);
-        jRadioButton23.setEnabled(false);
+        jRadioButton_5B.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru5.add(jRadioButton_5B);
+        jRadioButton_5B.setEnabled(false);
 
-        jRadioButton24.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup6.add(jRadioButton24);
-        jRadioButton24.setEnabled(false);
+        jRadioButton_5C.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru5.add(jRadioButton_5C);
+        jRadioButton_5C.setEnabled(false);
 
-        jRadioButton25.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup6.add(jRadioButton25);
-        jRadioButton25.setEnabled(false);
+        jRadioButton_5D.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru5.add(jRadioButton_5D);
+        jRadioButton_5D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -1577,22 +1577,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton22)
+                .addComponent(jRadioButton_5A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton23)
+                .addComponent(jRadioButton_5B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton24)
+                .addComponent(jRadioButton_5C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton25)
+                .addComponent(jRadioButton_5D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton22, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_5A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_5B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_5C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_5D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel38.setBackground(new java.awt.Color(255, 255, 255));
@@ -1601,21 +1601,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("6");
 
-        jRadioButton26.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup7.add(jRadioButton26);
-        jRadioButton26.setEnabled(false);
+        jRadioButton_6A.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru6.add(jRadioButton_6A);
+        jRadioButton_6A.setEnabled(false);
 
-        jRadioButton27.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup7.add(jRadioButton27);
-        jRadioButton27.setEnabled(false);
+        jRadioButton_6B.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru6.add(jRadioButton_6B);
+        jRadioButton_6B.setEnabled(false);
 
-        jRadioButton28.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup7.add(jRadioButton28);
-        jRadioButton28.setEnabled(false);
+        jRadioButton_6C.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru6.add(jRadioButton_6C);
+        jRadioButton_6C.setEnabled(false);
 
-        jRadioButton29.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup7.add(jRadioButton29);
-        jRadioButton29.setEnabled(false);
+        jRadioButton_6D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru6.add(jRadioButton_6D);
+        jRadioButton_6D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -1624,13 +1624,13 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel38Layout.createSequentialGroup()
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton26)
+                .addComponent(jRadioButton_6A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton27)
+                .addComponent(jRadioButton_6B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton28)
+                .addComponent(jRadioButton_6C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton29)
+                .addComponent(jRadioButton_6D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
@@ -1639,10 +1639,10 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(jRadioButton27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jRadioButton_6A, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(jRadioButton_6B, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jRadioButton_6C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jRadioButton_6D, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel39.setBackground(new java.awt.Color(255, 204, 204));
@@ -1651,21 +1651,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel38.setText("9");
 
-        jRadioButton38.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup10.add(jRadioButton38);
-        jRadioButton38.setEnabled(false);
+        jRadioButton_9A.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru9.add(jRadioButton_9A);
+        jRadioButton_9A.setEnabled(false);
 
-        jRadioButton39.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup10.add(jRadioButton39);
-        jRadioButton39.setEnabled(false);
+        jRadioButton_9B.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru9.add(jRadioButton_9B);
+        jRadioButton_9B.setEnabled(false);
 
-        jRadioButton40.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup10.add(jRadioButton40);
-        jRadioButton40.setEnabled(false);
+        jRadioButton_9C.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru9.add(jRadioButton_9C);
+        jRadioButton_9C.setEnabled(false);
 
-        jRadioButton41.setBackground(new java.awt.Color(255, 204, 204));
-        buttonGroup10.add(jRadioButton41);
-        jRadioButton41.setEnabled(false);
+        jRadioButton_9D.setBackground(new java.awt.Color(255, 204, 204));
+        buttonGroup_Soru9.add(jRadioButton_9D);
+        jRadioButton_9D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -1674,22 +1674,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton38)
+                .addComponent(jRadioButton_9A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton39)
+                .addComponent(jRadioButton_9B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton40)
+                .addComponent(jRadioButton_9C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton41)
+                .addComponent(jRadioButton_9D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton38, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_9A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_9B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_9C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_9D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 255));
@@ -1698,21 +1698,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setText("8");
 
-        jRadioButton34.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup9.add(jRadioButton34);
-        jRadioButton34.setEnabled(false);
+        jRadioButton_8A.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru8.add(jRadioButton_8A);
+        jRadioButton_8A.setEnabled(false);
 
-        jRadioButton35.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup9.add(jRadioButton35);
-        jRadioButton35.setEnabled(false);
+        jRadioButton_8B.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru8.add(jRadioButton_8B);
+        jRadioButton_8B.setEnabled(false);
 
-        jRadioButton36.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup9.add(jRadioButton36);
-        jRadioButton36.setEnabled(false);
+        jRadioButton_8C.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru8.add(jRadioButton_8C);
+        jRadioButton_8C.setEnabled(false);
 
-        jRadioButton37.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup9.add(jRadioButton37);
-        jRadioButton37.setEnabled(false);
+        jRadioButton_8D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru8.add(jRadioButton_8D);
+        jRadioButton_8D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -1721,22 +1721,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel40Layout.createSequentialGroup()
                 .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton34)
+                .addComponent(jRadioButton_8A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton35)
+                .addComponent(jRadioButton_8B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton36)
+                .addComponent(jRadioButton_8C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton37)
+                .addComponent(jRadioButton_8D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton34, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-            .addComponent(jRadioButton36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_8A, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+            .addComponent(jRadioButton_8C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_8D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_8B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel41.setBackground(new java.awt.Color(255, 255, 255));
@@ -1745,21 +1745,21 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel39.setText("10");
 
-        jRadioButton42.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup11.add(jRadioButton42);
-        jRadioButton42.setEnabled(false);
+        jRadioButton_10A.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru10.add(jRadioButton_10A);
+        jRadioButton_10A.setEnabled(false);
 
-        jRadioButton43.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup11.add(jRadioButton43);
-        jRadioButton43.setEnabled(false);
+        jRadioButton_10B.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru10.add(jRadioButton_10B);
+        jRadioButton_10B.setEnabled(false);
 
-        jRadioButton44.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup11.add(jRadioButton44);
-        jRadioButton44.setEnabled(false);
+        jRadioButton_10C.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru10.add(jRadioButton_10C);
+        jRadioButton_10C.setEnabled(false);
 
-        jRadioButton45.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup11.add(jRadioButton45);
-        jRadioButton45.setEnabled(false);
+        jRadioButton_10D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup_Soru10.add(jRadioButton_10D);
+        jRadioButton_10D.setEnabled(false);
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
@@ -1768,22 +1768,22 @@ public class OBSUI extends javax.swing.JFrame {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton42)
+                .addComponent(jRadioButton_10A)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton43)
+                .addComponent(jRadioButton_10B)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton44)
+                .addComponent(jRadioButton_10C)
                 .addGap(30, 30, 30)
-                .addComponent(jRadioButton45)
+                .addComponent(jRadioButton_10D)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton42, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-            .addComponent(jRadioButton43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jRadioButton45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_10A, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+            .addComponent(jRadioButton_10B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_10C, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jRadioButton_10D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
@@ -1888,6 +1888,11 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_CevapA.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jRadioButton_CevapA.setText("Cevap A");
         jRadioButton_CevapA.setEnabled(false);
+        jRadioButton_CevapA.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton_CevapAItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1911,6 +1916,11 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_CevapB.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jRadioButton_CevapB.setText("Cevap B");
         jRadioButton_CevapB.setEnabled(false);
+        jRadioButton_CevapB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton_CevapBItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -1934,6 +1944,11 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_CevapC.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jRadioButton_CevapC.setText("Cevap C");
         jRadioButton_CevapC.setEnabled(false);
+        jRadioButton_CevapC.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton_CevapCItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -1957,6 +1972,11 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_CevapD.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jRadioButton_CevapD.setText("Cevap D");
         jRadioButton_CevapD.setEnabled(false);
+        jRadioButton_CevapD.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton_CevapDItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -1980,6 +2000,11 @@ public class OBSUI extends javax.swing.JFrame {
         jRadioButton_Bos.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jRadioButton_Bos.setText("Boş");
         jRadioButton_Bos.setEnabled(false);
+        jRadioButton_Bos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton_BosItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -2142,7 +2167,10 @@ public class OBSUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton_SınıfItemStateChanged
 
     private void jToggleButton_SınavItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_SınavItemStateChanged
-       
+        
+        String mesaj_1 = "Sınavı Başlatmak İçin Butona Tıklayınız";
+        String mesaj_2 = "Sınav Notunuz: ";
+        
         obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınav);
         
         if(jToggleButton_Sınav.isSelected()){
@@ -2151,8 +2179,10 @@ public class OBSUI extends javax.swing.JFrame {
             
             if(ogrenci.getSınavPuanı() == -100){
                 jButton_SınavBaslat.setEnabled(true);
+                jTextArea_OgrenciBilgi.setText(mesaj_1);
             }else{
                 jButton_SınavBaslat.setEnabled(false);
+                jTextArea_OgrenciBilgi.setText(mesaj_2 + ogrenci.getSınavPuanı());
             }
             
         }
@@ -2187,7 +2217,7 @@ public class OBSUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_KayıtOlusturActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       
+               
         LinkedList<Ogrenci> ogrenciler;
         boolean sonuc = false;
         
@@ -2240,6 +2270,7 @@ public class OBSUI extends javax.swing.JFrame {
 
     private void jButton_IleriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IleriActionPerformed
        
+        
         
         boolean sonuc = false;
         Integer puan = 0;
@@ -2332,6 +2363,136 @@ public class OBSUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton_GeriActionPerformed
 
+    private void jRadioButton_CevapAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton_CevapAItemStateChanged
+        
+        if(soruId == 1){
+            jRadioButton_1A.setSelected(true);
+        }else if(soruId == 2){
+            jRadioButton_2A.setSelected(true);
+        }else if(soruId == 3){
+            jRadioButton_3A.setSelected(true);
+        }else if(soruId == 4){
+            jRadioButton_4A.setSelected(true);
+        }else if(soruId == 5){
+            jRadioButton_5A.setSelected(true);
+        }else if(soruId == 6){
+            jRadioButton_6A.setSelected(true);
+        }else if(soruId == 7){
+            jRadioButton_7A.setSelected(true);
+        }else if(soruId == 8){
+            jRadioButton_8A.setSelected(true);
+        }else if(soruId == 9){
+            jRadioButton_9A.setSelected(true);
+        }else if(soruId == 10){
+            jRadioButton_10A.setSelected(true);
+        }
+        
+    }//GEN-LAST:event_jRadioButton_CevapAItemStateChanged
+
+    private void jRadioButton_CevapBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton_CevapBItemStateChanged
+       
+        if(soruId == 1){
+            jRadioButton_1B.setSelected(true);
+        }else if(soruId == 2){
+            jRadioButton_2B.setSelected(true);
+        }else if(soruId == 3){
+            jRadioButton_3B.setSelected(true);
+        }else if(soruId == 4){
+            jRadioButton_4B.setSelected(true);
+        }else if(soruId == 5){
+            jRadioButton_5B.setSelected(true);
+        }else if(soruId == 6){
+            jRadioButton_6B.setSelected(true);
+        }else if(soruId == 7){
+            jRadioButton_7B.setSelected(true);
+        }else if(soruId == 8){
+            jRadioButton_8B.setSelected(true);
+        }else if(soruId == 9){
+            jRadioButton_9B.setSelected(true);
+        }else if(soruId == 10){
+            jRadioButton_10B.setSelected(true);
+        }
+        
+    }//GEN-LAST:event_jRadioButton_CevapBItemStateChanged
+
+    private void jRadioButton_CevapCItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton_CevapCItemStateChanged
+        
+        if(soruId == 1){
+            jRadioButton_1C.setSelected(true);
+        }else if(soruId == 2){
+            jRadioButton_2C.setSelected(true);
+        }else if(soruId == 3){
+            jRadioButton_3C.setSelected(true);
+        }else if(soruId == 4){
+            jRadioButton_4C.setSelected(true);
+        }else if(soruId == 5){
+            jRadioButton_5C.setSelected(true);
+        }else if(soruId == 6){
+            jRadioButton_6C.setSelected(true);
+        }else if(soruId == 7){
+            jRadioButton_7C.setSelected(true);
+        }else if(soruId == 8){
+            jRadioButton_8C.setSelected(true);
+        }else if(soruId == 9){
+            jRadioButton_9C.setSelected(true);
+        }else if(soruId == 10){
+            jRadioButton_10C.setSelected(true);
+        }
+        
+    }//GEN-LAST:event_jRadioButton_CevapCItemStateChanged
+
+    private void jRadioButton_CevapDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton_CevapDItemStateChanged
+        
+        if(soruId == 1){
+            jRadioButton_1D.setSelected(true);
+        }else if(soruId == 2){
+            jRadioButton_2D.setSelected(true);
+        }else if(soruId == 3){
+            jRadioButton_3D.setSelected(true);
+        }else if(soruId == 4){
+            jRadioButton_4D.setSelected(true);
+        }else if(soruId == 5){
+            jRadioButton_5D.setSelected(true);
+        }else if(soruId == 6){
+            jRadioButton_6D.setSelected(true);
+        }else if(soruId == 7){
+            jRadioButton_7D.setSelected(true);
+        }else if(soruId == 8){
+            jRadioButton_8D.setSelected(true);
+        }else if(soruId == 9){
+            jRadioButton_9D.setSelected(true);
+        }else if(soruId == 10){
+            jRadioButton_10D.setSelected(true);
+        }
+        
+    }//GEN-LAST:event_jRadioButton_CevapDItemStateChanged
+
+    private void jRadioButton_BosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton_BosItemStateChanged
+        
+        if(soruId == 1){
+            buttonGroup_Soru1.clearSelection();
+        }else if(soruId == 2){
+            buttonGroup_Soru2.clearSelection();
+        }else if(soruId == 3){
+            buttonGroup_Soru3.clearSelection();
+        }else if(soruId == 4){
+            buttonGroup_Soru4.clearSelection();
+        }else if(soruId == 5){
+            buttonGroup_Soru5.clearSelection();
+        }else if(soruId == 6){
+            buttonGroup_Soru6.clearSelection();
+        }else if(soruId == 7){
+            buttonGroup_Soru7.clearSelection();
+        }else if(soruId == 8){
+            buttonGroup_Soru8.clearSelection();
+        }else if(soruId == 9){
+            buttonGroup_Soru9.clearSelection();
+        }else if(soruId == 10){
+            buttonGroup_Soru10.clearSelection();
+        }
+        
+    }//GEN-LAST:event_jRadioButton_BosItemStateChanged
+  
     /**
      * @param args the command line arguments
      */
@@ -2369,16 +2530,16 @@ public class OBSUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup10;
-    private javax.swing.ButtonGroup buttonGroup11;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.ButtonGroup buttonGroup6;
-    private javax.swing.ButtonGroup buttonGroup7;
-    private javax.swing.ButtonGroup buttonGroup8;
-    private javax.swing.ButtonGroup buttonGroup9;
+    private javax.swing.ButtonGroup buttonGroup_Soru1;
+    private javax.swing.ButtonGroup buttonGroup_Soru10;
+    private javax.swing.ButtonGroup buttonGroup_Soru2;
+    private javax.swing.ButtonGroup buttonGroup_Soru3;
+    private javax.swing.ButtonGroup buttonGroup_Soru4;
+    private javax.swing.ButtonGroup buttonGroup_Soru5;
+    private javax.swing.ButtonGroup buttonGroup_Soru6;
+    private javax.swing.ButtonGroup buttonGroup_Soru7;
+    private javax.swing.ButtonGroup buttonGroup_Soru8;
+    private javax.swing.ButtonGroup buttonGroup_Soru9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -2485,46 +2646,46 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Sınav;
     private javax.swing.JPanel jPanel_Sınıf;
     private javax.swing.JProgressBar jProgressBar_Soru;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton16;
-    private javax.swing.JRadioButton jRadioButton17;
-    private javax.swing.JRadioButton jRadioButton18;
-    private javax.swing.JRadioButton jRadioButton19;
-    private javax.swing.JRadioButton jRadioButton20;
-    private javax.swing.JRadioButton jRadioButton21;
-    private javax.swing.JRadioButton jRadioButton22;
-    private javax.swing.JRadioButton jRadioButton23;
-    private javax.swing.JRadioButton jRadioButton24;
-    private javax.swing.JRadioButton jRadioButton25;
-    private javax.swing.JRadioButton jRadioButton26;
-    private javax.swing.JRadioButton jRadioButton27;
-    private javax.swing.JRadioButton jRadioButton28;
-    private javax.swing.JRadioButton jRadioButton29;
-    private javax.swing.JRadioButton jRadioButton30;
-    private javax.swing.JRadioButton jRadioButton31;
-    private javax.swing.JRadioButton jRadioButton32;
-    private javax.swing.JRadioButton jRadioButton33;
-    private javax.swing.JRadioButton jRadioButton34;
-    private javax.swing.JRadioButton jRadioButton35;
-    private javax.swing.JRadioButton jRadioButton36;
-    private javax.swing.JRadioButton jRadioButton37;
-    private javax.swing.JRadioButton jRadioButton38;
-    private javax.swing.JRadioButton jRadioButton39;
-    private javax.swing.JRadioButton jRadioButton40;
-    private javax.swing.JRadioButton jRadioButton41;
-    private javax.swing.JRadioButton jRadioButton42;
-    private javax.swing.JRadioButton jRadioButton43;
-    private javax.swing.JRadioButton jRadioButton44;
-    private javax.swing.JRadioButton jRadioButton45;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JRadioButton jRadioButton_10A;
+    private javax.swing.JRadioButton jRadioButton_10B;
+    private javax.swing.JRadioButton jRadioButton_10C;
+    private javax.swing.JRadioButton jRadioButton_10D;
+    private javax.swing.JRadioButton jRadioButton_1A;
+    private javax.swing.JRadioButton jRadioButton_1B;
+    private javax.swing.JRadioButton jRadioButton_1C;
+    private javax.swing.JRadioButton jRadioButton_1D;
+    private javax.swing.JRadioButton jRadioButton_2A;
+    private javax.swing.JRadioButton jRadioButton_2B;
+    private javax.swing.JRadioButton jRadioButton_2C;
+    private javax.swing.JRadioButton jRadioButton_2D;
+    private javax.swing.JRadioButton jRadioButton_3A;
+    private javax.swing.JRadioButton jRadioButton_3B;
+    private javax.swing.JRadioButton jRadioButton_3C;
+    private javax.swing.JRadioButton jRadioButton_3D;
+    private javax.swing.JRadioButton jRadioButton_4A;
+    private javax.swing.JRadioButton jRadioButton_4B;
+    private javax.swing.JRadioButton jRadioButton_4C;
+    private javax.swing.JRadioButton jRadioButton_4D;
+    private javax.swing.JRadioButton jRadioButton_5A;
+    private javax.swing.JRadioButton jRadioButton_5B;
+    private javax.swing.JRadioButton jRadioButton_5C;
+    private javax.swing.JRadioButton jRadioButton_5D;
+    private javax.swing.JRadioButton jRadioButton_6A;
+    private javax.swing.JRadioButton jRadioButton_6B;
+    private javax.swing.JRadioButton jRadioButton_6C;
+    private javax.swing.JRadioButton jRadioButton_6D;
+    private javax.swing.JRadioButton jRadioButton_7A;
+    private javax.swing.JRadioButton jRadioButton_7B;
+    private javax.swing.JRadioButton jRadioButton_7C;
+    private javax.swing.JRadioButton jRadioButton_7D;
+    private javax.swing.JRadioButton jRadioButton_8A;
+    private javax.swing.JRadioButton jRadioButton_8B;
+    private javax.swing.JRadioButton jRadioButton_8C;
+    private javax.swing.JRadioButton jRadioButton_8D;
+    private javax.swing.JRadioButton jRadioButton_9A;
+    private javax.swing.JRadioButton jRadioButton_9B;
+    private javax.swing.JRadioButton jRadioButton_9C;
+    private javax.swing.JRadioButton jRadioButton_9D;
     private javax.swing.JRadioButton jRadioButton_Bos;
     private javax.swing.JRadioButton jRadioButton_CevapA;
     private javax.swing.JRadioButton jRadioButton_CevapB;
@@ -2543,7 +2704,7 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea_OgrenciBilgi;
     private javax.swing.JTextArea jTextArea_Soru;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField_EMail;

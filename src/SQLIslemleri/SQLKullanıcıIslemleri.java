@@ -55,7 +55,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     public SQLKullanıcıIslemleri(String DBIsmi) {
         super(DBIsmi);
     }
-    
+            
     public boolean ogrenciNotuGir(Kullanıcı kullanıcı, Integer puan){
     
         boolean ogrenciNotuGuncellendiMi = false;
