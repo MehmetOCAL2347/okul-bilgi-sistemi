@@ -1,15 +1,16 @@
 package UIKullanıcı;
 
 import Okullar.Okul;
+import java.util.LinkedList;
 
 
 public class UIOkul {
     
-    private Okul okul1 = new Okul("Batıkent İ.Ö.O", "Ankara", 100, 5, 10);
-    private Okul okul2 = new Okul("Bahçelievler İ.Ö.O", "İstanbul", 200, 4, 20);
-    private Okul okul3 = new Okul("Ahmet Akkoç İ.Ö.O", "Sakarya", 50, 2, 5);
-    private Okul okul4 = new Okul("Yeşilevler İ.Ö.O", "Ankara", 300, 8, 30);
-    private Okul okul5 = new Okul("İldem İ.Ö.O", "Kayseri", 400, 7, 10);
+    private Okul okul1 = new Okul(1, "Batıkent İ.Ö.O", "Ankara", 100, 5, 10);
+    private Okul okul2 = new Okul(2, "Bahçelievler İ.Ö.O", "İstanbul", 200, 4, 20);
+    private Okul okul3 = new Okul(3, "Ahmet Akkoç İ.Ö.O", "Sakarya", 50, 2, 5);
+    private Okul okul4 = new Okul(4, "Yeşilevler İ.Ö.O", "Ankara", 300, 8, 30);
+    private Okul okul5 = new Okul(5, "İldem İ.Ö.O", "Kayseri", 400, 7, 10);
 
     public UIOkul() {
     }
@@ -30,8 +31,20 @@ public class UIOkul {
             return null;
         }
         
-    }
+    }        
     
+    public LinkedList<Okul> tumOkullarıBul(){
+    
+        LinkedList<Okul> tumOkullar = new LinkedList<>();
+        tumOkullar.add(okul1);
+        tumOkullar.add(okul2);
+        tumOkullar.add(okul3);
+        tumOkullar.add(okul4);
+        tumOkullar.add(okul5);
+        return tumOkullar;
+        
+    }
+        
     public Okul getOkul1() {
         return okul1;
     }

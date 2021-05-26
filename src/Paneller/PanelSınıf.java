@@ -8,5 +8,5 @@ public class PanelSınıf extends Panel{
     public PanelSınıf(JToggleButton jToggleButton, JPanel jPanel) {
         super(jToggleButton, jPanel);
     }
-    
+  
 }

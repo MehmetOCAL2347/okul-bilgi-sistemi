@@ -2,6 +2,7 @@ package Okullar;
 
 public class Okul {
     
+    private Integer id;
     private String okulAdı;
     private String sehir;
     private Integer ogrenciSayısı;
@@ -9,7 +10,8 @@ public class Okul {
     private Integer sınıfSayısı;
     private Integer sınıfOgrenciSayısı;
 
-    public Okul(String okulAdı, String sehir, Integer ogrenciSayısı, Integer ogretmenSayısı, Integer sınıfSayısı) {
+    public Okul(Integer id, String okulAdı, String sehir, Integer ogrenciSayısı, Integer ogretmenSayısı, Integer sınıfSayısı) {
+        this.id = id;
         this.okulAdı = okulAdı;
         this.sehir = sehir;
         this.ogrenciSayısı = ogrenciSayısı;
@@ -17,6 +19,10 @@ public class Okul {
         this.sınıfSayısı = sınıfSayısı;
         this.sınıfOgrenciSayısı = this.ogrenciSayısı / this.sınıfSayısı;
         
+    }
+
+    public Integer getId() {
+        return id;
     }
     
     public String getOkulAdı() {

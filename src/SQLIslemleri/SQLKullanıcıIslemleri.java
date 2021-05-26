@@ -35,6 +35,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     private final String OGRETMEN_ID = "SELECT * FROM ogretmen WHERE id=?";
     private final String OGRETMEN_YENI = "INSERT INTO ogretmen VALUES(?,?,?,?,0)";
+    private final String OGRETMEN_TUMU = "SELECT * FROM ogretmen INNER JOIN kullanıcı WHERE kullanıcı.role = 'Ogretmen' AND ogretmen.id = kullanıcı.id AND ogretmen.atanılanOkulId=?";
     
     // SQL - okulmuduru tablosu
     
@@ -383,8 +384,42 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
             tumOkulMudurleri.add(okulMuduru);
         }
         return tumOkulMudurleri;
+    } 
+    
+    public LinkedList<Ogretmen> ogretmenleriBul(Integer id) throws SQLException{
+    
+        LinkedList<Ogretmen> tumOgretmenler = new LinkedList<>();
+        
+        komuttamamlayıcı = baglantı.prepareStatement(OGRETMEN_TUMU);
+        komuttamamlayıcı.setInt(1, id);
+        
+        ResultSet sonuc = komuttamamlayıcı.executeQuery();
+        
+        while(sonuc.next()){
+            
+            Ogretmen ogretmen = new Ogretmen(
+                            
+                            sonuc.getInt("atamaPuanı"),
+                            sonuc.getInt("ogretmenlikBaslangicTarihi"),
+                            sonuc.getString("brans"),
+                            sonuc.getInt("atanılanOkulId"),
+                            sonuc.getInt("id"),
+                            sonuc.getInt("yas"),
+                            sonuc.getString("isim"),
+                            sonuc.getString("soyIsim"),
+                            sonuc.getString("kullanıcıAdı"),
+                            sonuc.getString("kullanıcıSifre"),
+                            sonuc.getString("role"),
+                            sonuc.getString("EMail")
+                            
+                    );
+            tumOgretmenler.add(ogretmen);
+            
+        }
+        return tumOgretmenler;
+        
     }
-           
+        
     public boolean sifremiUnuttum(Kullanıcı kullanıcı) throws MessagingException{                
         
         if(!kullanıcı.getEMail().equals("")){            

@@ -1,6 +1,7 @@
 package UserInterface;
 
 import ArayuzIslemleri.OBSEkranIslemleri;
+import Atamalar.Atama;
 import Kullanıcılar.Admin;
 import Kullanıcılar.Kullanıcı;
 import Kullanıcılar.Ogrenci;
@@ -46,6 +47,11 @@ public class OBSUI extends javax.swing.JFrame {
     UIKullanıcı iuKullanıcı;
     
     Tablo okulMuduruTablosu;
+    Tablo ogretmenTablo_1;
+    Tablo ogretmenTablo_2;
+    Atama atama;
+    Integer secilenOkulId = 0;
+    
     
     Integer soruId = 1;  
     LinkedHashMap<Integer, String> ogrenciCevaplar = new LinkedHashMap<>();
@@ -77,6 +83,9 @@ public class OBSUI extends javax.swing.JFrame {
         iuKullanıcı = new UIKullanıcı(jTextField_isim, jTextField_soyisim, jTextField_kullanıcıAdı, jTextField_KullanıcıSifre, jTextField_EMail, jButton_Yenile, jButton_KayıtOlustur, jComboBox_Role, jSpinner_Yas, jPanel_OgretmenlikEkBilgiler, jPanel_OgrenciEkBilgiler, jComboBox_OgretmenlikBaslangıcYili, jSpinner_atamaPuanı, jComboBox_Brans, jComboBox_MudurlukBaslangıcYılı, jComboBox_OgrencilikBaslangıcYılı, jPanel_DosyaOku);
                 
         okulMuduruTablosu = new Tablo(jTable_OkulMuduru);
+        ogretmenTablo_1 = new Tablo(jTable_OgretmenTablo_1);
+        ogretmenTablo_2 = new Tablo(jTable_OgretmenTablo_2);
+        atama = new Atama(ogretmenTablo_1, ogretmenTablo_2, jList_Okullar);
         
         panelAtama = new PanelAtama(jToggleButton_Atama, jPanel_Atama);
         panelKullanıcı = new PanelKullanıcı(iuKullanıcı, jToggleButton_Kullanıcı, jPanel_Kullanıcı);
@@ -186,14 +195,14 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel_Atama = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList_Okullar = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable_OgretmenTablo_1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTable_OgretmenTablo_2 = new javax.swing.JTable();
         jPanel_Sınıf = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -910,20 +919,25 @@ public class OBSUI extends javax.swing.JFrame {
 
         jPanel17.setBackground(new java.awt.Color(239, 237, 245));
 
-        jList1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jList1.setModel(modelTumOkullar);
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jList1.setSelectionBackground(new java.awt.Color(75, 0, 130));
-        jScrollPane3.setViewportView(jList1);
+        jList_Okullar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jList_Okullar.setModel(modelTumOkullar);
+        jList_Okullar.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList_Okullar.setSelectionBackground(new java.awt.Color(75, 0, 130));
+        jList_Okullar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList_OkullarMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jList_Okullar);
 
-        jTable2.setAutoCreateRowSorter(true);
-        jTable2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_OgretmenTablo_1.setAutoCreateRowSorter(true);
+        jTable_OgretmenTablo_1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTable_OgretmenTablo_1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Isim", "Soy Isim", "Branş", "Puan"
+                "Id", "Isim", "Soy Isim", "Branş", "OkulId"
             }
         ) {
             Class[] types = new Class [] {
@@ -941,13 +955,18 @@ public class OBSUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setRowHeight(40);
-        jTable2.setRowMargin(5);
-        jTable2.setSelectionBackground(new java.awt.Color(204, 0, 51));
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane4.setViewportView(jTable2);
+        jTable_OgretmenTablo_1.setRowHeight(40);
+        jTable_OgretmenTablo_1.setRowMargin(5);
+        jTable_OgretmenTablo_1.setSelectionBackground(new java.awt.Color(204, 0, 51));
+        jTable_OgretmenTablo_1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane4.setViewportView(jTable_OgretmenTablo_1);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
 
@@ -983,14 +1002,14 @@ public class OBSUI extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(252, 251, 253));
 
-        jTable3.setAutoCreateRowSorter(true);
-        jTable3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_OgretmenTablo_2.setAutoCreateRowSorter(true);
+        jTable_OgretmenTablo_2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTable_OgretmenTablo_2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Isim", "Soy Isim", "Branş", "Puan"
+                "Id", "Isim", "Soy Isim", "Branş", "OkulId"
             }
         ) {
             Class[] types = new Class [] {
@@ -1008,11 +1027,11 @@ public class OBSUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable3.setRowHeight(40);
-        jTable3.setRowMargin(5);
-        jTable3.setSelectionBackground(new java.awt.Color(204, 0, 51));
-        jTable3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane5.setViewportView(jTable3);
+        jTable_OgretmenTablo_2.setRowHeight(40);
+        jTable_OgretmenTablo_2.setRowMargin(5);
+        jTable_OgretmenTablo_2.setSelectionBackground(new java.awt.Color(204, 0, 51));
+        jTable_OgretmenTablo_2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane5.setViewportView(jTable_OgretmenTablo_2);
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2190,8 +2209,23 @@ public class OBSUI extends javax.swing.JFrame {
 
     private void jToggleButton_AtamaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_AtamaItemStateChanged
         
-        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Atama);
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Atama);   
         
+        LinkedList<Okul> tumOkullar = obsEkranIslemleri.getPanelOkul().getUiOkul().tumOkullarıBul();
+        atama.listeDoldur(tumOkullar);
+        
+        try {
+            LinkedList<Ogretmen> tumOgretmenler = sqlKullanıcıIslemleri.ogretmenleriBul(0);
+            Integer toplamOgremenSayısı = tumOgretmenler.size();
+            
+            for(int i = 0; i< toplamOgremenSayısı; i++){
+                ogretmenTablo_2.tabloDoldur(tumOgretmenler.get(i));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                        
     }//GEN-LAST:event_jToggleButton_AtamaItemStateChanged
 
     private void jToggleButton_SınıfItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_SınıfItemStateChanged
@@ -2543,6 +2577,33 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList_OkullarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList_OkullarMouseClicked
+        
+        String secilenOkul = jList_Okullar.getSelectedValue();
+        
+        Integer toplamOgretmenSayısı = 0;
+        secilenOkulId = obsEkranIslemleri.getPanelOkul().getUiOkul().okulBul(secilenOkul).getId();
+        
+    }//GEN-LAST:event_jList_OkullarMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+        ogretmenTablo_1.getTabloModel().setRowCount(0);
+        try {
+            LinkedList<Ogretmen> tumOgretmenler = sqlKullanıcıIslemleri.ogretmenleriBul(secilenOkulId);
+            
+            Integer toplamOgretmenSayısı = tumOgretmenler.size();
+            
+            for(int i=0; i<toplamOgretmenSayısı; i++){
+                ogretmenTablo_1.tabloDoldur(tumOgretmenler.get(i));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
   
     /**
      * @param args the command line arguments
@@ -2643,7 +2704,7 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_OgrenciIsmı;
     private javax.swing.JLabel jLabel_OgrenciSoyismi;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList_Okullar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2751,8 +2812,8 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSpinner jSpinner_Yas;
     private javax.swing.JSpinner jSpinner_atamaPuanı;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable_OgretmenTablo_1;
+    private javax.swing.JTable jTable_OgretmenTablo_2;
     private javax.swing.JTable jTable_OkulMuduru;
     private javax.swing.JTextArea jTextArea_OgrenciBilgi;
     private javax.swing.JTextArea jTextArea_OkulBilgi;
