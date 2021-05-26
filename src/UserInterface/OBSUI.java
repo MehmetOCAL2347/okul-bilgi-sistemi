@@ -6,6 +6,7 @@ import Kullanıcılar.Kullanıcı;
 import Kullanıcılar.Ogrenci;
 import Kullanıcılar.Ogretmen;
 import Kullanıcılar.OkulMuduru;
+import Okullar.Okul;
 import Paneller.PanelAtama;
 import Paneller.PanelKullanıcı;
 import Paneller.PanelOkul;
@@ -17,6 +18,7 @@ import Tablolar.Tablo;
 import UIKullanıcı.UIKullanıcı;
 import java.awt.Color;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -178,8 +180,8 @@ public class OBSUI extends javax.swing.JFrame {
         jTable_OkulMuduru = new javax.swing.JTable();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField6 = new javax.swing.JTextField();
+        jTextArea_OkulBilgi = new javax.swing.JTextArea();
+        jTextField_OkulIsmi = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel_Atama = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -846,19 +848,24 @@ public class OBSUI extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(239, 237, 245));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(239, 237, 245));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextArea_OkulBilgi.setEditable(false);
+        jTextArea_OkulBilgi.setBackground(new java.awt.Color(239, 237, 245));
+        jTextArea_OkulBilgi.setColumns(20);
+        jTextArea_OkulBilgi.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        jTextArea_OkulBilgi.setLineWrap(true);
+        jTextArea_OkulBilgi.setRows(5);
+        jTextArea_OkulBilgi.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(jTextArea_OkulBilgi);
 
-        jTextField6.setBackground(new java.awt.Color(239, 237, 245));
-        jTextField6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Okul Ismi", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
+        jTextField_OkulIsmi.setBackground(new java.awt.Color(239, 237, 245));
+        jTextField_OkulIsmi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Okul Ismi", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Agency FB", 1, 20))); // NOI18N
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -868,7 +875,7 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(jTextField6)
+                    .addComponent(jTextField_OkulIsmi)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -878,7 +885,7 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField_OkulIsmi, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2155,7 +2162,29 @@ public class OBSUI extends javax.swing.JFrame {
 
     private void jToggleButton_OkulItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_OkulItemStateChanged
         
-        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Okul);
+        obsEkranIslemleri.btnItemStateChanged(jToggleButton_Okul);  
+        
+        Integer okulMudurSayısı = 0;
+        
+        okulMuduruTablosu.getTabloModel().setRowCount(0);
+        
+        try {
+            LinkedList<OkulMuduru> tumOkulMudurleri = sqlKullanıcıIslemleri.tumOkulMudurleriniBul();
+            
+            okulMudurSayısı = tumOkulMudurleri.size();
+            
+            if(okulMudurSayısı == 0){
+                JOptionPane.showMessageDialog(this, "Kayıtlı OkulMuduru Bulunamadı");
+            }else{
+                for(int i =0 ; i<okulMudurSayısı; i++){
+                okulMuduruTablosu.tabloDoldur(tumOkulMudurleri.get(i));
+                }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
     }//GEN-LAST:event_jToggleButton_OkulItemStateChanged
 
@@ -2497,6 +2526,23 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jRadioButton_BosItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+               
+        String okulAdı = jTextField_OkulIsmi.getText();
+        Okul okul = obsEkranIslemleri.getPanelOkul().getUiOkul().okulBul(okulAdı);
+        
+        if(okul == null){
+            JOptionPane.showMessageDialog(this, "Kayıtlı Okul Bulunamadı");
+        }else {
+            jTextArea_OkulBilgi.setText(            
+                    "Okul Ismi : " + okul.getOkulAdı() + "\n" + 
+                    "Bulunduğu Şehir : " + okul.getSehir() + "\n" + 
+                    "Sınıftaki Öğrenci Sayısı : " + okul.getSınıfOgrenciSayısı()
+            );
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
   
     /**
      * @param args the command line arguments
@@ -2708,12 +2754,12 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable_OkulMuduru;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea_OgrenciBilgi;
+    private javax.swing.JTextArea jTextArea_OkulBilgi;
     private javax.swing.JTextArea jTextArea_Soru;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField_EMail;
     private javax.swing.JTextField jTextField_KullanıcıSifre;
+    private javax.swing.JTextField jTextField_OkulIsmi;
     private javax.swing.JTextField jTextField_isim;
     private javax.swing.JTextField jTextField_kullanıcıAdı;
     private javax.swing.JTextField jTextField_soyisim;

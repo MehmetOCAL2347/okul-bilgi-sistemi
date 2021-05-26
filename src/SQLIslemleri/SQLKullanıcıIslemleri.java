@@ -8,6 +8,7 @@ import Kullanıcılar.OkulMuduru;
 import MailConfig.MailIslemleri;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -39,6 +40,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     
     private final String OKULMUDURU_ID = "SELECT * FROM ogretmen INNER JOIN okulmuduru WHERE ogretmen.id=?";
     private final String OKULMUDURU_YENI = "INSERT INTO okulmuduru VALUES(?,?)";
+    private final String OKULMUDURU_TUMU = "SELECT * FROM okulmuduru INNER JOIN kullanıcı INNER JOIN ogretmen WHERE kullanıcı.role='OkulMuduru' AND okulmuduru.id = kullanıcı.id AND ogretmen.id = kullanıcı.id";
     
     // Classlar
     
@@ -352,7 +354,37 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         return kullanıcı;
     }
     
-            
+    
+    public LinkedList<OkulMuduru> tumOkulMudurleriniBul() throws SQLException{
+    
+        LinkedList<OkulMuduru> tumOkulMudurleri = new LinkedList<>();
+        
+        komuttamamlayıcı = baglantı.prepareStatement(OKULMUDURU_TUMU);
+        ResultSet sonuc = komuttamamlayıcı.executeQuery();
+        
+        while(sonuc.next()){
+        
+            OkulMuduru okulMuduru = new OkulMuduru(
+                            
+                            sonuc.getInt("mudurlukBaslangicTarihi"),
+                            sonuc.getInt("atamaPuanı"),
+                            sonuc.getInt("ogretmenlikBaslangicTarihi"),
+                            sonuc.getString("brans"),
+                            sonuc.getInt("atanılanOkulId"),
+                            sonuc.getInt("id"),
+                            sonuc.getInt("yas"),
+                            sonuc.getString("isim"),
+                            sonuc.getString("soyIsim"),
+                            sonuc.getString("kullanıcıAdı"),
+                            sonuc.getString("kullanıcıSifre"),
+                            sonuc.getString("role"),
+                            sonuc.getString("EMail")
+                    );
+            tumOkulMudurleri.add(okulMuduru);
+        }
+        return tumOkulMudurleri;
+    }
+           
     public boolean sifremiUnuttum(Kullanıcı kullanıcı) throws MessagingException{                
         
         if(!kullanıcı.getEMail().equals("")){            

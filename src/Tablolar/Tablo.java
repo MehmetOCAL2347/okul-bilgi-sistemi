@@ -1,6 +1,7 @@
 package Tablolar;
 
 import ArayuzIslemleri.RenkVeIconlar;
+import Kullanıcılar.OkulMuduru;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +34,23 @@ public class Tablo {
     
     }
     
+    public void tabloDoldur(OkulMuduru okulMuduru){
+    
+        tabloModel.insertRow(tabloModel.getRowCount(), new Object[]{
+        
+            okulMuduru.getId(),
+            okulMuduru.getIsim(),
+            okulMuduru.getSoyIsım(),
+            okulMuduru.getYas(),
+            okulMuduru.getAtamaPuanı()
+            
+        });
+        
+    }
+
+    public DefaultTableModel getTabloModel() {
+        return tabloModel;
+    }
     
     
 }
