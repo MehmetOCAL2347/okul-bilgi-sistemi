@@ -36,6 +36,7 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
     private final String OGRETMEN_ID = "SELECT * FROM ogretmen WHERE id=?";
     private final String OGRETMEN_YENI = "INSERT INTO ogretmen VALUES(?,?,?,?,0)";
     private final String OGRETMEN_TUMU = "SELECT * FROM ogretmen INNER JOIN kullanıcı WHERE kullanıcı.role = 'Ogretmen' AND ogretmen.id = kullanıcı.id AND ogretmen.atanılanOkulId=?";
+    private final String OGRETMEN_ATAMA = "UPDATE ogretmen SET atanılanOkulId=? WHERE id=?";
     
     // SQL - okulmuduru tablosu
     
@@ -420,6 +421,30 @@ public class SQLKullanıcıIslemleri extends SQLBaglantı{
         
     }
         
+    public boolean ogretmenAtamasıYap(Integer atanılanOkulId, Integer ogretmenId){
+    
+        boolean atamaTamamlandıMı = false;
+        
+        try {
+            
+            baglantı.setAutoCommit(false);
+            komuttamamlayıcı = baglantı.prepareStatement(OGRETMEN_ATAMA);
+            komuttamamlayıcı.setInt(1, atanılanOkulId);
+            komuttamamlayıcı.setInt(2, ogretmenId);            
+            komuttamamlayıcı.executeUpdate();
+            baglantı.commit();
+            atamaTamamlandıMı = true;
+            
+        } catch (SQLException ex) {
+            try {
+                baglantı.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SQLKullanıcıIslemleri.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        }
+        return atamaTamamlandıMı;
+    }
+    
     public boolean sifremiUnuttum(Kullanıcı kullanıcı) throws MessagingException{                
         
         if(!kullanıcı.getEMail().equals("")){            

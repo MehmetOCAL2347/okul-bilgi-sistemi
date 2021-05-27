@@ -969,6 +969,11 @@ public class OBSUI extends javax.swing.JFrame {
         });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checked.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -2214,6 +2219,8 @@ public class OBSUI extends javax.swing.JFrame {
         LinkedList<Okul> tumOkullar = obsEkranIslemleri.getPanelOkul().getUiOkul().tumOkullarıBul();
         atama.listeDoldur(tumOkullar);
         
+        ogretmenTablo_2.getTabloModel().setRowCount(0);
+        
         try {
             LinkedList<Ogretmen> tumOgretmenler = sqlKullanıcıIslemleri.ogretmenleriBul(0);
             Integer toplamOgremenSayısı = tumOgretmenler.size();
@@ -2604,6 +2611,28 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       
+        Integer secilenSatır = jTable_OgretmenTablo_2.getSelectedRow();
+        Integer secilenOgretmenId;
+        boolean sonuc = false;
+        
+        if(jList_Okullar.isSelectionEmpty() || secilenSatır == -1){
+            JOptionPane.showMessageDialog(this, "Okul ve Ogretmen Seçmediniz");
+        }else{
+            secilenOgretmenId = (Integer) jTable_OgretmenTablo_2.getValueAt(secilenSatır, 0);
+            sonuc = sqlKullanıcıIslemleri.ogretmenAtamasıYap(secilenOkulId, secilenOgretmenId);
+            
+            if(sonuc){
+                JOptionPane.showMessageDialog(this, "Ogretmen Ataması Başarılı");
+            }else{
+                JOptionPane.showMessageDialog(this, "Atama Yapılamadı");
+            }
+            
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
   
     /**
      * @param args the command line arguments
