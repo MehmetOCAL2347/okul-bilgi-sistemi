@@ -17,6 +17,9 @@ public class RenkVeIconlar {
     private Icon minimize2 = new ImageIcon(getClass().getResource("/Images/minimize2.png"));
     private Icon user = new ImageIcon(getClass().getResource("/Images/user.png"));
     private Icon user2 = new ImageIcon(getClass().getResource("/Images/user2.png"));
+    private Icon school1 = new ImageIcon(getClass().getResource("/Images/school1.png"));
+    private Icon school2 = new ImageIcon(getClass().getResource("/Images/school2.png"));
+    private Icon success = new ImageIcon(getClass().getResource("/Images/success.png"));
     
     
     // Renkler
@@ -35,6 +38,18 @@ public class RenkVeIconlar {
     private DefaultComboBoxModel modelMudur = new DefaultComboBoxModel(roleMudur);
     private DefaultComboBoxModel modelAdmin = new DefaultComboBoxModel(roleAdmin);
 
+    public Icon getSchool1() {
+        return school1;
+    }
+
+    public Icon getSchool2() {
+        return school2;
+    }
+
+    public Icon getSuccess() {
+        return success;
+    }
+    
     public Color getMor() {
         return mor;
     }

@@ -1668,7 +1668,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel23" max="32767" attributes="0"/>
-                                          <Component id="jLabel21" max="32767" attributes="0"/>
+                                          <Component id="jLabel_OkulAdı" max="32767" attributes="0"/>
                                           <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1687,7 +1687,7 @@
                               <EmptySpace type="separate" max="32767" attributes="0"/>
                               <Component id="jLabel22" min="-2" pref="65" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="32767" attributes="0"/>
-                              <Component id="jLabel21" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabel_OkulAdı" min="-2" pref="36" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="32767" attributes="0"/>
                               <Component id="jLabel23" min="-2" pref="36" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="32767" attributes="0"/>
@@ -1704,6 +1704,11 @@
                           <Image iconType="3" name="/Images/school1.png"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
+                        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseEntered"/>
+                        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseExited"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel5">
                       <Properties>
@@ -1718,7 +1723,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel21">
+                    <Component class="javax.swing.JLabel" name="jLabel_OkulAd&#x131;">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="20" style="1"/>
@@ -1782,10 +1787,10 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="2" attributes="0">
                                       <Component id="jLabel6" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIsmi_1" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenSoyisim_1" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenBrans_1" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIcon_1" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1797,13 +1802,13 @@
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="jLabel6" min="-2" pref="136" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIsmi_1" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenSoyisim_1" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenBrans_1" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel10" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIcon_1" min="-2" pref="88" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1817,14 +1822,14 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel10">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIcon_1">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Images/user3.png"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel9">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIsmi_1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1833,7 +1838,7 @@
                             <Property name="text" type="java.lang.String" value="&#xd6;&#x11f;retmen"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel13">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenSoyisim_1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1842,7 +1847,7 @@
                             <Property name="text" type="java.lang.String" value="Atamas&#x131;"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel14">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenBrans_1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1867,10 +1872,10 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="2" attributes="0">
                                       <Component id="jLabel7" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIsmi_2" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenSoyisim_2" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenBrans_2" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIcon_2" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1882,13 +1887,13 @@
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="jLabel7" min="-2" pref="136" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="jLabel15" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIsmi_2" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel16" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenSoyisim_2" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenBrans_2" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace pref="65" max="32767" attributes="0"/>
-                                  <Component id="jLabel11" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIcon_2" min="-2" pref="88" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1902,14 +1907,14 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel11">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIcon_2">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Images/user3.png"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel15">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIsmi_2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1918,7 +1923,7 @@
                             <Property name="text" type="java.lang.String" value="&#xd6;&#x11f;retmen"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel16">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenSoyisim_2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1927,7 +1932,7 @@
                             <Property name="text" type="java.lang.String" value="Atamas&#x131;"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel17">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenBrans_2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -1952,10 +1957,10 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="2" attributes="0">
                                       <Component id="jLabel8" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel19" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel20" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIsmi_3" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenSoyisim_3" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenBrans_3" alignment="2" min="-2" pref="205" max="-2" attributes="0"/>
+                                      <Component id="jLabel_OgretmenIcon_3" alignment="2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1967,13 +1972,13 @@
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="jLabel8" min="-2" pref="136" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIsmi_3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenSoyisim_3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenBrans_3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel12" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="jLabel_OgretmenIcon_3" min="-2" pref="88" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1987,14 +1992,14 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel12">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIcon_3">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Images/user3.png"/>
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel18">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenIsmi_3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -2003,7 +2008,7 @@
                             <Property name="text" type="java.lang.String" value="&#xd6;&#x11f;retmen"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel19">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenSoyisim_3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>
@@ -2012,7 +2017,7 @@
                             <Property name="text" type="java.lang.String" value="Atamas&#x131;"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel20">
+                        <Component class="javax.swing.JLabel" name="jLabel_OgretmenBrans_3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Arial" size="20" style="1"/>

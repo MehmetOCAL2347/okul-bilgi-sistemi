@@ -1,6 +1,7 @@
 package UserInterface;
 
 import ArayuzIslemleri.OBSEkranIslemleri;
+import ArayuzIslemleri.RenkVeIconlar;
 import Atamalar.Atama;
 import Kullanıcılar.Admin;
 import Kullanıcılar.Kullanıcı;
@@ -18,7 +19,10 @@ import Sorular.Soru;
 import Tablolar.Tablo;
 import UIKullanıcı.UIKullanıcı;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -58,6 +62,7 @@ public class OBSUI extends javax.swing.JFrame {
     LinkedHashMap<Integer, String> dogruCevaplar = new LinkedHashMap<>();
         
     SQLKullanıcıIslemleri sqlKullanıcıIslemleri = new SQLKullanıcıIslemleri(GirisEkrani.DB_KULLANICI);
+    RenkVeIconlar renkVeIconlar = new RenkVeIconlar();
         
     /**
      * Creates new form OBSUI
@@ -208,28 +213,28 @@ public class OBSUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        jLabel_OkulAdı = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        jLabel_OgretmenIcon_1 = new javax.swing.JLabel();
+        jLabel_OgretmenIsmi_1 = new javax.swing.JLabel();
+        jLabel_OgretmenSoyisim_1 = new javax.swing.JLabel();
+        jLabel_OgretmenBrans_1 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jLabel_OgretmenIcon_2 = new javax.swing.JLabel();
+        jLabel_OgretmenIsmi_2 = new javax.swing.JLabel();
+        jLabel_OgretmenSoyisim_2 = new javax.swing.JLabel();
+        jLabel_OgretmenBrans_2 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        jLabel_OgretmenIcon_3 = new javax.swing.JLabel();
+        jLabel_OgretmenIsmi_3 = new javax.swing.JLabel();
+        jLabel_OgretmenSoyisim_3 = new javax.swing.JLabel();
+        jLabel_OgretmenBrans_3 = new javax.swing.JLabel();
         jPanel_Sınav = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
@@ -1072,15 +1077,26 @@ public class OBSUI extends javax.swing.JFrame {
         jPanel19.setBackground(new java.awt.Color(239, 237, 245));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/school1.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel4MouseExited(evt);
+            }
+        });
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("https://www.osym.gov.tr/");
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/QR.png"))); // NOI18N
 
-        jLabel21.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("Okul Bulunamadı");
+        jLabel_OkulAdı.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OkulAdı.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OkulAdı.setText("Okul Bulunamadı");
 
         jLabel23.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1105,7 +1121,7 @@ public class OBSUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_OkulAdı, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -1119,7 +1135,7 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OkulAdı, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
@@ -1131,19 +1147,19 @@ public class OBSUI extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user1.png"))); // NOI18N
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
+        jLabel_OgretmenIcon_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Öğretmen");
+        jLabel_OgretmenIsmi_1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenIsmi_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenIsmi_1.setText("Öğretmen");
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Ataması");
+        jLabel_OgretmenSoyisim_1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenSoyisim_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenSoyisim_1.setText("Ataması");
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Yapılmadı");
+        jLabel_OgretmenBrans_1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenBrans_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenBrans_1.setText("Yapılmadı");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1153,10 +1169,10 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel_OgretmenIsmi_1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenSoyisim_1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenBrans_1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenIcon_1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
@@ -1165,13 +1181,13 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIsmi_1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenSoyisim_1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenBrans_1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIcon_1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
 
@@ -1179,19 +1195,19 @@ public class OBSUI extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user1.png"))); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
+        jLabel_OgretmenIcon_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Öğretmen");
+        jLabel_OgretmenIsmi_2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenIsmi_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenIsmi_2.setText("Öğretmen");
 
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Ataması");
+        jLabel_OgretmenSoyisim_2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenSoyisim_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenSoyisim_2.setText("Ataması");
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Yapılmadı");
+        jLabel_OgretmenBrans_2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenBrans_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenBrans_2.setText("Yapılmadı");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -1201,10 +1217,10 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addComponent(jLabel_OgretmenIsmi_2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenSoyisim_2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenBrans_2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenIcon_2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
@@ -1213,13 +1229,13 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIsmi_2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenSoyisim_2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenBrans_2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIcon_2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
 
@@ -1227,19 +1243,19 @@ public class OBSUI extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user1.png"))); // NOI18N
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
+        jLabel_OgretmenIcon_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user3.png"))); // NOI18N
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Öğretmen");
+        jLabel_OgretmenIsmi_3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenIsmi_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenIsmi_3.setText("Öğretmen");
 
-        jLabel19.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Ataması");
+        jLabel_OgretmenSoyisim_3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenSoyisim_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenSoyisim_3.setText("Ataması");
 
-        jLabel20.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Yapılmadı");
+        jLabel_OgretmenBrans_3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_OgretmenBrans_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_OgretmenBrans_3.setText("Yapılmadı");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -1249,10 +1265,10 @@ public class OBSUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel_OgretmenIsmi_3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenSoyisim_3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenBrans_3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_OgretmenIcon_3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
@@ -1261,13 +1277,13 @@ public class OBSUI extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIsmi_3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenSoyisim_3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenBrans_3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_OgretmenIcon_3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
 
@@ -2236,8 +2252,50 @@ public class OBSUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton_AtamaItemStateChanged
 
     private void jToggleButton_SınıfItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton_SınıfItemStateChanged
-        
+                
         obsEkranIslemleri.btnItemStateChanged(jToggleButton_Sınıf);
+        
+        Okul okul = obsEkranIslemleri.getPanelOkul().getUiOkul().okulBul(ogretmen.getAtanılanOkulId());
+        LinkedList<Ogretmen> atanmısOgretmenler = new LinkedList<>();
+        Integer atanmısOgretmenSayısı;
+        
+        if(okul != null){
+            try {
+                atanmısOgretmenler = sqlKullanıcıIslemleri.ogretmenleriBul(okul.getId());
+                atanmısOgretmenSayısı = atanmısOgretmenler.size();
+                jLabel_OkulAdı.setText(okul.getOkulAdı());
+                
+                for(int i = 0; i<atanmısOgretmenSayısı; i++){
+                    
+                    if(i==0){
+                        jLabel_OgretmenIsmi_1.setText(atanmısOgretmenler.get(i).getIsim().toUpperCase());
+                        jLabel_OgretmenSoyisim_1.setText(atanmısOgretmenler.get(i).getSoyIsım().toUpperCase());
+                        jLabel_OgretmenBrans_1.setText(atanmısOgretmenler.get(i).getBrans().toUpperCase());
+                        jLabel_OgretmenIcon_1.setIcon(renkVeIconlar.getSuccess());
+                    }else if(i==1){
+                        jLabel_OgretmenIsmi_2.setText(atanmısOgretmenler.get(i).getIsim().toUpperCase());
+                        jLabel_OgretmenSoyisim_2.setText(atanmısOgretmenler.get(i).getSoyIsım().toUpperCase());
+                        jLabel_OgretmenBrans_2.setText(atanmısOgretmenler.get(i).getBrans().toUpperCase());
+                        jLabel_OgretmenIcon_2.setIcon(renkVeIconlar.getSuccess());
+                    }else if(i==2){
+                        jLabel_OgretmenIsmi_3.setText(atanmısOgretmenler.get(i).getIsim().toUpperCase());
+                        jLabel_OgretmenSoyisim_3.setText(atanmısOgretmenler.get(i).getSoyIsım().toUpperCase());
+                        jLabel_OgretmenBrans_3.setText(atanmısOgretmenler.get(i).getBrans().toUpperCase());
+                        jLabel_OgretmenIcon_3.setIcon(renkVeIconlar.getSuccess());
+                    }                    
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else {
+        
+            jLabel_OgretmenIsmi_1.setText(ogretmen.getIsim().toUpperCase());
+            jLabel_OgretmenSoyisim_1.setText(ogretmen.getSoyIsım().toUpperCase());
+            jLabel_OgretmenBrans_1.setText(ogretmen.getBrans().toUpperCase());
+            jLabel_OgretmenIcon_1.setIcon(renkVeIconlar.getSuccess());
+            
+        }
         
     }//GEN-LAST:event_jToggleButton_SınıfItemStateChanged
 
@@ -2633,6 +2691,33 @@ public class OBSUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        
+        jLabel4.setIcon(renkVeIconlar.getSchool2());
+        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+       
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+        
+        jLabel4.setIcon(renkVeIconlar.getSchool1());
+        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        
+    }//GEN-LAST:event_jLabel4MouseExited
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        try {
+            URI osymAdres = new URI("https://www.osym.gov.tr/");
+            
+            java.awt.Desktop.getDesktop().browse(osymAdres);
+            
+        } catch (URISyntaxException | IOException ex) {
+            Logger.getLogger(OBSUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
   
     /**
      * @param args the command line arguments
@@ -2695,19 +2780,7 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox_OgretmenlikBaslangıcYili;
     private javax.swing.JComboBox<String> jComboBox_Role;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -2730,9 +2803,21 @@ public class OBSUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_OgrenciIsmı;
     private javax.swing.JLabel jLabel_OgrenciSoyismi;
+    private javax.swing.JLabel jLabel_OgretmenBrans_1;
+    private javax.swing.JLabel jLabel_OgretmenBrans_2;
+    private javax.swing.JLabel jLabel_OgretmenBrans_3;
+    private javax.swing.JLabel jLabel_OgretmenIcon_1;
+    private javax.swing.JLabel jLabel_OgretmenIcon_2;
+    private javax.swing.JLabel jLabel_OgretmenIcon_3;
+    private javax.swing.JLabel jLabel_OgretmenIsmi_1;
+    private javax.swing.JLabel jLabel_OgretmenIsmi_2;
+    private javax.swing.JLabel jLabel_OgretmenIsmi_3;
+    private javax.swing.JLabel jLabel_OgretmenSoyisim_1;
+    private javax.swing.JLabel jLabel_OgretmenSoyisim_2;
+    private javax.swing.JLabel jLabel_OgretmenSoyisim_3;
+    private javax.swing.JLabel jLabel_OkulAdı;
     private javax.swing.JList<String> jList_Okullar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

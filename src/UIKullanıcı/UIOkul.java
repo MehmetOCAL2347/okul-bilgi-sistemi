@@ -31,8 +31,25 @@ public class UIOkul {
             return null;
         }
         
-    }        
+    }  
     
+    public Okul okulBul(Integer okulId){
+    
+        if(okulId == 1){
+            return okul1;
+        }else if(okulId == 2){
+            return okul2;
+        }else if(okulId == 3){
+            return okul3;
+        }else if(okulId == 4){
+            return okul4;
+        }else if(okulId == 5){
+            return okul5;
+        }else{
+            return null;
+        }
+    }
+        
     public LinkedList<Okul> tumOkullarıBul(){
     
         LinkedList<Okul> tumOkullar = new LinkedList<>();
